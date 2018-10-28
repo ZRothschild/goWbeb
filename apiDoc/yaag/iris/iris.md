@@ -17,7 +17,7 @@
 > irisyaag记录响应主体并向apidoc提供所有必要的信息
 
 
-### 生成API文档简单示例
+### 生成API文档简单示例 `main.go`
 
 ```go
 package main
