@@ -1,53 +1,41 @@
-// This middleware provides Cross-Site Request Forgery
-// protection.
-//
-// It securely generates a masked (unique-per-request) token that
-// can be embedded in the HTTP response (e.g. form field or HTTP header).
-// The original (unmasked) token is stored in the session, which is inaccessible
-// by an attacker (provided you are using HTTPS). Subsequent requests are
-// expected to include this token, which is compared against the session token.
-// Requests that do not provide a matching token are served with a HTTP 403
-// 'Forbidden' error response.
+//此中间件提供跨站点请求伪造保护
+//它安全地生成一个掩码（每个请求唯一）令牌
+//可以嵌入HTTP响应中（例如表单字段或HTTP标头）。
+//原始令牌存储在会话中，该会话无法访问
+// 攻击者（如果您使用的是HTTPS后续请求是 期望包含此令牌，该令牌与会话令牌进行比较。
+//匹配令牌失败包HTTP 403 Forbidden 错误响应。
 package main
-
 // $ go get -u github.com/iris-contrib/middleware/...
-
 import (
 	"github.com/kataras/iris"
-
 	"github.com/iris-contrib/middleware/csrf"
 )
-
 func main() {
 	app := iris.New()
 	app.RegisterView(iris.HTML("./views", ".html"))
-	// Note that the authentication key provided should be 32 bytes
-	// long and persist across application restarts.
+	//请注意，提供的身份验证密钥应为32个字节应用程序重新启动时保持不变
 	protect := csrf.Protect([]byte("9AB0F421E53A477C084477AEA06096F5"),
-		csrf.Secure(false)) // Defaults to true, but pass `false` while no https (devmode).
-
+		csrf.Secure(false)) //默认为true，但在没有https（devmode）的情况下传递`false`。
 	users := app.Party("/user", protect)
 	{
 		users.Get("/signup", getSignupForm)
-		// // POST requests without a valid token will return a HTTP 403 Forbidden.
+		//没有有效令牌的POST请求将返回HTTP 403 Forbidden。
 		users.Post("/signup", postSignupForm)
 	}
-
 	// GET: http://localhost:8080/user/signup
 	// POST: http://localhost:8080/user/signup
 	app.Run(iris.Addr(":8080"))
 }
 
 func getSignupForm(ctx iris.Context) {
-	// views/user/signup.html just needs a {{ .csrfField }} template tag for
-	// csrf.TemplateField to inject the CSRF token into. Easy!
+	// views/user/signup.html只需要一个{{.csrfField}}模板标记
+	// csrf.TemplateField将CSRF令牌注入即可！
 	ctx.ViewData(csrf.TemplateTag, csrf.TemplateField(ctx))
 	ctx.View("user/signup.html")
-
-	// We could also retrieve the token directly from csrf.Token(ctx) and
-	// set it in the request header - ctx.GetHeader("X-CSRF-Token", token)
-	// This is useful if you're sending JSON to clients or a front-end JavaScript
-	// framework.
+	//我们也可以直接从csrf.Token（ctx）中获取检索令牌
+	//在请求标头中设置它 - ctx.GetHeader("X-CSRF-Token"，token)
+	//如果您要向客户端或前端JavaScript发送JSON，这将非常有用
+	//框架
 }
 
 func postSignupForm(ctx iris.Context) {

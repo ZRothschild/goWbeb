@@ -8,7 +8,7 @@ import (
 func main() {
 
 	//跨与请求 下面代码表示 http://foo.com 站点下的 ajax 可以跨域请求 localhost:8080 接口
-	//当http://foo.com 为 × 表示所有域名都可以请求
+	//当http://foo.com 为 * 表示所有域名都可以请求
 
 	//AllowedOrigins 该字段是必须的。
 	// 它的值要么是请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。
@@ -20,7 +20,7 @@ func main() {
 
     //ExposedHeaders 该字段可选。CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段该字段可选。
     //6个基本字段：Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma。
-    //如果想拿到其他字段，就必须在 ExposedHeaders 里面指定。
+    //如果想拿到其他字段，就必须在 ExposedHeaders 里面指定
 	app := iris.New()
 	corsOptions := cors.Options{
 		AllowedOrigins:   []string{"http://foo.com"},
