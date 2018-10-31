@@ -2,37 +2,48 @@ package main
 
 import (
 	"github.com/kataras/iris"
-
 	"github.com/iris-contrib/middleware/secure"
 )
 
 func main() {
 	s := secure.New(secure.Options{
-		AllowedHosts:            []string{"ssl.example.com"},                                                                                                                         // AllowedHosts is a list of fully qualified domain names that are allowed. Default is empty list, which allows any and all host names.
-		SSLRedirect:             true,                                                                                                                                                // If SSLRedirect is set to true, then only allow HTTPS requests. Default is false.
-		SSLTemporaryRedirect:    false,                                                                                                                                               // If SSLTemporaryRedirect is true, the a 302 will be used while redirecting. Default is false (301).
-		SSLHost:                 "ssl.example.com",                                                                                                                                   // SSLHost is the host name that is used to redirect HTTP requests to HTTPS. Default is "", which indicates to use the same host.
-		SSLProxyHeaders:         map[string]string{"X-Forwarded-Proto": "https"},                                                                                                     // SSLProxyHeaders is set of header keys with associated values that would indicate a valid HTTPS request. Useful when using Nginx: `map[string]string{"X-Forwarded-Proto": "https"}`. Default is blank map.
-		STSSeconds:              315360000,                                                                                                                                           // STSSeconds is the max-age of the Strict-Transport-Security header. Default is 0, which would NOT include the header.
-		STSIncludeSubdomains:    true,                                                                                                                                                // If STSIncludeSubdomains is set to true, the `includeSubdomains` will be appended to the Strict-Transport-Security header. Default is false.
-		STSPreload:              true,                                                                                                                                                // If STSPreload is set to true, the `preload` flag will be appended to the Strict-Transport-Security header. Default is false.
-		ForceSTSHeader:          false,                                                                                                                                               // STS header is only included when the connection is HTTPS. If you want to force it to always be added, set to true. `IsDevelopment` still overrides this. Default is false.
-		FrameDeny:               true,                                                                                                                                                // If FrameDeny is set to true, adds the X-Frame-Options header with the value of `DENY`. Default is false.
-		CustomFrameOptionsValue: "SAMEORIGIN",                                                                                                                                        // CustomFrameOptionsValue allows the X-Frame-Options header value to be set with a custom value. This overrides the FrameDeny option.
-		ContentTypeNosniff:      true,                                                                                                                                                // If ContentTypeNosniff is true, adds the X-Content-Type-Options header with the value `nosniff`. Default is false.
-		BrowserXSSFilter:        true,                                                                                                                                                // If BrowserXssFilter is true, adds the X-XSS-Protection header with the value `1; mode=block`. Default is false.
-		ContentSecurityPolicy:   "default-src 'self'",                                                                                                                                // ContentSecurityPolicy allows the Content-Security-Policy header value to be set with a custom value. Default is "".
-		PublicKey:               `pin-sha256="base64+primary=="; pin-sha256="base64+backup=="; max-age=5184000; includeSubdomains; report-uri="https://www.example.com/hpkp-report"`, // PublicKey implements HPKP to prevent MITM attacks with forged certificates. Default is "".
-
-		IsDevelopment: true, // This will cause the AllowedHosts, SSLRedirect, and STSSeconds/STSIncludeSubdomains options to be ignored during development. When deploying to production, be sure to set this to false.
+		// AllowedHosts是允许的完全限定域名列表。默认为空列表，允许任何和所有主机名。
+		AllowedHosts:            []string{"ssl.example.com"},
+		//如果SSLRedirect设置为true，则仅允许HTTPS请求。默认值为false。
+		SSLRedirect:             true,
+		//如果SSLTemporaryRedirect为true，则在重定向时将使用a 302。默认值为false（301）。
+		SSLTemporaryRedirect:    false,
+		// SSLHost是用于将HTTP请求重定向到HTTPS的主机名。默认值为“”，表示使用相同的主机。
+		SSLHost:                 "ssl.example.com",
+		// SSLProxyHeaders是一组标题键，其关联值表示有效的HTTPS请求。在使用Nginx时很有用：`map[string]string{"X-Forwarded-Proto”:“https"}`。默认为空白map。
+		SSLProxyHeaders:         map[string]string{"X-Forwarded-Proto": "https"},
+		// STSSeconds是Strict-Transport-Security标头的max-age。默认值为0，不包括header。
+		STSSeconds:              315360000,
+		//如果STSIncludeSubdomains设置为true，则`includeSubdomains`将附加到Strict-Transport-Security标头。默认值为false。
+		STSIncludeSubdomains:    true,
+		//如果STSPreload设置为true，则`preload`标志将附加到Strict-Transport-Security标头。默认值为false。
+		STSPreload:              true,
+		//仅当连接是HTTPS时才包含STS标头。如果要强制始终添加，请设置为true."IsDevelopment"仍然覆盖了这一点。默认值为false。
+		ForceSTSHeader:          false,
+		//如果FrameDeny设置为true，则添加值为"DENY"的X-Frame-Options标头。默认值为false。
+		FrameDeny:               true,
+		// CustomFrameOptionsValue允许使用自定义值设置X-Frame-Options标头值。这会覆盖FrameDeny选项。
+		CustomFrameOptionsValue: "SAMEORIGIN",
+		//如果ContentTypeNosniff为true，则使用值nosniff添加X-Content-Type-Options标头。默认值为false。
+		ContentTypeNosniff:      true,
+		//如果BrowserXssFilter为true，则添加值为1的X-XSS-Protection标头;模式= block`。默认值为false。
+		BrowserXSSFilter:        true,
+		// ContentSecurityPolicy允许使用自定义值设置Content-Security-Policy标头值。默认为""。
+		ContentSecurityPolicy:   "default-src 'self'",
+		// PublicKey实现HPKP以防止伪造证书的MITM攻击。默认为""。
+		PublicKey:               `pin-sha256="base64+primary=="; pin-sha256="base64+backup=="; max-age=5184000; includeSubdomains; report-uri="https://www.example.com/hpkp-report"`,
+		//这将导致在开发期间忽略AllowedHosts，SSLRedirect和STSSeconds/STSIncludeSubdomains选项。 部署到生产时，请务必将其设置为false。
+		IsDevelopment: true,
 	})
-
 	app := iris.New()
 	app.Use(s.Serve)
-
 	app.Get("/home", func(ctx iris.Context) {
 		ctx.Writef("Hello from /home")
 	})
-
 	app.Run(iris.Addr(":8080"))
 }

@@ -111,8 +111,8 @@ func getUserByID(ctx iris.Context) {
 
 func createUser(ctx iris.Context) {
 	var user User
-	//ctx.ReadForm 格式请求数据 与ctx.ReadJSON相似 不过接收的是 Form请求
-	//记住 post 字段取名  Username 结构体字段体
+	//ctx.ReadForm 格式请求数据与ctx.ReadJSON相似不过接收的是Form请求
+	//记住 post字段取名Username结构体字段体
 	err := ctx.ReadForm(&user)
 	if err != nil {
 		ctx.Values().Set("error", "creating user, read and parse form failed. "+err.Error())

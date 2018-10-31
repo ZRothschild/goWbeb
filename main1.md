@@ -522,7 +522,6 @@ func main() {
 	// app.Patch("/", func(ctx iris.Context){})-> for "PATCH" http method.
 	// app.Any("/", func(ctx iris.Context){}) for all http methods.
 
-
 	//多个路由可以包含具有不同http映射方法的相同路径。
 	// 您可以捕获任何路径创建错误：
 	// route, err := app.Get(...)
@@ -1121,9 +1120,7 @@ pugEngine.Reload(true) //<---设置为true以在每个请求上重新构建模�
 app.RegisterView(pugEngine)
 ```
 
-注意：
-
-如果你想知道，视图引擎背后的代码来自`github.com/kataras/iris/view`包，对引擎变量的访问也可以通过`github.com/kataras/iris`包来获得。
+注意：如果你想知道，视图引擎背后的代码来自`github.com/kataras/iris/view`包，对引擎变量的访问也可以通过`github.com/kataras/iris`包来获得。
 
 ```go
 iris.HTML(...)      简写         view.HTML(...)
@@ -1707,12 +1704,12 @@ customStruct |
 
 中间件：
 
-*[https://github.com/kataras/iris/tree/master/middleware](https://github.com/kataras/iris/tree/master/middleware)
-*[https://github.com/iris-contrib/middleware](https://github.com/iris-contrib/middleware)
+* [https://github.com/kataras/iris/tree/master/middleware](https://github.com/kataras/iris/tree/master/middleware)
+* [https://github.com/iris-contrib/middleware](https://github.com/iris-contrib/middleware)
 
 主页：   [https://iris-go.com](https://iris-go.com)
 
-书籍（正在进行中）：  [https://docs.iris-go.com](https://docs.iris-go.com)
+书籍(正在进行中): [https://docs.iris-go.com](https://docs.iris-go.com)
 
 ### 框架数据类型介绍
 
@@ -1787,7 +1784,7 @@ const (
 )
 ```
 
-在`IANA`注册的`HTTP`状态代码。 请参阅：[http：//www.iana.org/assignments/http-status-codes/http-status-codes.xhtml](http：//www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)来自`net/http` std包的原始副本，以便用户重新获取`net/http`的导入路径。
+在`IANA`注册的`HTTP`状态代码。 请参阅：[http//www.iana.org/assignments/http-status-codes/http-status-codes.xhtml](http：//www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)来自`net/http` std包的原始副本，以便用户重新获取`net/http`的导入路径。
 
 复制自`net/http`包
 
@@ -2263,7 +2260,7 @@ func (app *Application) SubdomainRedirect(from, to router.Party) router.Party
 
 如果您需要有关此实现的更多信息，那么您必须通过`core/router＃NewSubdomainRedirectWrapper`函数进行导航。
 
-示例： [ https://github.com/kataras/iris/tree/master/_examples/subdomains/redirect]( https://github.com/kataras/iris/tree/master/_examples/subdomains/redirect)
+示例： [https://github.com/kataras/iris/tree/master/_examples/subdomains/redirect](https://github.com/kataras/iris/tree/master/_examples/subdomains/redirect)
 
 **[func (*Application) View](https://github.com/kataras/iris/blob/master/iris.go#L323)**
 
@@ -2456,7 +2453,7 @@ func DefaultConfiguration() Configuration
 func TOML(filename string) Configuration
 ``` 
 
-TOML从兼容toml的文档文件中读取配置。 有关toml实现的更多信息，请访问：[https：//github.com/toml-lang/toml](https：//github.com/toml-lang/toml)
+TOML从兼容toml的文档文件中读取配置。 有关toml实现的更多信息，请访问：[https://github.com/toml-lang/toml](https://github.com/toml-lang/toml)
 
 接受配置文件的绝对路径。 将通过出现错误消息的恐慌向用户显示错误。 文件不存在或格式不正确时可能会出错。
 
@@ -2729,7 +2726,7 @@ func WithoutServerError(errors ...error) Configurator
 
 请参阅`Configuration＃IgnoreServerErrors [] string`。
 
-示例： [Example: https://github.com/kataras/iris/tree/master/_examples/http-listening/listen-addr/omit-server-errors](Example: https://github.com/kataras/iris/tree/master/_examples/http-listening/listen-addr/omit-server-errors)
+示例： [Example: https://github.com/kataras/iris/tree/master/_examples/http-listening/listen-addr/omit-server-errors](https://github.com/kataras/iris/tree/master/_examples/http-listening/listen-addr/omit-server-errors)
 
 #### [type Context](https://github.com/kataras/iris/blob/master/go19.go#L19)
 

@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/kataras/iris"
-
 	"github.com/iris-contrib/middleware/newrelic"
 )
 
@@ -14,10 +13,8 @@ func main() {
 		app.Logger().Fatal(err)
 	}
 	app.Use(m.ServeHTTP)
-
 	app.Get("/", func(ctx iris.Context) {
 		ctx.Writef("success!\n")
 	})
-
 	app.Run(iris.Addr(":8080"))
 }
