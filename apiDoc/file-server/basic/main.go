@@ -13,7 +13,7 @@ func main() {
 	//或者对于大型文件（如果它们已经压缩），
 	// i.e "zippedDir/file.gz"
 	// app.Use(iris.Gzip)
-	//第一个参数是请求路径，第二个参数是系统目录
+	//第一个参数是请求路径，第二个参数是系统目录,文件所在目录
 
 	// app.StaticWeb("/css", "./assets/css")
 	// app.StaticWeb("/js", "./assets/js")

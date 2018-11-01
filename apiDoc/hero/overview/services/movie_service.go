@@ -1,10 +1,9 @@
 // file: services/movie_service.go
-
 package services
 
 import (
-	"github.com/kataras/iris/_examples/hero/overview/datamodels"
-	"github.com/kataras/iris/_examples/hero/overview/repositories"
+	"../datamodels"
+	"../repositories"
 )
 //MovieService处理电影数据模型的一些CRUID操作。
 //这依赖于影片repository的方法。

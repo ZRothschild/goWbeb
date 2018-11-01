@@ -5,22 +5,19 @@ import (
 	"github.com/kataras/iris/sessions"
 )
 
-// Index will increment a simple int version based on the visits that this user/session did.
+// Index将根据此用户/session 所执行的访问来增加一个简单的int版本。
 func Index(ctx iris.Context, session *sessions.Session) {
-	// it increments a "visits" value of integer by one,
-	// if the entry with key 'visits' doesn't exist it will create it for you.
+	//每一次访问自增一，如果不存在就先为你创建一个visits
 	visits := session.Increment("visits", 1)
-
-	// write the current, updated visits.
+	//打印出当前的visits值
 	ctx.Writef("%d visit(s) from my current session", visits)
 }
 
 /*
-You can also do anything that an MVC function can, i.e:
-
+您还可以执行MVC功能可以执行的任何操作，即：
 func Index(ctx iris.Context,session *sessions.Session) string {
 	visits := session.Increment("visits", 1)
 	return fmt.Spritnf("%d visit(s) from my current session", visits)
 }
-// you can also omit iris.Context input parameter and use dependency injection for LoginForm and etc. <- look the mvc examples.
+//你也可以省略iris.Context输入参数并使用LoginForm等依赖注入。< - 查看mvc示例。
 */

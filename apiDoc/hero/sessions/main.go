@@ -2,11 +2,9 @@ package main
 
 import (
 	"time"
-
-	"github.com/kataras/iris/_examples/hero/sessions/routes"
-
+	"./routes"
 	"github.com/kataras/iris"
-	"github.com/kataras/iris/hero" // <- IMPORTANT
+	"github.com/kataras/iris/hero" // <- 导入
 	"github.com/kataras/iris/sessions"
 )
 
@@ -17,21 +15,18 @@ func main() {
 		Expires:      60 * time.Minute,
 		AllowReclaim: true,
 	})
-
-	// Register
-	// dynamic dependencies like the *sessions.Session, from `sessionManager.Start(ctx) *sessions.Session` <- it accepts a Context and it returns
-	// something -> this is called dynamic request-time dependency and that "something" can be used to your handlers as input parameters,
-	// no limit about the number of dependencies, each handler will be builded once, before the server ran and it will use only dependencies that it needs.
+	//注册
+	//动态依赖关系，比如* sessions.Session，来自`sessionManager.Start(ctx)*sessions.Session` < - 它接受一个Context并返回
+	// something - >这称为动态请求 - 时间依赖，并且某些东西可以作为输入参数用于处理程序，
+	//没有关于依赖项数量限制，每个处理程序将在服务器运行之前构建一次，并且它将仅使用它所需的依赖项。
 	hero.Register(sessionManager.Start)
-	// convert any function to an iris Handler, their input parameters are being resolved using the unique Iris' blazing-fast dependency injection
-	// for services or dynamic dependencies like the *sessions.Session, from sessionManager.Start(ctx) *sessions.Session) <- it accepts a context and it returns
-	// something-> this is called dynamic request-time dependency.
+	//将任何函数转换为iris Handler，使用独特的Iris超快速依赖注入来解析它们的输入参数
+	//用于服务或动态依赖，例如* sessions.Session，来自sessionManager.Start(ctx)* sessions.Session)< - 它接受一个Context并返回
+	// 某些东西->这称为动态请求时依赖性。
 	indexHandler := hero.Handler(routes.Index)
-
 	// Method: GET
 	// Path: http://localhost:8080
 	app.Get("/", indexHandler)
-
 	app.Run(
 		iris.Addr(":8080"),
 		iris.WithoutServerError(iris.ErrServerClosed),

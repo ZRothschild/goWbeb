@@ -1,14 +1,11 @@
 // file: repositories/movie_repository.go
-
 package repositories
 
 import (
 	"errors"
 	"sync"
-
-	"github.com/kataras/iris/_examples/hero/overview/datamodels"
+	"../datamodels"
 )
-
 // Query表示访问者和操作查询
 type Query func(datamodels.Movie) bool
 
@@ -29,9 +26,6 @@ type MovieRepository interface {
 func NewMovieRepository(source map[int64]datamodels.Movie) MovieRepository {
 	return &movieMemoryRepository{source: source}
 }
-
-// movieMemoryRepository is a "MovieRepository"
-// which manages the movies using the memory data source (map).
 
 // movieMemoryRepository是一个MovieRepository
 //使用内存数据源（map）管理电影。
@@ -70,19 +64,6 @@ func (r *movieMemoryRepository) Exec(query Query, action Query, actionLimit int,
 	return
 }
 
-// Select receives a query function
-// which is fired for every single movie model inside
-// our imaginary data source.
-// When that function returns true then it stops the iteration.
-//
-// It returns the query's return last known "found" value
-// and the last known movie model
-// to help callers to reduce the LOC.
-//
-// It's actually a simple but very clever prototype function
-// I'm using everywhere since I firstly think of it,
-// hope you'll find it very useful as well.
-
 //Select接收查询函数
 //为内部的每个电影模型触发
 //我们想象中的数据源
@@ -100,12 +81,10 @@ func (r *movieMemoryRepository) Select(query Query) (movie datamodels.Movie, fou
 		movie = m
 		return true
 	}, 1, ReadOnlyMode)
-
 	//设置一个空的datamodels.Movie，如果根本找不到的话。
 	if !found {
 		movie = datamodels.Movie{}
 	}
-
 	return
 }
 
@@ -116,7 +95,6 @@ func (r *movieMemoryRepository) SelectMany(query Query, limit int) (results []da
 		results = append(results, m)
 		return true
 	}, limit, ReadOnlyMode)
-
 	return
 }
 
@@ -166,7 +144,6 @@ func (r *movieMemoryRepository) InsertOrUpdate(movie datamodels.Movie) (datamode
 	r.mu.Lock()
 	r.source[id] = current
 	r.mu.Unlock()
-
 	return movie, nil
 }
 

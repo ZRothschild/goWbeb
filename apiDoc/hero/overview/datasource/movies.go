@@ -1,7 +1,7 @@
 // file: datasource/movies.go
 package datasource
 
-import "github.com/kataras/iris/_examples/hero/overview/datamodels"
+import "../datamodels"
 //Movies是我们想象中的数据源。
 var Movies = map[int64]datamodels.Movie{
 	1: {
