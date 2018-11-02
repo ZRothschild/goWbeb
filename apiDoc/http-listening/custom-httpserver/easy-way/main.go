@@ -13,13 +13,13 @@ func main() {
 	app.Get("/mypath", func(ctx iris.Context) {
 		ctx.Writef("Hello from %s", ctx.Path())
 	})
-	// Any custom fields here. Handler and ErrorLog are setted to the server automatically
+	//这里有任何自定义字段 Handler和ErrorLog自动设置到服务器
 	srv := &http.Server{Addr: ":8080"}
 	// http://localhost:8080/
 	// http://localhost:8080/mypath
-	app.Run(iris.Server(srv)) // same as app.Run(iris.Addr(":8080"))
-	// More:
-	// see "multi" if you need to use more than one server at the same app.
-	// for a custom listener use: iris.Listener(net.Listener) or
-	// iris.TLS(cert,key) or iris.AutoTLS(), see "custom-listener" example for those.
+	app.Run(iris.Server(srv)) // 等同于 app.Run(iris.Addr(":8080"))
+	// 更多：
+	//如果您需要在同一个应用程序中使用多个服务器，请参阅“multi”。
+	//用于自定义listener：iris.Listener（net.Listener）或
+	// iris.TLS(cert，key)或iris.AutoTLS()，请参阅“custom-listener”示例。
 }

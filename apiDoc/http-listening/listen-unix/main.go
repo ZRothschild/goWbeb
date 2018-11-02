@@ -7,13 +7,10 @@ import (
 
 func main() {
 	app := iris.New()
-
-	l, err := netutil.UNIX("/tmpl/srv.sock", 0666) // see its code to see how you can manually create a new file listener, it's easy.
+	l, err := netutil.UNIX("/tmpl/srv.sock", 0666) //查看其代码以了解如何手动创建新的文件侦听器，这很容易
 	if err != nil {
 		panic(err)
 	}
-
 	app.Run(iris.Listener(l))
 }
-
-// Look "custom-listener/unix-reuseport" too.
+//更多参阅 "custom-listener/unix-reuseport"

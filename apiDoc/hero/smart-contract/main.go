@@ -69,7 +69,6 @@ func getAllUsersHandler(ctx iris.Context) {
 /*
 开始使用  USERS路由组的子路由组
 */
-
 func registerUserRoutes(userRouter iris.Party) {
 	//为此子路由器创建一个新的依赖注入管理器
 	userDeps := hero.New()

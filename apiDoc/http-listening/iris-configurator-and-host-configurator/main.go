@@ -6,23 +6,20 @@ import (
 
 func main() {
 	app := iris.New()
-
 	app.ConfigureHost(func(host *iris.Supervisor) { // <- HERE: IMPORTANT
-		// You can control the flow or defer something using some of the host's methods:
+		//您可以使用某些主机的方法控制流或延迟某些内容：
 		// host.RegisterOnError
 		// host.RegisterOnServe
 		host.RegisterOnShutdown(func() {
 			app.Logger().Infof("Application shutdown on signal")
 		})
 	})
-
 	app.Get("/", func(ctx iris.Context) {
 		ctx.HTML("<h1>Hello</h1>\n")
 	})
-
 	app.Run(iris.Addr(":8080"), iris.WithoutServerError(iris.ErrServerClosed))
-
-	/* There are more easy ways to notify for global shutdown using the `iris.RegisterOnInterrupt` for default signal interrupt events.
-	You can even go it even further by looking at the: "graceful-shutdown" example.
+	/*
+	对于默认信号中断事件，使用`iris.RegisterOnInterrupt`可以更简单地通知全局关闭。
+	您甚至可以通过查看：“graceful-shutdown”示例进一步了解它。
 	*/
 }

@@ -15,7 +15,6 @@ import (
 
 func main() {
 	app := iris.New()
-
 	app.Get("/", func(ctx iris.Context) {
 		ctx.HTML("<b>Hello World!</b>")
 	})

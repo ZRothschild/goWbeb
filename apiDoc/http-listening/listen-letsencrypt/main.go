@@ -1,4 +1,4 @@
-// Package main provide one-line integration with letsencrypt.org
+//包main提供与letsencrypt.org的单行集成
 package main
 
 import (
@@ -7,21 +7,17 @@ import (
 
 func main() {
 	app := iris.New()
-
 	app.Get("/", func(ctx iris.Context) {
 		ctx.Writef("Hello from SECURE SERVER!")
 	})
-
 	app.Get("/test2", func(ctx iris.Context) {
 		ctx.Writef("Welcome to secure server from /test2!")
 	})
-
 	app.Get("/redirect", func(ctx iris.Context) {
 		ctx.Redirect("/test2")
 	})
-
-	// NOTE: This will not work on domains like this,
-	// use real whitelisted domain(or domains split by whitespaces)
-	// and a non-public e-mail instead.
+	//注意：这不适用于这样的域名，
+	//使用真正的白名单域（或由空格分割的域）
+	//而不是非公开的电子邮件。
 	app.Run(iris.AutoTLS(":443", "example.com", "mail@example.com"))
 }
