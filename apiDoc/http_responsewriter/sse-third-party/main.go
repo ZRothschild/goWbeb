@@ -6,27 +6,26 @@ import (
 	"github.com/r3labs/sse"
 )
 
-// First of all install the sse third-party package (you can use other if you don't like this approach or go ahead to the "sse" example)
+//首先安装sse第三方软件包（如果您不喜欢这种方法，可以使用其他软件包或继续使用sse示例）
 // $ go get -u github.com/r3labs/sse
 func main() {
 	app := iris.New()
 	s := sse.New()
 	/*
-		This creates a new stream inside of the scheduler.
-		Seeing as there are no consumers, publishing a message
-		to this channel will do nothing.
-		Clients can connect to this stream once the iris handler is started
-		by specifying stream as a url parameter, like so:
+		这会在调度程序内部创建一个新流。
+		没有消费者，发布消息,这个频道什么都不做。
+		启动iris处理程序后，客户端可以连接到此流
+		通过将stream指定为url参数，如下所示：
 		http://localhost:8080/events?stream=messages
 	*/
 	s.CreateStream("messages")
 	app.Any("/events", iris.FromStd(s.HTTPHandler))
 	go func() {
-		// You design when to send messages to the client,
-		// here we just wait 5 seconds to send the first message
-		// in order to give u time to open a browser window...
+		//您设计何时向客户端发送消息，
+		//这里我们等待5秒钟发送第一条消息
+		//为了给你时间打开一个浏览器窗口..
 		time.Sleep(5 * time.Second)
-		// Publish a payload to the stream.
+		//将有效负载发布到流。
 		s.Publish("messages", &sse.Event{
 			Data: []byte("ping"),
 		})
@@ -38,7 +37,7 @@ func main() {
 		s.Publish("messages", &sse.Event{
 			Data: []byte("third message"),
 		})
-	}() // ...
+	}()
 	app.Run(iris.Addr(":8080"), iris.WithoutServerError(iris.ErrServerClosed))
 }
-/* For a golang SSE client you can look at: https://github.com/r3labs/sse#example-client */
+/*对于golang SSE客户端，您可以查看：https://github.com/r3labs/sse#example-client */

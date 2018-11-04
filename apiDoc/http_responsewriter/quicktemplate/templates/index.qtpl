@@ -1,9 +1,7 @@
-Index template, implements the Partial's methods.
-
+Hello模板，实现了Partial的方法。
 {% code
 type Index struct {}
 %}
-
 {% func (i *Index) Body() %}
 	<h1>Index Page</h1>
 	<div>

@@ -7,36 +7,36 @@ import (
 
 func main() {
 	app := iris.New()
-	// subdomains works with all available routers, like other features too.
+	//子域可以与所有可用的路由器一起使用，就像其他功能一样。
 	app.Get("/", func(ctx context.Context) {
 		ctx.BeginTransaction(func(t *context.Transaction) {
-			// OPTIONAl STEP: , if true then the next transictions will not be executed if this transiction fails
-			// t.SetScope(context.RequestTransactionScope)
-			// OPTIONAL STEP:
-			// create a new custom type of error here to keep track of the status code and reason message
+			// 选择步骤：如果为true，那么下一个转录将不会被执行，如果为fails则向反
+			// t.SetScope（context.RequestTransactionScope）
+			//可选步骤：
+			//在此处创建新的自定义错误类型，以跟踪状态代码和错误消息
 			err := context.NewTransactionErrResult()
-			// we should use t.Context if we want to rollback on any errors lives inside this function clojure.
+			//如果我们想要回滚这个函数clojure中的任何错误，我们应该使用t.Context。
 			t.Context().Text("Blablabla this should not be sent to the client because we will fill the err with a message and status")
-			// virtualize a fake error here, for the shake of the example
+			//在这里虚拟化一个虚假的错误，为了测试这个例子
 			fail := true
 			if fail {
 				err.StatusCode = iris.StatusInternalServerError
-				// NOTE: if empty reason then the default or the custom http error will be fired (like ctx.FireStatusCode)
+				//注意：如果为空原因则会触发默认或自定义http错误（如ctx.FireStatusCode）
 				err.Reason = "Error: Virtual failure!!"
 			}
-			// OPTIONAl STEP:
-			// but useful if we want to post back an error message to the client if the transaction failed.
-			// if the reason is empty then the transaction completed successfully,
-			// otherwise we rollback the whole response writer's body,
-			// headers and cookies, status code and everything lives inside this transaction
+			//选择步骤：
+			//但是如果我们想要在事务失败时将错误消息回发给客户端，这很有用
+			//如果原因为空，那么交易成功完成，
+			//否则我们回滚整个返回的响应体，
+			//header和Cookie，状态代码以及此事务中的所有内容
 			t.Complete(err)
 		})
 		ctx.BeginTransaction(func(t *context.Transaction) {
 			t.Context().HTML("<h1>This will sent at all cases because it lives on different transaction and it doesn't fails</h1>")
-			// * if we don't have any 'throw error' logic then no need of scope.Complete()
+			// *如果我们没有任何'throw error'逻辑，则不需要scope.Complete（）
 		})
-		// OPTIONALLY, depends on the usage:
-		// at any case, what ever happens inside the context's transactions send this to the client
+		// OPTIONALLY，取决于用法：
+		//无论如何，在上下文的事务中发生的情景都会发送给客户端
 		ctx.HTML("<h1>Let's add a second html message to the response, " +
 			"if the transaction was failed and it was request scoped then this message would " +
 			"not been shown. But it has a transient scope(default) so, it is visible as expected!</h1>")

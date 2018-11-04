@@ -1,26 +1,20 @@
 # Hero Template Example
 
-This folder contains the iris version of the original hero's example: https://github.com/shiyanhui/hero/tree/master/examples/app.
+此文件夹包含原始英雄示例的`Iris`版本：[https://github.com/shiyanhui/hero/tree/master/examples/app](https://github.com/shiyanhui/hero/tree/master/examples/app)
+`Iris`与`net/http` 100％兼容，因此您无需更改任何其他内容,除了原始示例中的处理程序输入。
 
-Iris is 100% compatible with `net/http` so you don't have to change anything else
-except the handler input from the original example.
-
-The only inline handler's changes were:
-
-From:
-
+从:
 ```go
 if _, err := w.Write(buffer.Bytes()); err != nil {
 // and
 template.UserListToWriter(userList, w)
 ```
-To: 
+到: 
 ```go
 if _, err := ctx.Write(buffer.Bytes()); err != nil {
 // and
 template.UserListToWriter(userList, ctx)
 ```
+如此容易.
 
-So easy.
-
-Read more at: https://github.com/shiyanhui/hero
+了解更多信息，请访问：[https://github.com/shiyanhui/hero](https://github.com/shiyanhui/hero)

@@ -7,7 +7,7 @@ import (
 )
 // $ go get -u github.com/shiyanhui/hero/hero
 // $ go run app.go
-// Read more at https://github.com/shiyanhui/hero/hero
+// 了解更多 https://github.com/shiyanhui/hero/hero
 func main() {
 	app := iris.New()
 	app.Get("/users", func(ctx iris.Context) {
@@ -18,8 +18,8 @@ func main() {
 			"Bob",
 			"Tom",
 		}
-		// Had better use buffer sync.Pool.
-		// Hero(github.com/shiyanhui/hero/hero) exports GetBuffer and PutBuffer for this.
+		//最好使用buffer sync.Pool
+		//Hero(github.com/shiyanhui/hero/hero)为此导出了GetBuffer和PutBuffer
 
 		// buffer := hero.GetBuffer()
 		// defer hero.PutBuffer(buffer)
@@ -27,10 +27,10 @@ func main() {
 		// template.UserList(userList, buffer)
 		// ctx.Write(buffer.Bytes())
 
-		// using an io.Writer for automatic buffer management (i.e. hero built-in buffer pool),
-		// iris context implements the io.Writer by its ResponseWriter
-		// which is an enhanced version of the standard http.ResponseWriter
-		// but still 100% compatible, GzipResponseWriter too:
+		//使用io.Writer进行自动缓冲管理（hero built-in 缓冲池），
+		// iris context通过其ResponseWriter实现io.Writer
+		//这是标准http.ResponseWriter的增强版本
+		//但仍然100％兼容，GzipResponseWriter也同样兼容：
 		// _, err := template.UserListToWriter(userList, ctx.GzipResponseWriter())
 		buffer := new(bytes.Buffer)
 		template.UserList(userList, buffer)

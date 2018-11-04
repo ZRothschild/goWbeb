@@ -1,5 +1,5 @@
-// Package main shows how to send continuous event messages to the clients through SSE via a broker.
-// Read details at: https://www.w3schools.com/htmL/html5_serversentevents.asp and
+// Package main显示如何通过代理通过SSE向客户端发送连续事件消息。
+//阅读详情：https://www.w3schools.com/htmL/html5_serversentevents.asp
 // https://robots.thoughtbot.com/writing-a-server-sent-events-server-in-go
 package main
 
@@ -9,26 +9,26 @@ import (
 	"time"
 	"github.com/kataras/golog"
 	"github.com/kataras/iris"
-	// Note:
-	// For some reason the latest vscode-go language extension does not provide enough intelligence (parameters documentation and go to definition features)
-	// for the `iris.Context` alias, therefore if you use VS Code, import the original import path of the `Context`, that will do it:
+	//注意:
+	//由于某种原因，最新的vscode-go语言扩展不能提供足够智能帮助（参数文档并转到定义功能）
+	//对于`iris.Context`别名，因此如果您使用VS Code，则导入`Context`的原始导入路径，它将执行此操作：
 	"github.com/kataras/iris/context"
 )
-// A Broker holds open client connections,
-// listens for incoming events on its Notifier channel
-// and broadcast event data to all registered connections.
+//Broker拥有开放的客户端连接
+//在其Notifier频道上侦听传入事件
+//并将事件数据广播到所有已注册的连接
 type Broker struct {
-	// Events are pushed to this channel by the main events-gathering routine.
+	//主要事件收集例程将事件推送到此频道
 	Notifier chan []byte
-	// New client connections.
+	//新的客户端连接
 	newClients chan chan []byte
-	// Closed client connections.
+	//关闭客户端连接
 	closingClients chan chan []byte
-	// Client connections registry.
+	//客户端连接注册表
 	clients map[chan []byte]bool
 }
 
-// NewBroker returns a new broker factory.
+// NewBroker返回一个新的代理工厂
 func NewBroker() *Broker {
 	b := &Broker{
 		Notifier:       make(chan []byte, 1),
@@ -36,28 +36,27 @@ func NewBroker() *Broker {
 		closingClients: make(chan chan []byte),
 		clients:        make(map[chan []byte]bool),
 	}
-	// Set it running - listening and broadcasting events.
+	//设置它正在运行 - 收听和广播事件
 	go b.listen()
 	return b
 }
 
-// Listen on different channels and act accordingly.
+//听取不同的频道并采取相应应对
 func (b *Broker) listen() {
 	for {
 		select {
 		case s := <-b.newClients:
-			// A new client has connected.
-			// Register their message channel.
+			//新客户端已连接
+			//注册他们的消息频道
 			b.clients[s] = true
 			golog.Infof("Client added. %d registered clients", len(b.clients))
 		case s := <-b.closingClients:
-			// A client has dettached and we want to
-			// stop sending them messages.
+			//客户端已离线，我们希望停止向其发送消息。
 			delete(b.clients, s)
 			golog.Warnf("Removed client. %d registered clients", len(b.clients))
 		case event := <-b.Notifier:
-			// We got a new event from the outside!
-			// Send event to all connected clients.
+			//我们从外面得到了一个新事件
+			//向所有连接的客户端发送事件
 			for clientMessageChan := range b.clients {
 				clientMessageChan <- event
 			}
@@ -66,37 +65,36 @@ func (b *Broker) listen() {
 }
 
 func (b *Broker) ServeHTTP(ctx context.Context) {
-	// Make sure that the writer supports flushing.
+	//确保编写器支持刷新
 	flusher, ok := ctx.ResponseWriter().Flusher()
 	if !ok {
 		ctx.StatusCode(iris.StatusHTTPVersionNotSupported)
 		ctx.WriteString("Streaming unsupported!")
 		return
 	}
-	// Set the headers related to event streaming, you can omit the "application/json" if you send plain text.
-	// If you develop a go client, you must have: "Accept" : "application/json, text/event-stream" header as well.
+	//设置与事件流相关的header，如果发送纯文本，则可以省略“application/json”
+	//如果你开发了一个go客户端，你必须设置：“Accept”：“application/json，text/event-stream”header
 	ctx.ContentType("application/json, text/event-stream")
 	ctx.Header("Cache-Control", "no-cache")
 	ctx.Header("Connection", "keep-alive")
-	// We also add a Cross-origin Resource Sharing header so browsers on different domains can still connect.
+	//我们还添加了跨源资源共享标头，以便不同域上的浏览器仍然可以连接
 	ctx.Header("Access-Control-Allow-Origin", "*")
-	// Each connection registers its own message channel with the Broker's connections registry.
+	//每个连接都使用Broker的连接注册表注册自己的消息通道
 	messageChan := make(chan []byte)
-	// Signal the broker that we have a new connection.
+	//通知我们有新连接的Broker
 	b.newClients <- messageChan
-	// Listen to connection close and when the entire request handler chain exits(this handler here) and un-register messageChan.
+	//监听连接关闭以及整个请求处理程序链退出时（此处理程序）并取消注册messageChan。
 	ctx.OnClose(func() {
-		// Remove this client from the map of connected clients
-		// when this handler exits.
+		//从已连接客户端的map中删除此客户端,当这个处理程序退出时
 		b.closingClients <- messageChan
 	})
-	// Block waiting for messages broadcast on this connection's messageChan.
+	//阻止等待在此连接的消息上广播的消息
 	for {
-		// Write to the ResponseWriter.
-		// Server Sent Events compatible.
+		//写入ResponseWriter
+		// Server Sent Events兼容
 		ctx.Writef("data: %s\n\n", <-messageChan)
-		// or json: data:{obj}.
-		// Flush the data immediately instead of buffering it for later.
+		//或json：data：{obj}
+		//立即刷新数据而不是稍后缓冲它
 		flusher.Flush()
 	}
 }

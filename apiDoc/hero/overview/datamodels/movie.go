@@ -1,4 +1,4 @@
-// file: datamodels/movie.go
+//文件: datamodels/movie.go
 package datamodels
 
 //Movie是我们的示例数据结构。

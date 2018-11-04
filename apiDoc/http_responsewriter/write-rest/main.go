@@ -5,14 +5,15 @@ import (
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/context"
 )
-// User bind struct
+//用户绑定结构
 type User struct {
 	Firstname string `json:"firstname"`
 	Lastname  string `json:"lastname"`
 	City      string `json:"city"`
 	Age       int    `json:"age"`
 }
-// ExampleXML just a test struct to view represents xml content-type
+
+// ExampleXML只是一个要查看的测试结构，表示xml内容类型
 type ExampleXML struct {
 	XMLName xml.Name `xml:"example"`
 	One     string   `xml:"one,attr"`
@@ -21,9 +22,9 @@ type ExampleXML struct {
 
 func main() {
 	app := iris.New()
-	// Read
+	// 读取
 	app.Post("/decode", func(ctx iris.Context) {
-		// Read https://github.com/kataras/iris/blob/master/_examples/http_request/read-json/main.go as well.
+		// 参考 /http_request/read-json/main.go
 		var user User
 		ctx.ReadJSON(&user)
 		ctx.Writef("%s %s is %d years old and comes from %s!", user.Firstname, user.Lastname, user.Age, user.City)
@@ -36,10 +37,10 @@ func main() {
 			City:      "Neither FBI knows!!!",
 			Age:       25,
 		}
-		// Manually setting a content type: ctx.ContentType("application/javascript")
+		//手动设置内容类型: ctx.ContentType("application/javascript")
 		ctx.JSON(peter)
 	})
-	// Other content types,
+	//其他内容类型
 	app.Get("/binary", func(ctx iris.Context) {
 		// useful when you want force-download of contents of raw bytes form.
 		ctx.Binary([]byte("Some binary data here."))
@@ -68,11 +69,10 @@ func main() {
 	// http://localhost:8080/xml
 	// http://localhost:8080/markdown
 
-	// `iris.WithOptimizations` is an optional configurator,
-	// if passed to the `Run` then it will ensure that the application
-	// response to the client as fast as possible.
+	//`iris.WithOptimizations`是一个可选的配置器，
+	//如果传递给`Run`那么它将确保应用程序，尽快响应客户端。
 
-	// `iris.WithoutServerError` is an optional configurator,
-	// if passed to the `Run` then it will not print its passed error as an actual server error.
+	// `iris.WithoutServerError` 是一个可选的配置器,
+	//如果传递给`Run`那么它不会将传递的错误，实际的服务器错误打印。
 	app.Run(iris.Addr(":8080"), iris.WithoutServerError(iris.ErrServerClosed), iris.WithOptimizations)
 }
