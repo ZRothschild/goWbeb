@@ -27,7 +27,6 @@
     Content-Type: text/html
     Content-Length: xxx
 ```
-
 - 当符合`http1.0`或`1.1`规范的客户端浏览器收到`401`返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码
 - 用户输入用户名和密码后，将用户名及密码以`BASE64`加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容:
 
@@ -36,7 +35,6 @@
     Host:www.studyiris.com
     Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxx //加密串
 ```
-
 - 服务器收到上述请求信息后，将`Authorization`字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，
 如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端
 
@@ -93,10 +91,7 @@ func h(ctx iris.Context) {
 	ctx.Writef("%s %s:%s", ctx.Path(), username, password)
 }
 ```
-
 ### 提示
 
 1. 运行上面的代码，访问`http://localhost:8080/admin`
 2. 未验证时候会弹出一个验证框，让你输入用户名与密码，请认真看弹出框上面的内容
-
-[Go Web Iris中文网](https://www.studyiris.com/)

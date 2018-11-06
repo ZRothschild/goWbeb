@@ -78,7 +78,6 @@ Charset = "UTF-8"
 
 [Other]
 	MyServerName = "iris"
-
 ```
 ### 通过YAML加载配置 main.go
 >  go代码如下 `main.go`
@@ -134,15 +133,12 @@ func main() {
 	//前缀：With，代码编辑器将帮助您浏览所有内容
 	//配置选项，甚至没有参考文档的类型。
 	app.Run(iris.Addr(":8080"), iris.WithoutStartupLog, iris.WithCharset("UTF-8"))
-
 	// 在run之前加载:
 	// app.Configure(iris.WithoutStartupLog, iris.WithCharset("UTF-8"))
 	// app.Run(iris.Addr(":8080"))
 }
 ```
-
 ## Built'n配置器
-
 ```go
 // WithoutServerError将忽略错误，来自主应用程序的`Run`函数。
 // 用法：
@@ -224,7 +220,6 @@ package counter
 
 import (
     "time"
-
     "github.com/kataras/iris"
     "github.com/kataras/iris/core/host"
 )
@@ -254,14 +249,12 @@ package main
 
 import (
     "counter"
-
     "github.com/kataras/iris"
 )
 
 func main() {
     app := iris.New()
     app.Configure(counter.Configurator)
-
     app.Run(iris.Addr(":8080"))
 }
 ```

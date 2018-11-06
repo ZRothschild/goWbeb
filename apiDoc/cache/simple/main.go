@@ -12,8 +12,6 @@ var markdownContents = []byte(`## Hello Markdown
 
 This is a sample of Markdown contents
 
-
-
 Features
 --------
 

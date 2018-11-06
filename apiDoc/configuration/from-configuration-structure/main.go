@@ -22,7 +22,6 @@ func main() {
 		TimeFormat:                        "Mon, 02 Jan 2006 15:04:05 GMT",
 		Charset:                           "UTF-8",
 	}))
-
 	// 或在运行之前:
 	// app.Configure(iris.WithConfiguration(iris.Configuration{...}))
 }

@@ -12,6 +12,3 @@
 1. 缓存分为服务端侧（server side，比如 Nginx、Apache）。服务端缓存又分为代理服务器缓存和反向代理服务器缓存
 （也叫网关缓存，比如 Nginx反向代理、nginx缓存、Squid等）
 2. 客户端侧（client side，比如 web browser）。 例如 浏览器缓存
-
-
-[Go Web Iris中文网](https://www.studyiris.com/)

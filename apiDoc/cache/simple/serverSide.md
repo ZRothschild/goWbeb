@@ -7,16 +7,13 @@ package main
 
 import (
 	"time"
-
 	"github.com/kataras/iris"
-
 	"github.com/kataras/iris/cache"
 )
 
 var markdownContents = []byte(`## Hello Markdown
 
 This is a sample of Markdown contents
-
 
 Features
 --------
@@ -79,10 +76,7 @@ func writeMarkdown(ctx iris.Context) {
    为了更快的解决方案，服务器不需要跟踪响应
 */
 ```
-
 ### 提示
 
 1. 第一次访问，服务器会返回所有信息，当在缓存时间之内请求服务器，将得到最缓存的信息。过期以后将从新在服务生成。
 2. 适合于静态页面做缓存
-
-[Go Web Iris中文网](https://www.studyiris.com/)

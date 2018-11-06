@@ -53,7 +53,6 @@
 
 - `Last-Modified/If-Modified-Since`：`Last-Modified/If-Modified-Since`要配合`Cache-Control`使用
 
-
 | 字段名称 | 表示内容 |
 | :--------: | :-----:|
 | Last-Modified | 标示这个响应资源的最后修改时间.`web`服务器在响应请求时，告诉浏览器资源的最后修改时间 | 
@@ -116,5 +115,3 @@ func greet(ctx iris.Context) {
 
 1. 运行上面代码,打开浏览器调试`network`工具,查看状态,status列,你会发现有时候是`200`有时候是`304`这就告诉你,何时是重新获取,何时是缓存
 2. 也可以尝试在浏览器地址栏按回车、F5、Ctrl+F5刷新网页的区别，注意观察其中的状态
-
-[Go Web Iris中文网](https://www.studyiris.com/)

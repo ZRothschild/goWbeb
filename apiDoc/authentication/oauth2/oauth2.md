@@ -412,11 +412,7 @@ type ProviderIndex struct {
 <p>ExpiresAt: {{.ExpiresAt}}</p>
 <p>RefreshToken: {{.RefreshToken}}</p>
 ```
-
 ### 提示
 
 1. 去Github设置第三方授权登录，设置回调路径，把key,secret填入上面代码指定位置
 2. 执行程序选择github 即可看到想要的效果
-3. 与微信授权一模一样
-
-[Go Web Iris中文网](https://www.studyiris.com/)

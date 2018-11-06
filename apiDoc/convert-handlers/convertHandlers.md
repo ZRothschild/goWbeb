@@ -44,7 +44,6 @@ func negronilikeTestMiddleware(w http.ResponseWriter, r *http.Request, next http
 //如果要使用自定义上下文转换自定义处理程序，请查看routing/custom-context
 //一个context.Handler
 ```
-
 ### 面向`netHttp`  `main.go`
 
 ```go
@@ -79,7 +78,6 @@ func nativeTestMiddleware(w http.ResponseWriter, r *http.Request) {
 //如果要使用自定义上下文转换自定义处理程序，请查看routing/custom-context
 //一个context.Handler。
 ```
-
 ### 错误中间件(raven)客户端 `https://sentry.io/welcome/`
 
 #### 修饰路由类型 `main.go`
@@ -181,14 +179,8 @@ func main() {
 }
 ```
 
-
-
-
 ### 提示
 
 1. 主要介绍如何将原始请求转换成`context.Handler`
 2. `Negroni`是面向`web`中间件的一种惯用方法.它是微小的,非侵入性的,并且鼓励使用`net/http`处理器
 3. `raven`是错误`Sentry`为我们提供了一个非常清晰的报表,说明我们可以积极响应并提高质量.'这是完整的堆栈跟踪.这是你需要的所有背景.'这是一个非常强大的东西
-
-
-[Go Web Iris中文网](https://www.studyiris.com/)
