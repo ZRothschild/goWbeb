@@ -1,7 +1,6 @@
 # 域名安全加密
 
-
-### 示例代码 main.go
+## 示例代码 main.go
 
 ```go
 package main

@@ -11,7 +11,6 @@ func newApp() *iris.Application {
 		// 另外也可以用: ctx.SetCookie(&http.Cookie{...})
 		// 如果要设置自定义存放路径：
 		// ctx.SetCookieKV(name, value, iris.CookiePath("/custom/path/cookie/will/be/stored"))
-
 		ctx.Request().Cookie(name)
 		//如果您希望仅对当前请求路径可见：
 		//（请注意，如果服务器发送空cookie的路径，所有浏览器都兼容，将会使用客户端自定义路径）

@@ -1,6 +1,6 @@
 # 原始请求转换成`context.Handler`
 
-### 面向中间件 `negroni-like` `main.go`
+## 面向中间件 `negroni-like` `main.go`
 
 ```go
 package main
@@ -44,7 +44,8 @@ func negronilikeTestMiddleware(w http.ResponseWriter, r *http.Request, next http
 //如果要使用自定义上下文转换自定义处理程序，请查看routing/custom-context
 //一个context.Handler
 ```
-### 面向`netHttp`  `main.go`
+> `negroni`是`go`实现中间件的一种使用很广泛的模式
+## 面向`net/Http`  `main.go`
 
 ```go
 package main
@@ -78,9 +79,11 @@ func nativeTestMiddleware(w http.ResponseWriter, r *http.Request) {
 //如果要使用自定义上下文转换自定义处理程序，请查看routing/custom-context
 //一个context.Handler。
 ```
-### 错误中间件(raven)客户端 `https://sentry.io/welcome/`
+> 直接把原生的`net/http`满足请求接口的函数转化成中间件
 
-#### 修饰路由类型 `main.go`
+## 错误中间件(raven)客户端 `https://sentry.io/welcome/`
+
+### 修饰路由类型 `main.go`
 
 ```go
 package main
@@ -124,7 +127,7 @@ func main() {
 }
 ```
 
-#### 直接中间件类型 `main.go`
+### 直接中间件类型 `main.go`
 
 ```go
 package main
@@ -178,9 +181,8 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-
 ### 提示
 
 1. 主要介绍如何将原始请求转换成`context.Handler`
 2. `Negroni`是面向`web`中间件的一种惯用方法.它是微小的,非侵入性的,并且鼓励使用`net/http`处理器
-3. `raven`是错误`Sentry`为我们提供了一个非常清晰的报表,说明我们可以积极响应并提高质量.'这是完整的堆栈跟踪.这是你需要的所有背景.'这是一个非常强大的东西
+3. 错误中间件(raven)客户端为我们提供了一个非常清晰的报表,展示我们的响应并提高质量.这是完整的堆栈跟踪.这是一个非常强大的东西

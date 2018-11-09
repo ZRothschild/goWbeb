@@ -1,4 +1,4 @@
-# Send Files
+# `Send Files`
 
 ### 示例代码
 
@@ -17,4 +17,12 @@ func main() {
 	})
 	app.Run(iris.Addr(":8080"))
 }
+```
+
+## 文件目录格式
+> send-files目录结构
+```html
+—— files
+    —— first.zip
+—— main.go
 ```

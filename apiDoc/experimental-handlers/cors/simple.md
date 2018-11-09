@@ -9,8 +9,6 @@
 有差别，代码完全一样。浏览器一旦发现`AJAX`请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。因此，
 实现`CORS`通信的关键是服务器。只要服务器实现了`CORS`接口，就可以跨源通信
 
-
-
 ### 示例代码
 
 ```go
@@ -22,7 +20,6 @@ import (
 	"github.com/kataras/iris"
 	"github.com/iris-contrib/middleware/cors"
 )
-
 
 //跨与请求 下面代码表示 http://foo.com 站点下的 ajax 可以跨域请求 localhost:8080 接口
 //当http://foo.com 为 * 表示所有域名都可以请求
@@ -62,5 +59,3 @@ func main() {
 	app.Run(iris.Addr("localhost:8080"))
 }
 ````
-
-[Go Web Iris中文网](https://www.studyiris.com/)

@@ -1,19 +1,15 @@
-# Tollbooth
+# `Tollbooth`
 
-### Tollbooth介绍
+## `Tollbooth`介绍
 
-这是一个限制`HTTP`请求的通用中间件，该库被认为已完成。
-
-主要版本更改是向后不兼容的.`v2.0.0`简化了旧`API`
+这是一个限制`HTTP`请求次数的中间件，该库被认为已完成。主要版本更改是向后不兼容的.`v2.0.0`简化了旧`API`
 
 1. `v1.0.0`:此版本维护旧`API`，但所有第三方模块都移动到他们自己的`repo`。
-
 2. `v2.x.x`:全新的`API`，用于代码清理，线程安全和自动过期的数据结构。
+3. `v3.x.x`:显然我们一直在使用`golang.org/x/time/rate`。 见问题`＃48`。它始终限制每`1`秒的`X`数。持续时间不可更改，因此将
+`TTL`传递给`tollbooth`是没有意义的。
 
-3. `v3.x.x`:显然我们一直在使用`golang.org/x/time/rate`。 见问题`＃48`。它始终限制每`1`秒的`X`数。持续时间不可更改，因此将`TTL`传递给`tollbooth`是没有意义的。
-
-
-### 示例代码
+## 示例代码
 
 ```go
 package main
@@ -42,5 +38,3 @@ func main() {
 }
 //阅读更多信息：https://github.com/didip/tollbooth
 ```
-
-[Tollbooth传送门](https://github.com/didip/tollbooth)

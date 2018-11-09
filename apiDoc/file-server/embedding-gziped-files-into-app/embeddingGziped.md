@@ -1,6 +1,8 @@
-# embedding Gziped
+# `embedding Gziped`
 
-### 示例代码
+## 示例代码
+
+> `main.go`
 
 ```go
 package main
@@ -34,4 +36,16 @@ func main() {
 	// http://localhost:8080/static/favicon.ico
 	app.Run(iris.Addr(":8080"))
 }
+```
+## 文件目录格式
+> embedding-gziped-files-into-app目录结构
+```html
+—— assets
+    —— css
+        —— bootstrap.min.css
+    —— favicon.ico
+    —— js
+        —— jquery-2.1.1.js
+—— bindata_gzip.go(执行命令后才会生成)
+—— main.go
 ```

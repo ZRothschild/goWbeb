@@ -1,6 +1,6 @@
-# Basic
+# Basic（基础服务）
 
-### 代码示例
+## 代码示例  `main.go`
 
 ```go
 package main
@@ -31,4 +31,15 @@ func main() {
 	//要了解如何包装路由器以实现
 	//根路径上的通配符，请参阅"single-page-application"。
 }
+```
+
+## 文件目录格式
+> basic目录结构
+```html
+—— assets
+    —— css
+        —— main.css
+    —— favicon.ico
+    —— index.html
+—— main.go    
 ```

@@ -1,6 +1,6 @@
-# favicon 设置
+# `favicon`设置
 
-### 示例代码
+## 示例代码
 
 ```go
 package main
@@ -23,4 +23,13 @@ func main() {
 	}) //如果您没有显示favicon，请尝试清除浏览器的缓存。
 	app.Run(iris.Addr(":8080"))
 }
+```
+
+## 文件目录格式
+> favicon目录结构
+```html
+—— static
+    —— favicons
+        —— favicon.ico
+—— main.go
 ```

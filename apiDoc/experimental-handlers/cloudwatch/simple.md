@@ -1,8 +1,6 @@
 # 简单的aws监听API
 
-
-### `aws API`示例
-
+## `aws API`示例   `main.go`
 ```go
 package main
 
@@ -48,5 +46,3 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-
-[Go Web Iris中文网](https://www.studyiris.com/)

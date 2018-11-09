@@ -22,11 +22,13 @@ func newApp() *iris.Application {
 	app.Get("/cookies/{name}/{value}", func(ctx iris.Context) {
 		name := ctx.Params().Get("name")
 		value := ctx.Params().Get("value")
+		//加密值
 		ctx.SetCookieKV(name, value, iris.CookieEncode(sc.Encode)) // <--设置一个Cookie
 		ctx.Writef("cookie added: %s = %s", name, value)
 	})
 	app.Get("/cookies/{name}", func(ctx iris.Context) {
 		name := ctx.Params().Get("name")
+		//解密值
 		value := ctx.GetCookie(name, iris.CookieDecode(sc.Decode)) // <--检索Cookie
 		ctx.WriteString(value)
 	})

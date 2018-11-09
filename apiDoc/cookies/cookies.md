@@ -1,6 +1,6 @@
 # cookies使用
 
-### 基础cookies操作
+## 基础cookies操作
 
 ```go
 package main
@@ -55,7 +55,7 @@ func main() {
 }
 ```
 
-### 如何加密cookies
+## `cookies`加密
 
 ```go
 package main
@@ -82,11 +82,13 @@ func newApp() *iris.Application {
 	app.Get("/cookies/{name}/{value}", func(ctx iris.Context) {
 		name := ctx.Params().Get("name")
 		value := ctx.Params().Get("value")
+		//加密值
 		ctx.SetCookieKV(name, value, iris.CookieEncode(sc.Encode)) // <--设置一个Cookie
 		ctx.Writef("cookie added: %s = %s", name, value)
 	})
 	app.Get("/cookies/{name}", func(ctx iris.Context) {
 		name := ctx.Params().Get("name")
+		//解密值
 		value := ctx.GetCookie(name, iris.CookieDecode(sc.Decode)) // <--检索Cookie
 		ctx.WriteString(value)
 	})
@@ -103,5 +105,3 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-
-[Go Web Iris中文网](https://www.studyiris.com/)

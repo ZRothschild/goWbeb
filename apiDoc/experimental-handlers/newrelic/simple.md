@@ -1,11 +1,11 @@
 # New Relic
 
-### [New Relic](https://github.com/newrelic/go-agent)介绍
+## `New Relic`介绍
 
-`New Relic Go Agent`允许您使用`New Relic`监控`Go`应用程序。 它可以帮助您跟踪事务，出站请求，数据库调用以及`Go`应用程序行为的其他部分，
-并提供垃圾收集，`goroutine`活动和内存使用的运行概述。
+`New Relic Go Agent`允许您使用`New Relic`监控`Go`应用程序。 它可以帮助您跟踪事务，出站请求，数据库调用以及`Go`应用程序行为的其
+他部分，并提供垃圾收集，`goroutine`活动和内存使用的运行概述。
 
-### 示例 `main.go`
+## 示例 `main.go`
 
 ```go
 package main
