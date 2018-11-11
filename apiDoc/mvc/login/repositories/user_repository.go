@@ -7,7 +7,6 @@ import (
 )
 // Query表示访问者和操作查询。
 type Query func(datamodels.User) bool
-
 // UserRepository处理用户实体/模型的基本操作。
 //它是一个可测试的接口，即内存用户存储库或 连接到sql数据库。
 type UserRepository interface {
@@ -17,27 +16,23 @@ type UserRepository interface {
 	InsertOrUpdate(user datamodels.User) (updatedUser datamodels.User, err error)
 	Delete(query Query, limit int) (deleted bool)
 }
-
 // NewUserRepository返回一个新的基于用户内存的存储库，
 //我们示例中唯一的存储库类型。
 func NewUserRepository(source map[int64]datamodels.User) UserRepository {
 	return &userMemoryRepository{source: source}
 }
-
 //userMemoryRepository是一个“UserRepository”
 //使用内存数据源（map）管理用户。
 type userMemoryRepository struct {
 	source map[int64]datamodels.User
 	mu     sync.RWMutex
 }
-
 const (
 	// ReadOnlyMode将RLock(read) 数据。
 	ReadOnlyMode = iota
 	// ReadWriteMode将锁定(read/write)数据。
 	ReadWriteMode
 )
-
 func (r *userMemoryRepository) Exec(query Query, action Query, actionLimit int, mode int) (ok bool) {
 	loops := 0
 	if mode == ReadOnlyMode {
@@ -64,7 +59,6 @@ func (r *userMemoryRepository) Exec(query Query, action Query, actionLimit int, 
 //Select接收查询方法
 //为内部的每个用户模型触发查找我们想象中的数据源
 //当该函数返回true时，它会停止迭代。
-
 //它实际上是一个简单但非常游泳的原型函数
 //自从我第一次想到它以来，我一直在使用它，
 //希望你会发现它也很有用。
@@ -79,7 +73,6 @@ func (r *userMemoryRepository) Select(query Query) (user datamodels.User, found 
 	}
 	return
 }
-
 // SelectMany与Select相同但返回一个或多个datamodels.User作为切片。
 //如果limit <= 0则返回所有内容。
 func (r *userMemoryRepository) SelectMany(query Query, limit int) (results []datamodels.User) {
@@ -89,7 +82,6 @@ func (r *userMemoryRepository) SelectMany(query Query, limit int) (results []dat
 	}, limit, ReadOnlyMode)
 	return
 }
-
 // InsertOrUpdate将用户添加或更新到（内存）存储。
 //返回新用户，如果有则返回错误。
 func (r *userMemoryRepository) InsertOrUpdate(user datamodels.User) (datamodels.User, error) {
@@ -112,7 +104,6 @@ func (r *userMemoryRepository) InsertOrUpdate(user datamodels.User) (datamodels.
 		r.mu.Unlock()
 		return user, nil
 	}
-
 	//基于user.ID更新操作，
 	//这里我们将允许更新海报和流派，如果不是空的话。
 	//或者我们可以做替换：
@@ -136,7 +127,6 @@ func (r *userMemoryRepository) InsertOrUpdate(user datamodels.User) (datamodels.
 	r.mu.Unlock()
 	return user, nil
 }
-
 func (r *userMemoryRepository) Delete(query Query, limit int) bool {
 	return r.Exec(query, func(m datamodels.User) bool {
 		delete(r.source, m.ID)

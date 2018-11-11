@@ -72,7 +72,7 @@ func (c *basicController) BeforeActivation(b mvc.BeforeActivation) {
 
 func (c *basicController) AfterActivation(a mvc.AfterActivation) {
 	if a.Singleton() {
-		panic("basicController should be stateless, a request-scoped, we have a 'Session' which depends on the context.")
+		panic("basicController should be stateless,a request-scoped,we have a 'Session' which depends on the context.")
 	}
 }
 

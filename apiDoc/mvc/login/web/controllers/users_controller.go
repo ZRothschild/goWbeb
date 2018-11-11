@@ -5,7 +5,6 @@ import (
 	"../../services"
 	"github.com/kataras/iris"
 )
-
 // UsersController是我们 /users API控制器。
 // GET				/users  | get all
 // GET				/users/{id:long} | 获取通过 id
@@ -22,7 +21,6 @@ type UsersController struct {
 	//从主应用程序绑定。
 	Service services.UserService
 }
-
 //获取用户的返回列表。
 // 示例:
 // curl -i -u admin:password http://localhost:8080/users
@@ -38,7 +36,6 @@ type UsersController struct {
 func (c *UsersController) Get() (results []datamodels.User) {
 	return c.Service.GetAll()
 }
-
 // GetBy 返回指定一个id用户
 // 示例:
 // curl -i -u admin:password http://localhost:8080/users/1
@@ -51,7 +48,6 @@ func (c *UsersController) GetBy(id int64) (user datamodels.User, found bool) {
 	}
 	return u, found // it will throw/emit 404 if found == false.
 }
-
 // PutBy 修改指定用户.
 // 示例:
 // curl -i -X PUT -u admin:password -F "username=kataras"
@@ -66,7 +62,6 @@ func (c *UsersController) PutBy(id int64) (datamodels.User, error) {
 	}
 	return c.Service.Update(id, u)
 }
-
 // DeleteBy 删除指定用户
 // Demo:
 // curl -i -X DELETE -u admin:password http://localhost:8080/users/1

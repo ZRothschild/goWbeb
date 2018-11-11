@@ -11,7 +11,7 @@ func newApp() *iris.Application {
 	authConfig := basicauth.Config{
 		Users:   map[string]string{"myusername": "mypassword", "mySecondusername": "mySecondpassword"},
 		Realm:   "Authorization Required", // 默认表示域 "Authorization Required"
-		Expires: time.Duration(30) * time.Minute,
+		Expires: time.Duration(1) * time.Minute,
 	}
 	authentication := basicauth.New(authConfig)
 	//作用范围 全局 app.Use(authentication) 或者 (app.UseGlobal 在Run之前)

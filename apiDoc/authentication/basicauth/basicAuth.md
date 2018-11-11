@@ -44,8 +44,8 @@
 几乎 都采取了这种方式。其缺点是没有灵活可靠的认证策略，如无法提供域（`domain`或`realm`）认证功能，另外，`BASE64`的加密强度非常低。
 当然，`HTTP`基本认证系统也可以其他加密技术一起，实现安全性能较高（相对）的认证系统
 
-### `BASIC`iris 示例 `main.go`
-
+###  代码示例 
+> 文件名称`main.go`
 ```go
 package main
 
@@ -91,7 +91,35 @@ func h(ctx iris.Context) {
 	ctx.Writef("%s %s:%s", ctx.Path(), username, password)
 }
 ```
-### 提示
+> 文件名称`main_test.go`
+```go
+package main
 
+import (
+	"testing"
+	"github.com/kataras/iris/httptest"
+)
+
+func TestBasicAuth(t *testing.T) {
+	app := newApp()
+	e := httptest.New(t, app)
+	// redirects to /admin without basic auth
+	e.GET("/").Expect().Status(httptest.StatusUnauthorized)
+	// without basic auth
+	e.GET("/admin").Expect().Status(httptest.StatusUnauthorized)
+	// with valid basic auth
+	e.GET("/admin").WithBasicAuth("myusername", "mypassword").Expect().
+		Status(httptest.StatusOK).Body().Equal("/admin myusername:mypassword")
+	e.GET("/admin/profile").WithBasicAuth("myusername", "mypassword").Expect().
+		Status(httptest.StatusOK).Body().Equal("/admin/profile myusername:mypassword")
+	e.GET("/admin/settings").WithBasicAuth("myusername", "mypassword").Expect().
+		Status(httptest.StatusOK).Body().Equal("/admin/settings myusername:mypassword")
+	// with invalid basic auth
+	e.GET("/admin/settings").WithBasicAuth("invalidusername", "invalidpassword").
+		Expect().Status(httptest.StatusUnauthorized)
+}
+```
+### 提示
 1. 运行上面的代码，访问`http://localhost:8080/admin`
 2. 未验证时候会弹出一个验证框，让你输入用户名与密码，请认真看弹出框上面的内容
+3. 细心的朋友会发现过期时间设置不起作用，因为还需要设置一个`expirEnbale`为`true`

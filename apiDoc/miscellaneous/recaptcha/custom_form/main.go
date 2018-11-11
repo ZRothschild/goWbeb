@@ -5,7 +5,6 @@ import (
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/middleware/recaptcha"
 )
-
 //密钥应通过https://www.google.com/recaptcha获取
 const (
 	recaptchaPublic = "6Lf3WywUAAAAAKNfAm5DP2J5ahqedtZdHTYaKkJ6"
