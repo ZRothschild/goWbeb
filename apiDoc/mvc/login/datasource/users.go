@@ -5,7 +5,6 @@ import (
 	"errors"
 	"../datamodels"
 )
-
 //引擎来自何处获取数据，在这种情况下是用户。
 type Engine uint32
 

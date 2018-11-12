@@ -98,11 +98,7 @@ func (c *ExampleController) CustomHandlerWithoutFollowingTheNamingGuide() string
 // GetUserBy 服务
 // 请求方法:   GET
 // 请求资源路径: http://localhost:8080/user/{username:string}
-// By is a reserved "keyword" to tell the framework that you're going to
-// bind path parameters in the function's input arguments, and it also
-// helps to have "Get" and "GetBy" in the same controller.
-
-//是一个保留的“keyword”来告诉框架你要在函数的输入参数中绑定路径参数，
+//是一个保留的关键字来告诉框架你要在函数的输入参数中绑定路径参数，
 //在同一控制器中使用“Get”和“GetBy”可以实现
 //
 //func (c *ExampleController) GetUserBy(username string) mvc.Result {

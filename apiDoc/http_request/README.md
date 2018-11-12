@@ -1,1 +1,0 @@
-`context.Request（）`返回你已经知道的相同的* http.Request，这些例子显示了Context使用这个对象的一些地方。 除此之外，您可以像在iris之前那样使用它。

@@ -9,8 +9,7 @@ import (
 	"time"
 	"github.com/kataras/golog"
 	"github.com/kataras/iris"
-	//注意:
-	//由于某种原因，最新的vscode-go语言扩展不能提供足够智能帮助（参数文档并转到定义功能）
+	//注意: 由于某种原因，最新的vscode-go语言扩展不能提供足够智能帮助（参数文档并转到定义功能）
 	//对于`iris.Context`别名，因此如果您使用VS Code，则导入`Context`的原始导入路径，它将执行此操作：
 	"github.com/kataras/iris/context"
 )

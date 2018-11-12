@@ -1,5 +1,4 @@
 // 文件: controllers/user_controller.go
-
 package controllers
 
 import (
@@ -23,7 +22,6 @@ type UserController struct {
 	//所以所有字段都是默认的请求范围，只能设置依赖注入
 	//自定义字段，如服务，对所有请求都是相同的（静态绑定）
 	//和依赖于当前上下文的会话（动态绑定）。
-
 	Ctx iris.Context
 	//我们的UserService，它是一个接口
 	//从主应用程序绑定。
@@ -31,27 +29,21 @@ type UserController struct {
 	//Session，使用来自main.go的依赖注入绑定
 	Session *sessions.Session
 }
-
 const userIDKey = "UserID"
-
 func (c *UserController) getCurrentUserID() int64 {
 	userID := c.Session.GetInt64Default(userIDKey, 0)
 	return userID
 }
-
 func (c *UserController) isLoggedIn() bool {
 	return c.getCurrentUserID() > 0
 }
-
 func (c *UserController) logout() {
 	c.Session.Destroy()
 }
-
 var registerStaticView = mvc.View{
 	Name: "user/register.html",
 	Data: iris.Map{"Title": "User Registration"},
 }
-
 // GetRegister 处理 GET: http://localhost:8080/user/register.
 func (c *UserController) GetRegister() mvc.Result {
 	if c.isLoggedIn() {
@@ -59,7 +51,6 @@ func (c *UserController) GetRegister() mvc.Result {
 	}
 	return registerStaticView
 }
-
 // PostRegister 处理 POST: http://localhost:8080/user/register.
 func (c *UserController) PostRegister() mvc.Result {
 	//从表单中获取名字，用户名和密码
@@ -90,12 +81,10 @@ func (c *UserController) PostRegister() mvc.Result {
 		//代码：303，
 	}
 }
-
 var loginStaticView = mvc.View{
 	Name: "user/login.html",
 	Data: iris.Map{"Title": "User Login"},
 }
-
 // GetLogin handles GET: http://localhost:8080/user/login.
 func (c *UserController) GetLogin() mvc.Result {
 	if c.isLoggedIn() {
@@ -104,7 +93,6 @@ func (c *UserController) GetLogin() mvc.Result {
 	}
 	return loginStaticView
 }
-
 // PostLogin handles
 // PostLogin处理POST: http://localhost:8080/user/register.
 func (c *UserController) PostLogin() mvc.Result {
@@ -123,7 +111,6 @@ func (c *UserController) PostLogin() mvc.Result {
 		Path: "/user/me",
 	}
 }
-
 // GetMe 处理P GET: http://localhost:8080/user/me.
 func (c *UserController) GetMe() mvc.Result {
 	if !c.isLoggedIn() {
@@ -146,7 +133,6 @@ func (c *UserController) GetMe() mvc.Result {
 		},
 	}
 }
-
 // AnyLogout处理 All/AnyHTTP 方法：http://localhost:8080/user/logout
 func (c *UserController) AnyLogout() {
 	if c.isLoggedIn() {

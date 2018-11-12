@@ -1,5 +1,5 @@
-// Package main shows how you can add middleware to an mvc Application, simply
-// by using its `Router` which is a sub router(an iris.Party) of the main iris app.
+//main包显示了如何将中间件添加到mvc应用程序中
+//使用它的`Router`，它是主iris app的子路由器（iris.Party）。
 package main
 
 import (
@@ -16,7 +16,7 @@ func main() {
 	mvc.Configure(app, configure)
 	// http://localhost:8080
 	// http://localhost:8080/other
-	// refresh every 10 seconds and you'll see different time output.
+	// //每10秒刷新一次，你会看到不同的时间输出。
 	app.Run(iris.Addr(":8080"))
 }
 

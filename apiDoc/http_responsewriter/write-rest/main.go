@@ -42,7 +42,7 @@ func main() {
 	})
 	//其他内容类型
 	app.Get("/binary", func(ctx iris.Context) {
-		// useful when you want force-download of contents of raw bytes form.
+		//当您想要强制下载原始字节内容时有用下载文件
 		ctx.Binary([]byte("Some binary data here."))
 	})
 	app.Get("/text", func(ctx iris.Context) {
