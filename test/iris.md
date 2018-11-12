@@ -17,8 +17,7 @@ import "github.com/kataras/iris"
 ```go
  go get -u github.com/kataras/iris
 ```
-
-示例:  `main1.go`
+示例: 
 
 ```go
 package main
@@ -202,8 +201,7 @@ app.Run(iris.Raw(&http.Server{Addr:":8080"}).ListenAndServe)
 ```
 UNIX和BSD主机可以利用重用端口功能
 
-示例:  `main2.go`
-
+示例: 
 ```go
 package main
 
@@ -251,7 +249,7 @@ func main() {
 
 说白了就是自定义响应 `CONTROL + C / COMMAND + C` 的函数，也就是自定义关闭服务
 
-示例：  `main3.go`
+示例：
 
 ```go
 package main
@@ -305,7 +303,7 @@ app.Run(iris.Raw(h.ListenAndServe))
 
 我们之前看到的所有常见的 **Runners**（`iris＃Addr，iris＃Listener，iris #Server，iris＃TLS，iris #AutoTLS`）接受`host.Configurator`的可变参数，只有`func（* host）.Supervisor）`。 因此，`Application`使您有权通过这些修改自动创建的主机主管。
 
-示例：  `main4.go`
+示例：
 ```go
 package main
 
@@ -466,7 +464,7 @@ app.OnErrorCode(500, func(ctx iris.Context){
 
 在`iris`的表现主义路由器的帮助下，您可以安全地构建任何形式的API。
 
-示例： `main5.go`
+示例：
 ```go
 package main
 import "github.com/kataras/iris"
@@ -724,7 +722,7 @@ app.Macros().String.RegisterFunc("equal", func(argument string) func(paramValue 
     return func(paramValue string){ return argument == paramValue }
 })
 ```
-示例：  `main6.go`
+示例：
 ```go
 package main
 
@@ -883,7 +881,7 @@ Favicon(favPath string, requestPath ...string) (*Route, error)
 // Returns the GET *Route.  返回GET * Route
 StaticWeb(requestPath string, systemPath string, exceptRoutes ...*Route) (*Route, error)
 ```
-示例：  `main7.go`
+示例：
 ```go
 package main
 
@@ -950,7 +948,7 @@ dynamicSub.Get("/", func(ctx iris.Context){
 
 iris能够将您以前使用的任何外部第三方处理程序包装并转换为Web应用程序。 让我们转换[https://github.com/rs/cors](https://github.com/rs/cors) net/http外部中间件，它返回一个`next form`处理程序。
 
-示例： `main8.go`
+示例：
 
 ```go
 package main
@@ -1025,7 +1023,7 @@ Amber
 它的模板解析器是 github.com/eknkc/amber
 ```
 
-示例： `main9.go`
+示例：
 
 ```go
 package main
@@ -1077,7 +1075,7 @@ func hi(ctx iris.Context) {
 
 程序需要加载模板文件生成输出的 HTML。在程序部署的时候，除了发布应用可执行文件外，还需要发布依赖的静态资源文件。这给发布过程添加了一些麻烦。既然发布单独一个可执行文件是非常简单的操作，就有人会想办法把静态资源文件打包进 Go 的程序文件中。
 
-示例： `main10.go`
+示例：
 
 ```go
 package main
@@ -1140,7 +1138,7 @@ iris.Amber(...)      >> >>      view.Amber(...)
 
 在此示例中，我们将仅允许通过了身份验证的用户在 `/secret`页面上查看我们的信息。 要获得访问权限，首先必须访问`/login`以获取有效的会话`cookie`，并将其登录。此外，他可以访问 `/logout` 以撤消对我们的信息的访问权限。
 
-示例： `main11.go`
+示例：
 
 ```go
 package main
@@ -1214,7 +1212,7 @@ The cake is a lie!
 
 可以使用一个（或多个）`sessiondb`来实现会话持久性。
 
-示例： `main12.go`
+示例：
 
 ```go
 package main
@@ -1325,7 +1323,7 @@ func main() {
 
 在此示例中，我们将通过浏览器在Web套接字之间创建一个小聊天。
 
-服务器代码示例： `main13.go`
+服务器代码示例：
 
 ```go
 package main
@@ -1434,7 +1432,7 @@ $ start http://localhost:8080
 
 Iris拥有对MVC模式的一流支持，你不会在Go世界的任何其他地方找到这些东西。
 
-示例： `main14.go`
+示例：
 
 ```go
 package main
@@ -1532,7 +1530,7 @@ func (c *ExampleController) AfterActivation(a mvc.AfterActivation) {}
 
 通过`BeforeActivation`自定义事件回调，每个控制器，将自定义控制器的struct的方法注册为具有自定义路径的处理程序（即使使用正则表达参数化路径）
 
-示例： `main15.go`
+示例：
 
 ```go
 package main
