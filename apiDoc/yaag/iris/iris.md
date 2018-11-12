@@ -1,24 +1,24 @@
 # `YAAG `生成`iris web`框架项目`API`文档
-
 ## API 生成步骤
-
 - 下载`YAAG`中间件
 > go get github.com/betacraft/yaag/...
-
 - 导入依赖包
 > import github.com/betacraft/yaag/yaag
 > Import github.com/betacraft/yaag/irisyaag
-
 - 初始化`yaag`
 > yaag.Init(&yaag.Config(On: true, DocTile: "Iris", DocPath: "apidoc.html"))
-
 - 注册`yaag`中间件
 > app.Use(irisyaag.New())
 > irisyaag记录响应主体并向apidoc提供所有必要的信息
-
-
-## 生成API文档简单示例 `main.go`
-
+## 目录结构
+> 主目录`iris`
+```html
+    —— apidoc.html (执行命令后生成)
+    —— apidoc.html.json (执行命令后生成)
+    —— main.go
+```
+## 代码示例
+> `main.go`
 ```go
 package main
 
@@ -66,13 +66,6 @@ func main() {
 	//在制作时关闭yaag中间件。
 	app.Run(iris.Addr(":8080"))
 }
-```
-## 目录结构
-> 主目录`iris`
-```html
-    —— apidoc.html (执行命令后生成)
-    —— apidoc.html.json (执行命令后生成)
-    —— main.go
 ```
 ### 提示
 1. 运行上面的例子，并请求其中任意一个接口，会生成`apidoc.html`，`apidoc.html.json`两个文件

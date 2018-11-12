@@ -1,5 +1,4 @@
 # 配置组
-
 所有配置的值都有默认值，所有你可以直接使用`iris.New()`
 
 在`listen`函数之前配置是没用的，所以应该在`Application＃Run / 2`（第二个参数）上传递它
@@ -8,11 +7,15 @@
 完成此操作可以在`Application＃Configure`或`Application＃Run/2`中传递。
 
 `Application#ConfigurationReadOnly()`返回配置值.
-
 ## 加载配置类型介绍
-
-### 通过结构体加载配置 `main.go`
-
+### 通过结构体加载配置
+#### 目录结构
+> 主目录`fromConfigurationStructure`
+```html
+    —— main.go
+```
+#### 代码示例
+> `main.go`
 ```go
 package main
 
@@ -44,8 +47,15 @@ func main() {
 ```
 
 ### 通过toml加载配置 
->  go代码如下 `main.go`
-
+#### 目录结构
+> 主目录`fromTomlFile`
+```html
+    —— main.go
+    —— configs
+        —— iris.tml
+```
+#### 代码示例
+> `main.go`
 ```go
 package main
 
@@ -66,8 +76,7 @@ func main() {
 	// app.Run(iris.Addr(":8080"))
 }
 ```
->  toml 文件如下，请注意路径问题 `./configs/iris.tml`
-
+> `/configs/iris.tml`
 ```tml
 DisablePathCorrection = false
 EnablePathEscape = false
@@ -79,8 +88,16 @@ Charset = "UTF-8"
 [Other]
 	MyServerName = "iris"
 ```
-### 通过YAML加载配置 main.go
->  go代码如下 `main.go`
+### 通过`YAML`加载配置
+#### 目录结构
+> 主目录`fromYamlFile`
+```html
+    —— main.go
+    —— configs
+        —— iris.yml
+```
+#### 代码示例
+> `main.go`
 ```go
 package main
 
@@ -103,7 +120,7 @@ func main() {
 	// app.Run(iris.Addr(":8080"))
 }
 ```
->  yml文件格式`./configs/iris.yml`，可以设置放在全局
+> `/configs/iris.yml`
 
 ```yml
 DisablePathCorrection: false
@@ -113,9 +130,14 @@ DisableBodyConsumptionOnUnmarshal: true
 TimeFormat: Mon, 01 Jan 2006 15:04:05 GMT
 Charset: UTF-8
 ```
-
-### 直接通过单个配置选项配置 main.go
-
+### 直接通过单个配置选项配置
+#### 目录结构
+> 主目录`functional`
+```html
+    —— main.go
+```
+#### 代码示例
+> `main.go`
 ```go
 package main
 
@@ -138,6 +160,7 @@ func main() {
 	// app.Run(iris.Addr(":8080"))
 }
 ```
+----------------------------------------------------------------------------------------------------------------------------------
 ## Built'n配置器
 ```go
 // WithoutServerError将忽略错误，来自主应用程序的`Run`函数。
@@ -209,11 +232,8 @@ func WithoutRemoteAddrHeader(headerName string) Configurator
 //参见`配置`
 func WithOtherValue(key string, val interface{}) Configurator
 ```
-
 ## 自定义配置器
-
 使用`Configurator`，开发人员可以轻松地模块化他们的应用程序，示例:
-
 ```go
 // 文件名称 counter/counter.go
 package counter

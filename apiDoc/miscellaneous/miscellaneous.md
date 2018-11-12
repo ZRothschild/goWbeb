@@ -1,7 +1,12 @@
 # 一些杂项例子(`miscellaneous`)
 ## 文件日志记录(`file logger`)
+### 目录结构
+> 主目录`fileLogger`
+```html
+    —— main.go
+```
 ### 代码示例
-> 文件名称`main.go`
+> `main.go`
 ```go
 package main
 
@@ -48,8 +53,18 @@ func main() {
 }
 ```
 ## 多语言切换(`i18n`)
+### 目录结构
+> 主目录`i18n`
+```html
+    —— locales
+        —— locale_el-GR.ini
+        —— locale_en-US.ini
+        —— locale_zh-CN.ini
+    —— main.go
+    —— main_test.go
+```
 ### 代码示例
-> 文件名称`main.go`
+> `main.go`
 ```go
 package main
 
@@ -120,7 +135,7 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-> 文件名称`main_test.go`(测试代码)
+> `main_test.go`(测试代码)
 ```go
 package main
 
@@ -165,31 +180,26 @@ func TestI18n(t *testing.T) {
 		Body().Equal(enusMulti)
 }
 ```
-> 文件名称`locales/locale_el-GR.ini`(语言包)
+> `/locales/locale_el-GR.ini`(语言包)
 ```ini
 hi = γεια, %s
 ```
-> 文件名称`locales/locale_en-US.ini`(语言包)
+> `/locales/locale_en-US.ini`(语言包)
 ```ini
 hi = hello, %s
 ```
-> 文件名称`locales/locale_zh-CN.ini`(语言包)
+> `/locales/locale_zh-CN.ini`(语言包)
 ```ini
 hi = 您好，%s
 ```
-### 目录结构
-> 主目录`i18n`
-```html
-    —— locales
-        —— locale_el-GR.ini
-        —— locale_en-US.ini
-        —— locale_zh-CN.ini
-    —— main.go
-    —— main_test.go
-```
 ## 代码性能测试(`pprof`)
+### 目录结构
+> 主目录`pprof`
+```html
+    —— main.go
+```
 ### 代码示例
-> 文件名称`main.go`
+> `main.go`
 ```go
 //go中有pprof包来做代码的性能监控
 package main
@@ -209,8 +219,15 @@ func main() {
 }
 ```
 ## 图形验证码(`recaptcha`)
+### 目录结构
+> 主目录`recaptcha`
+```html
+    —— custom_form
+        —— main.go
+    —— main.go
+```
 ### 代码示例
-> 文件名称`main.go`
+> `main.go`
 ```go
 package main
 
@@ -251,7 +268,7 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-> 文件名称`custom_form/main.go`
+> `/custom_form/main.go`
 ```go
 package main
 
@@ -291,16 +308,14 @@ func postComment(ctx iris.Context) {
 	ctx.JSON(iris.Map{"success": true})
 }
 ```
+## 异常回复(`recover`)
 ### 目录结构
-> 主目录`recaptcha`
+> 主目录`recover`
 ```html
-    —— custom_form
-        —— main.go
     —— main.go
 ```
-## 异常回复(`recover`)
 ### 代码示例
-> 文件名称`main.go`
+> `main.go`
 ```go
 package main
 

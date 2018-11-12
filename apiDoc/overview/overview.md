@@ -1,4 +1,13 @@
 # 小项目示例
+## 目录结构
+> 主目录overview
+```html
+—— views
+    —— user
+        —— create_verification.html
+        —— profile.html
+—— main.go
+```
 ## 示例代码
 ```go
 package main
@@ -105,12 +114,38 @@ func createUser(ctx iris.Context) {
 	ctx.View("user/create_verification.html")
 }
 ```
-## 目录结构
-> overview为主目录
+> `/views/user/create_verification.html`
 ```html
-—— views
-    —— user
-        —— create_verification.html
-        —— profile.html
-—— main.go
+<html>
+    <head><title>Create verification</title></head>
+    <body>
+        <h1> Create Verification </h1>
+        <table style="width:550px">
+        <tr>
+            <th>Username</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>City</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>{{ .Username }}</td>
+            <td>{{ .Firstname }}</td>
+            <td>{{ .Lastname }}</td>
+            <td>{{ .City }}</td>
+            <td>{{ .Age }}</td>
+        </tr>
+        </table> 
+    </body>
+</html>
+```
+> `/views/user/profile.html`
+```html
+<html>
+    <head><title>Profile page</title></head>
+    <body>
+        <h1> Profile </h1>
+        <b> {{ .Username }} </b>
+    </body>
+</html>
 ```
