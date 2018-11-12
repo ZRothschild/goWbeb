@@ -1,6 +1,40 @@
 # `MVC` `login`示例
-## `datamodels`文件夹(数据模型)
-> 文件名称 `user.go`**User**结构体定义
+## 目录结构
+> 主目录`login`
+
+```html
+    —— datamodels
+        —— user.go
+    —— datasource
+        —— users.go
+    —— repositories
+        —— user_repository.go
+    —— services
+        —— user_service.go
+    —— web
+        —— controllers
+            —— user_controller.go
+            —— users_controller.go
+        —— middleware
+            —— basicauth.go
+        —— public
+            —— css
+                —— site.css
+        —— viewmodels
+            —— viewModels.md
+        —— views
+            —— shared
+                —— error.html
+                —— layout.html
+            —— user
+                —— login.html
+                —— me.html
+                —— register.html
+   —— main.go  
+```
+## 代码示例
+> 文件名称 `/datamodels/user.go`**User**结构体定义
+
 ```go
 package datamodels
 
@@ -39,8 +73,8 @@ func ValidatePassword(userPassword string, hashed []byte) (bool, error) {
 	return true, nil
 }
 ```
-## `datasource`文件夹(数据资源)
-> 文件名称 `user.go`数据资源，相当于数据库
+> 文件名称 `/datasource/user.go`数据资源，相当于数据库
+
 ```go
 //文件: datasource/users.go
 package datasource
@@ -68,8 +102,8 @@ func LoadUsers(engine Engine) (map[int64]datamodels.User, error) {
 	return make(map[int64]datamodels.User), nil
 }
 ```
-## `repositories`文件夹(仓库层)
-> 文件名称 `user_repository.go`对数据筛选，必要数据的仓库
+> 文件名称 `/repositories/user_repository.go`对数据筛选，必要数据的仓库
+
 ```go
 package repositories
 
@@ -206,8 +240,8 @@ func (r *userMemoryRepository) Delete(query Query, limit int) bool {
 	}, limit, ReadWriteMode)
 }
 ```
-## `services`文件夹(服务层)
-> 文件名称 `user_service.go`业务逻辑代码
+> 文件名称 `/services/user_service.go`业务逻辑代码
+
 ```go
 package services
 
@@ -316,9 +350,8 @@ func (s *userService) DeleteByID(id int64) bool {
 	}, 1)
 }
 ```
-## `web`文件夹(`web`层里面包括`mvc`)
-### `controllers`文件夹(控制器)
-> 文件名称 `user_controller.go`
+> 文件名称 `/web/controllers/user_controller.go`
+
 ```go
 // 文件: controllers/user_controller.go
 package controllers
@@ -463,7 +496,8 @@ func (c *UserController) AnyLogout() {
 	c.Ctx.Redirect("/user/login")
 }
 ```
-> 文件名称 `users_controller.go`
+> 文件名称 `/web/controllers/users_controller.go`
+
 ```go
 package controllers
 
@@ -544,8 +578,8 @@ func (c *UsersController) DeleteBy(id int64) interface{} {
 	return iris.StatusBadRequest //等同于 400.
 }
 ```
-### `middleware`文件夹(中间件)
-> 文件名称 `basicauth.go`
+> 文件名称 `/web/middleware/basicauth.go`
+
 ```go
 // 文件: middleware/basicauth.go
 package middleware
@@ -559,8 +593,8 @@ var BasicAuth = basicauth.New(basicauth.Config{
 	},
 })
 ```
-### `public`文件夹
-> 文件名称 `css/site.css`
+> 文件名称 `/web/public/css/site.css`
+
 ```css
 /* Bordered form */
 form {
@@ -616,8 +650,8 @@ span.psw {
     }
 }
 ```
-### `viewmodels`文件夹
-> 文件名称 `viewModels.md`
+> 文件名称 `/web/viewmodels/viewModels.md`
+
 ```markdown
 # `View Models`
 应该有视图模型，客户端将能够看到的结构例：
@@ -657,8 +691,8 @@ func (m User) Dispatch(ctx context.Context) {
 但是，我们将使用“datamodels”作为唯一的一个模型包，因为
 User结构不包含任何敏感数据，客户端可以查看其所有字段我们内部不需要任何额外的功能或验证。
 ```
-### `views`文件夹(视图)
-> 文件名称 `shared/error.html`
+> 文件名称 `/web/views/shared/error.html`
+
 ```html
 <h1>错误</h1>
 <h2>处理您的请求时发生错误。</h2>
@@ -686,7 +720,8 @@ User结构不包含任何敏感数据，客户端可以查看其所有字段我�
 </body>
 </html>
 ```
-> 文件名称 `user/login.html`
+> 文件名称 `/web/views/user/login.html`
+
 ```html
 <form action="/user/login" method="POST">
     <div class="container">
@@ -698,13 +733,15 @@ User结构不包含任何敏感数据，客户端可以查看其所有字段我�
     </div>
 </form>
 ```
-> 文件名称 `user/me.html`
+> 文件名称 `/web/views/user/me.html`
+
 ```html
 <p>
     Welcome back <strong>{{.User.Firstname}}</strong>!
 </p>
 ```
-> 文件名称 `user/register.html`
+> 文件名称 `/web/views/user/register.html`
+
 ```html
 <form action="/user/register" method="POST">
     <div class="container">
@@ -717,37 +754,5 @@ User结构不包含任何敏感数据，客户端可以查看其所有字段我�
         <button type="submit">Register</button>
     </div>
 </form>
-```
-## 目录结构
-> 主目录login
-```html
-    —— datamodels
-        —— user.go
-    —— datasource
-        —— users.go
-    —— repositories
-        —— user_repository.go
-    —— services
-        —— user_service.go
-    —— web
-        —— controllers
-            —— user_controller.go
-            —— users_controller.go
-        —— middleware
-            —— basicauth.go
-        —— public
-            —— css
-                —— site.css
-        —— viewmodels
-            —— viewModels.md
-        —— views
-            —— shared
-                —— error.html
-                —— layout.html
-            —— user
-                —— login.html
-                —— me.html
-                —— register.html
-   —— main.go  
 ```
 ![目录结构](./folder_structure.png)

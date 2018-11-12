@@ -1,6 +1,7 @@
 # `favicon`设置
 ## 目录结构
 > 主目录`favicon`
+
 ```html
 —— static
     —— favicons
@@ -8,7 +9,8 @@
 —— main.go
 ```
 ## 示例代码
-> main.go
+> `main.go`
+
 ```go
 package main
 

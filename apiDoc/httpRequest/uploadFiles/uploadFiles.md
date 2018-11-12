@@ -1,6 +1,7 @@
 # `iris`多文件上传示例
 ## 目录结构
 > 主目录`uploadFiles`
+
 ```html
     —— templates
         —— upload_form.html
@@ -9,6 +10,7 @@
 ```
 ## 示例代码
 > `/templates/upload_form.html`
+
 ```html
 <html>
 <head>
@@ -24,6 +26,7 @@
 </html>
 ```
 > `main.go`
+
 ```go
 package main
 

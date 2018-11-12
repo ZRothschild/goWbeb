@@ -1,4 +1,4 @@
-// 文件: main.go
+//文件: main.go
 package main
 
 import (

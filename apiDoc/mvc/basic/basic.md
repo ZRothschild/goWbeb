@@ -1,6 +1,12 @@
 # `MVC`基础用法
+## 目录结构
+> 主目录`basic`
+```html
+    —— main.go
+```
 ## 代码示例
-> 文件名称 `main.go`
+> `main.go`
+
 ```go
 package main
 

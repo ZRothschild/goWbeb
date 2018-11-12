@@ -107,11 +107,13 @@ Authorization: Bearer <token>
 > 请注意，使用签名`Token`，`Token`中包含的所有信息都会向用户或其他方公开，即使他们无法更改。这意味着您不应该在`Token`中放置秘密信息。
 ## 目录结构
 > 主目录`jwt`
+
 ```html
     —— main.go
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 // iris提供了一些基本的中间件，大部分用于学习曲线。
 //您可以将任何net/http请求的中间件与iris.FromStd（把net/http转化成iris context形式）包装器一起使用

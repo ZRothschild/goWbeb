@@ -1,6 +1,7 @@
 # `embedding Gziped`
 ## 目录结构
 > 主目录`embeddingGzipedFilesIntoApp`
+
 ```html
 —— assets
     —— css
@@ -13,6 +14,7 @@
 ```
 ## 示例代码
 > `main.go`
+
 ```go
 package main
 

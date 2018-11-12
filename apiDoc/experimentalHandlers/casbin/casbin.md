@@ -59,6 +59,7 @@ p, bob, data2, write
 > 意思就是 alice 可以读 data1，bob 可以写 data2
 ## 示例 
 > 模型与策略定制 `test.conf`
+
 ```smartyconfig
 [request_definition]
 r = sub, dom, obj, act
@@ -76,6 +77,7 @@ e = some(where (p.eft == allow))
 m = g(r.sub, p.sub, r.dom) && r.dom == p.dom && r.obj == p.obj && r.act == p.act
 ```
 > 具体规则设置 `test.csv`
+
 ```smartyconfig
 p, admin, domain1, data1, read
 p, admin, domain1, data1, write
@@ -89,6 +91,7 @@ g, bob, admin, domain2
 ### 中间件格式 `错误返回forbidden`
 #### 目录结构
 > 主目录`middleware`
+
 ```html
     —— casbinmodel.conf
     —— casbinpolicy.csv
@@ -97,6 +100,7 @@ g, bob, admin, domain2
 ```
 #### 代码示例
 > `casbinmodel.conf`
+
 ```smartyconfig
 [request_definition]
 r = sub, obj, act
@@ -123,6 +127,7 @@ p, bob, /dataset2/resource2, GET
 p, bob, /dataset2/folder1/*, POST
 ```
 > `main.go`
+
 ```go
 package main
 
@@ -160,6 +165,7 @@ func hi(ctx iris.Context) {
 }
 ```
 > `main_test.go`
+
 ```go
 package main
 
@@ -213,6 +219,7 @@ func check(e *httpexpect.Expect, method, path, username string, status int) {
 ### 路由修饰模式  `错误返回403`
 #### 目录结构
 > 主目录`wrapper`
+
 ```html
     —— casbinmodel.conf
     —— casbinpolicy.csv
@@ -221,6 +228,7 @@ func check(e *httpexpect.Expect, method, path, username string, status int) {
 ```
 #### 代码示例
 > `casbinmodel.conf`
+
 ```smartyconfig
 [request_definition]
 r = sub, obj, act
@@ -238,6 +246,7 @@ e = some(where (p.eft == allow))
 m = g(r.sub, p.sub) && keyMatch(r.obj, p.obj) && (r.act == p.act || p.act == "*")
 ```
 > `casbinpolicy.csv`
+
 ```smartyconfig
 p, alice, /dataset1/*, GET
 p, alice, /dataset1/resource1, POST
@@ -249,6 +258,7 @@ p, dataset1_admin, /dataset1/*, *
 g, cathrin, dataset1_admin
 ```
 > `main.go`
+
 ```go
 package main
 
@@ -288,6 +298,7 @@ func hi(ctx iris.Context) {
 }
 ```
 > `main_test.go`
+
 ```go
 package main
 

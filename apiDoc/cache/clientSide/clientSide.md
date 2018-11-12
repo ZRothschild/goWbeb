@@ -56,11 +56,13 @@
 `Etag`是服务器自动生成或者由开发者生成的对应资源在服务器端的唯一标识符,能够更加准确的控制缓存.`Last-Modified`与`ETag`一起使用时,服务器会优先验证`ETag`
 ## 目录结构
 > 主目录`clientSide`
+
 ```html
     —— main.go
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 //包main显示了如何使用`WriteWithExpiration`
 //基于“modtime”，如果If-Modified-Since的时间将于之前的对比，如果超出了refreshEvery的范围

@@ -1,6 +1,7 @@
 # `embedded Single Page Application`(单页面应用)
 ## 目录结构
-> 主目录`embeddedSinglePageApplication`
+> 主目录`embeddedSPA`
+
 ```html
 —— main.go
 —— main_test.go
@@ -12,6 +13,7 @@
 ```
 ## 示例代码
 > `main.go`
+
 ```go
 package main
 
@@ -67,6 +69,7 @@ func main() {
 //到服务器的根路径
 ```
 > `main_test.go`
+
 ```go
 package main
 
@@ -144,11 +147,13 @@ func TestSPAEmbedded(t *testing.T) {
 	}
 }
 ```
-> `public/app.js`
+> `/public/app.js`
+
 ```js
 window.alert("app.js loaded from \"/");
 ```
-> `public/index.html`
+> `/public/index.html`
+
 ```html
 <html>
 <head>
@@ -160,7 +165,8 @@ window.alert("app.js loaded from \"/");
 </body>
 </html>
 ```
-> `public/css/main.css`
+> `/public/css/main.css`
+
 ```css
 body {
     background-color: black;

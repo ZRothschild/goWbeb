@@ -4,11 +4,13 @@
 他部分，并提供垃圾收集，`goroutine`活动和内存使用的运行概述。
 ## 目录结构
 > 主目录`simple`
+
 ```html
     —— main.go
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 package main
 

@@ -17,6 +17,7 @@
 - 避免全站通用的`cookie`，严格设置`cookie`的域
 ## 目录结构
 > 主目录`csrf`
+
 ```html
     —— main.go
     —— views
@@ -25,6 +26,7 @@
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 //此中间件提供跨站点请求伪造保护
 //它安全地生成一个掩码（每个请求唯一）令牌
@@ -71,6 +73,7 @@ func postSignupForm(ctx iris.Context) {
 }
 ```
 > `/views/user/signup.html`
+
 ```html
 <form method="POST" action="/user/signup">
     {{ .csrfField }}

@@ -1,6 +1,7 @@
 # 小项目示例
 ## 目录结构
-> 主目录overview
+> 主目录`overview`
+
 ```html
 —— views
     —— user
@@ -9,6 +10,8 @@
 —— main.go
 ```
 ## 示例代码
+> `main.go`
+
 ```go
 package main
 
@@ -115,6 +118,7 @@ func createUser(ctx iris.Context) {
 }
 ```
 > `/views/user/create_verification.html`
+
 ```html
 <html>
     <head><title>Create verification</title></head>
@@ -140,6 +144,7 @@ func createUser(ctx iris.Context) {
 </html>
 ```
 > `/views/user/profile.html`
+
 ```html
 <html>
     <head><title>Profile page</title></head>

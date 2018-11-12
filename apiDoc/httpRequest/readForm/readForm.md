@@ -1,6 +1,7 @@
 # `iris`自定义结构体映射获取`Form`表单请求数据
 ## 目录结构
 > 主目录`readForm`
+
 ```html
     —— templates
         —— form.html
@@ -8,6 +9,7 @@
 ```
 ## 代码示例
 > `templates/form.html`
+
 ```html
 <!DOCTYPE html>
 <head>
@@ -31,6 +33,7 @@
 </html>
 ```
 > `main.go`
+
 ```go
 // package main包含一个关于如何使用ReadForm的示例，但使用相同的方法可以执行ReadJSON和ReadJSON
 package main

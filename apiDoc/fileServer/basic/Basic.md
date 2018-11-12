@@ -1,6 +1,7 @@
 # Basic（基础服务）
 ##目录结构
 > 主目录`basic`
+
 ```html
 —— assets
     —— css
@@ -11,6 +12,7 @@
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 package main
 
@@ -28,7 +30,6 @@ func main() {
 	// i.e "zippedDir/file.gz"
 	// app.Use(iris.Gzip)
 	//第一个参数是请求路径，第二个参数是系统目录
-
 	// app.StaticWeb("/css", "./assets/css")
 	// app.StaticWeb("/js", "./assets/js")
 	app.StaticWeb("/static", "./assets")

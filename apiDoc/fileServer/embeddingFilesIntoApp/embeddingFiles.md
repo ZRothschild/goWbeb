@@ -5,6 +5,7 @@
 它在`go-bindata`子目录中附带了一个命令行工具。此工具提供一组命令行选项，用于自定义生成的输出。
 ## 目录结构
 > 主目录`embeddingFilesIntoApp`
+
 ```html
 —— assets
     —— css
@@ -17,6 +18,7 @@
 ```
 ## 代码示例 
 > `main.go`
+
 ```go
 package main
 

@@ -1,3 +1,14 @@
+# `IRIS`使用`.sock`文件服务监听
+## 目录结构
+> 主目录`listenUnix`
+
+```html
+    —— main.go
+```
+## 代码示例
+> `main.go`
+
+```go
 package main
 
 import (
@@ -13,4 +24,5 @@ func main() {
 	}
 	app.Run(iris.Listener(l))
 }
-//更多参阅 "custom-listener/unix-reuseport"
+//更多参阅 "customListener/unixReuseport"
+```

@@ -1,6 +1,7 @@
 # `Single Page Application`基本运用
 ## 目录结构
 > 主目录`basic`
+
 ```html
 —— main.go
 —— main_test.go
@@ -12,6 +13,7 @@
 ```
 ## 示例代码
 > `main.go`
+
 ```go
 package main
 
@@ -51,6 +53,7 @@ func main() {
 }
 ```
 > `main_test.go`
+
 ```go
 package main
 
@@ -115,10 +118,12 @@ func TestSPA(t *testing.T) {
 }
 ```
 > `public/app.js`
+
 ```js
 window.alert("app.js loaded from \"/");
 ```
 > `public/index.html`
+
 ```html
 <html>
 <head>
@@ -131,6 +136,7 @@ window.alert("app.js loaded from \"/");
 </html>
 ```
 > `public/css/main.css`
+
 ```css
 body {
     background-color: black;

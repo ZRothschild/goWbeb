@@ -11,11 +11,13 @@
 ### 通过结构体加载配置
 #### 目录结构
 > 主目录`fromConfigurationStructure`
+
 ```html
     —— main.go
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -45,10 +47,10 @@ func main() {
 	// app.Configure(iris.WithConfiguration(iris.Configuration{...}))
 }
 ```
-
 ### 通过toml加载配置 
 #### 目录结构
 > 主目录`fromTomlFile`
+
 ```html
     —— main.go
     —— configs
@@ -56,6 +58,7 @@ func main() {
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -77,6 +80,7 @@ func main() {
 }
 ```
 > `/configs/iris.tml`
+
 ```tml
 DisablePathCorrection = false
 EnablePathEscape = false
@@ -91,6 +95,7 @@ Charset = "UTF-8"
 ### 通过`YAML`加载配置
 #### 目录结构
 > 主目录`fromYamlFile`
+
 ```html
     —— main.go
     —— configs
@@ -98,6 +103,7 @@ Charset = "UTF-8"
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -133,11 +139,13 @@ Charset: UTF-8
 ### 直接通过单个配置选项配置
 #### 目录结构
 > 主目录`functional`
+
 ```html
     —— main.go
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 

@@ -1,12 +1,14 @@
 # `iris`自定义结构体映射获取`xml`格式请求数据
 ## 目录结构
 > 主目录`readXml`
+
 ```html
     —— main.go
     —— main_test.go
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -59,6 +61,7 @@ func handler(ctx iris.Context) {
 }
 ```
 > `main_test.go`
+
 ```go
 package main
 

@@ -8,7 +8,6 @@ import (
 	"github.com/kataras/iris/mvc"
 	"github.com/kataras/iris/sessions"
 )
-
 // VisitController处理根路由
 type VisitController struct {
 	//当前请求会话

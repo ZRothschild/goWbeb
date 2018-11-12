@@ -45,8 +45,8 @@ func main() {
 	//重要
 	//所有选项都可以用Force填充：true，所有的都会很好的兼容
 	m.Router.SetExecutionRules(iris.ExecutionRules{
-		//Begin:  <- from `Use[all]` 到`Handle[last]` 程序执行顺序，执行all，即使缺少`ctx.Next()`也执行all。
-		// Main:   <- all `Handle` 执行顺序，执行所有>> >>。
+		//Begin: <- from `Use[all]` 到`Handle[last]` 程序执行顺序，执行all，即使缺少`ctx.Next()`也执行all。
+		// Main: <- all `Handle` 执行顺序，执行所有>> >>。
 		Done: iris.ExecutionOptions {Force:true},// < - 从`Handle [last]`到`Done [all]`程序执行顺序，执行全部>> >>。
 		})
 	m.Router.Done(doneHandler)

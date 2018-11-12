@@ -1,4 +1,10 @@
-# `MVC` `hello world`简单用法
+# `iris MVC` `hello world`简单用法
+## 目录结构
+> 主目录`helloWorld`
+```html
+    —— main.go
+    —— main_test.go
+```
 ## 代码示例
 > 文件名称 `main.go`
 ```go
@@ -139,4 +145,25 @@ func (c *ExampleController) BeforeActivation(b mvc.BeforeActivation) {
 ，但仍可以添加自定义控制器或简单的标准处理程序。
 func (c *ExampleController) AfterActivation(a mvc.AfterActivation) {}
 */
+```
+> `main_test.go`
+```go
+package main
+
+import (
+	"testing"
+	"github.com/kataras/iris/httptest"
+)
+
+func TestMVCHelloWorld(t *testing.T) {
+	e := httptest.New(t, newApp())
+	e.GET("/").Expect().Status(httptest.StatusOK).
+		ContentType("text/html", "utf-8").Body().Equal("<h1>Welcome</h1>")
+	e.GET("/ping").Expect().Status(httptest.StatusOK).
+		Body().Equal("pong")
+	e.GET("/hello").Expect().Status(httptest.StatusOK).
+		JSON().Object().Value("message").Equal("Hello Iris!")
+	e.GET("/custom_path").Expect().Status(httptest.StatusOK).
+		Body().Equal("hello from the custom handler without following the naming guide")
+}
 ```

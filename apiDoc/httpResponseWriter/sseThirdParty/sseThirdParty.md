@@ -1,11 +1,13 @@
 # `SSE`第三方包使用
 ## 目录结构
 > 主目录`sseThirdParty`
+
 ```html
     —— main.go
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 

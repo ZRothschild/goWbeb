@@ -1,4 +1,4 @@
-//包main提供与letsencrypt.org的单行集成
+//包main提供与letsencrypt.org集成
 package main
 
 import (
@@ -19,5 +19,6 @@ func main() {
 	//注意：这不适用于这样的域名，
 	//使用真正的白名单域（或由空格分割的域）
 	//而不是非公开的电子邮件。
+	//app.Run(iris.AutoTLS("studyiris.com:443", "studyiris.com www.studyiris.com", "mail@example.com"))
 	app.Run(iris.AutoTLS(":443", "example.com", "mail@example.com"))
 }

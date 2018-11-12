@@ -1,18 +1,16 @@
 package main
 
 import (
-	"strings"
 	"github.com/kataras/iris"
-	"github.com/kataras/iris/hero"
 	"fmt"
 	"github.com/jmespath/go-jmespath"
 	"github.com/kataras/iris/context"
+	"github.com/kataras/iris/hero"
+	"strings"
 )
-
 /*
 $ go get github.com/jmespath/go-jmespath
 */
-
 func newApp() *iris.Application {
 	app := iris.New()
 	// PartyFunc 等同于 usersRouter := app.Party("/users")
@@ -40,7 +38,6 @@ func main() {
 /*
 开始使用路由
 */
-
 func registerUsersRoutes(usersRouter iris.Party) {
 	// GET: /users
 	usersRouter.Get("/", getAllUsersHandler)
@@ -66,9 +63,7 @@ func getAllUsersHandler(ctx iris.Context) {
 	}
 }
 
-/*
-开始使用  USERS路由组的子路由组
-*/
+//开始使用  USERS路由组的子路由组
 func registerUserRoutes(userRouter iris.Party) {
 	//为此子路由器创建一个新的依赖注入管理器
 	userDeps := hero.New()

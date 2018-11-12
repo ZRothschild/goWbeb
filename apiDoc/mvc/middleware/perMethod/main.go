@@ -7,44 +7,35 @@
 当我需要在某个地方注册中间件时，我更喜欢最后一个代码片段
 否则我也会选择第一个：
 
-```go
 // 1
 mvc.Configure(app.Party("/user"), func(m *mvc.Application) {
      m.Router.Use(cache.Handler(10*time.Second))
 })
-```
 
-```go
 // 2
 // same:
 userRouter := app.Party("/user")
 userRouter.Use(cache.Handler(10*time.Second))
 mvc.Configure(userRouter, ...)
-```
 
-```go
 // 3
-// same:
 userRouter := app.Party("/user", cache.Handler(10*time.Second))
 mvc.Configure(userRouter, ...)
-```
 
-```go
 // 4
 // same:
 app.PartyFunc("/user", func(r iris.Party){
     r.Use(cache.Handler(10*time.Second))
     mvc.Configure(r, ...)
 })
-```
+
 如果要将中间件用于单个路由，
 对于已由引擎注册的单个控制器方法
 而不是自定义`Handle`（你可以添加最后一个参数上的中间件）
 并且它不依赖于`Next Handler`来完成它的工作
 然后你只需在方法上调用它：
 
-```go
-var myMiddleware := myMiddleware.New(...) // this should return an iris/context.Handler
+var myMiddleware := myMiddleware.New(...) //返回一个iris/context.Handler类型
 
 type UserController struct{}
 func (c *UserController) GetSomething(ctx iris.Context) {
@@ -56,7 +47,6 @@ func (c *UserController) GetSomething(ctx iris.Context) {
     }
    //其他工作，这在这里执行是允许的
 }
-```
 
 最后，如果您想在特定方法上添加中间件
 这取决于下一个和整个链，那么你必须这样做

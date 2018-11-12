@@ -17,7 +17,7 @@ func main() {
 	go func() {
 		ch := make(chan os.Signal, 1)
 		signal.Notify(ch,
-			// kill -SIGINT XXXX or Ctrl+c
+			// kill -SIGINT XXXX 或 Ctrl+c
 			os.Interrupt,
 			syscall.SIGINT, // register that too, it should be ok
 			// os.Kill等同于syscall.Kill

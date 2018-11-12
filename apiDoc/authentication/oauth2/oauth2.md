@@ -16,6 +16,7 @@
 > 客户端使用获取的访问令牌访问存放在服务提供方上的受保护的资源。
 ## 目录结构
 > 主目录`basicauth`
+
 ```html
     —— main.go
     —— templates
@@ -24,6 +25,7 @@
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -393,13 +395,15 @@ type ProviderIndex struct {
 	ProvidersMap map[string]string
 }
 ```
-> index.html
+> `index.html`
+
 ```html
 {{range $key,$value:=.Providers}}
     <p><a href="/auth/{{$value}}">Log in with {{index $.ProvidersMap $value}}</a></p>
 {{end}}
 ```
-> user.html
+> `user.html`
+
 ```html
 <p><a href="/logout/{{.Provider}}">logout</a></p>
 <p>Name: {{.Name}} [{{.LastName}}, {{.FirstName}}]</p>

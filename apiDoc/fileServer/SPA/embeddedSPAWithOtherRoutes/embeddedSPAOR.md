@@ -1,6 +1,7 @@
 # 单页面应用(`embedded Single Page Application Other router`)
 ## 目录结构
-> 主目录`embeddedSinglePageApplicationWithOtherRoutes`
+> 主目录`embeddedSPAWithOtherRoutes`
+
 ```html
 —— main.go
 —— public
@@ -11,6 +12,7 @@
 ```
 ## 示例代码
 > `main.go`
+
 ```go
 package main
 
@@ -62,11 +64,13 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-> `public/app.js`
+> `/public/app.js`
+
 ```js
 window.alert("app.js loaded from \"/");
 ```
-> `public/index.html`
+> `/public/index.html`
+
 ```html
 <html>
 <head>
@@ -78,7 +82,8 @@ window.alert("app.js loaded from \"/");
 </body>
 </html>
 ```
-> `public/css/main.css`
+> `/public/css/main.css`
+
 ```css
 body {
     background-color: black;

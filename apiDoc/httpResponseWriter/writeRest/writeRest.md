@@ -1,11 +1,13 @@
 # 数据返回类型(`write rest`)
 ## 目录结构
 > 主目录`writeRest`
+
 ```html
     —— main.go
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 

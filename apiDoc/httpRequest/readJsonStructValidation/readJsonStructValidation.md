@@ -1,11 +1,13 @@
 # `iris`自定义结构体映射获取`json`格式请求数据并且自动验证
 ## 目录结构
 > 主目录`readJsonStructValidation`
+
 ```html
     —— main.go
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 //包main显示验证器（最新版本9）与Iris的集成。
 //您可以在以下网址找到更多这样的示例：https//github.com/go-playground/validator/blob/v9/_examples

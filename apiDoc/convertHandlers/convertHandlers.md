@@ -1,13 +1,14 @@
 # 原始请求转换成`context.Handler`
-
 ## 面向中间件 `negroni-like`
 ### 目录结构
 > 主目录`negroniLike`
+
 ```html
     —— main.go
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -54,11 +55,13 @@ func negronilikeTestMiddleware(w http.ResponseWriter, r *http.Request, next http
 ## 面向`net/Http`
 ### 目录结构
 > 主目录`nethttp`
+
 ```html
     —— main.go
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -97,11 +100,13 @@ func nativeTestMiddleware(w http.ResponseWriter, r *http.Request) {
 ### 修饰路由类型
 #### 目录结构
 > 主目录`realUsecaseRaven`
+
 ```html
     —— main.go
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -143,15 +148,16 @@ func main() {
 	app.Run(iris.Addr(":8080"))
 }
 ```
-
 ### 直接中间件类型 
 #### 目录结构
 > 主目录`writingMiddleware`
+
 ```html
     —— main.go
 ```
 #### 代码示例
 > `main.go`
+
 ```go
 package main
 

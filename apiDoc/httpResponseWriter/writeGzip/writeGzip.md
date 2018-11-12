@@ -1,11 +1,13 @@
 # 以`gzip`格式写入数据(`write gzip`)
 ## 目录结构
 > 主目录`writeGzip`
+
 ```html
     —— main.go
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 

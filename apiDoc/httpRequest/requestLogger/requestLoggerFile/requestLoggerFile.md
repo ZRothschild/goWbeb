@@ -1,7 +1,14 @@
 # 请求日志记录(文件)
+
+### 主目录
+> 文件名称`requestLoggerFile`
+
+```html
+    —— main.go
+```
 ## 代码示例
-### 主目录`requestLoggerFile`
-> 文件名称`main.go`
+> `main.go`
+
 ```go
 package main
 
@@ -95,9 +102,4 @@ func newRequestLogger() (h iris.Handler, close func() error) {
 	h = logger.New(c)
 	return
 }
-```
-## 目录结构
-> 主目录`requestLoggerFile`
-```html
-    —— main.go
 ```

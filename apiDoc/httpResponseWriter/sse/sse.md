@@ -20,12 +20,14 @@
 4. 基于`HTTP/HTTPS`协议，可以直接运行于现有的代理服务器和认证技术
 ## 目录结构
 > 主目录`sse`
+
 ```html
     —— main.go
     —— optional.sse.mini.js.html
 ```
 ## 代码示例
 > `main.go`
+****
 ```go
 // Package main显示如何通过代理通过SSE向客户端发送连续事件消息。
 //阅读详情：https://www.w3schools.com/htmL/html5_serversentevents.asp

@@ -1,9 +1,7 @@
 # View Models
-
 应该有视图模型，客户端将能够看到的结构
 
 示例:
-
 ```go
 import (
     "./datamodels"
@@ -19,10 +17,8 @@ func (m Movie) IsValid() bool {
     return m.ID > 0
 }
 ```
-
 Iris能够将任何自定义数据结构转换为HTTP响应调度程序，
 从理论上讲，如果真的有必要，可以使用以下内容;
-
 ```go
 //Dispatch实现`kataras/iris/mvc＃Result`接口。
 //将`Movie` 作为受控的http响应发送。
@@ -43,6 +39,5 @@ func (m Movie) Dispatch(ctx context.Context) {
     ctx.JSON(m, context.JSON{Indent: " "})
 }
 ```
-
-但是，我们将使用“datamodels”作为唯一的一个模型包，因为
+但是，我们将使用`datamodels`作为唯一的一个模型包，因为
 Movie结构不包含任何敏感数据，客户端可以查看其所有字段我们内部不需要任何额外的功能或验证。

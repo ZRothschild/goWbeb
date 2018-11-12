@@ -8,6 +8,7 @@
 4. 文件更改时自动编译。
 ## 目录结构
 > 主目录`herotemplate`
+
 ```html
     —— template
         —— index.html
@@ -18,6 +19,7 @@
 ```
 ## 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -65,6 +67,7 @@ func main() {
 }
 ```
 > `/template/index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -78,12 +81,14 @@ func main() {
 </html>
 ```
 > 文件名称`template/user.html`
+
 ```html
 <li>
     <%= user %>
 </li>
 ```
 > 文件名称`template/userlist.html`
+
 ```html
 <%: func UserList(userList []string, buffer *bytes.Buffer) %>
 <%~ "index.html" %>

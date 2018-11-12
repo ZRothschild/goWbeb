@@ -2,11 +2,13 @@
 ## 文件日志记录(`file logger`)
 ### 目录结构
 > 主目录`fileLogger`
+
 ```html
     —— main.go
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -55,6 +57,7 @@ func main() {
 ## 多语言切换(`i18n`)
 ### 目录结构
 > 主目录`i18n`
+
 ```html
     —— locales
         —— locale_el-GR.ini
@@ -65,6 +68,7 @@ func main() {
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -136,6 +140,7 @@ func main() {
 }
 ```
 > `main_test.go`(测试代码)
+
 ```go
 package main
 
@@ -181,25 +186,30 @@ func TestI18n(t *testing.T) {
 }
 ```
 > `/locales/locale_el-GR.ini`(语言包)
+
 ```ini
 hi = γεια, %s
 ```
 > `/locales/locale_en-US.ini`(语言包)
+
 ```ini
 hi = hello, %s
 ```
 > `/locales/locale_zh-CN.ini`(语言包)
+
 ```ini
 hi = 您好，%s
 ```
 ## 代码性能测试(`pprof`)
 ### 目录结构
 > 主目录`pprof`
+
 ```html
     —— main.go
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 //go中有pprof包来做代码的性能监控
 package main
@@ -221,6 +231,7 @@ func main() {
 ## 图形验证码(`recaptcha`)
 ### 目录结构
 > 主目录`recaptcha`
+
 ```html
     —— custom_form
         —— main.go
@@ -228,6 +239,7 @@ func main() {
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 
@@ -269,6 +281,7 @@ func main() {
 }
 ```
 > `/custom_form/main.go`
+
 ```go
 package main
 
@@ -311,11 +324,13 @@ func postComment(ctx iris.Context) {
 ## 异常回复(`recover`)
 ### 目录结构
 > 主目录`recover`
+
 ```html
     —— main.go
 ```
 ### 代码示例
 > `main.go`
+
 ```go
 package main
 

@@ -22,17 +22,17 @@ func main() {
 		//在`configureHost` func中。
 		app.Shutdown(ctx)
 	}()
-	// app.ConfigureHost(configureHost) - >或将“configureHost”作为`app.Addr`参数传递，结果相同。
+	// app.ConfigureHost(configureHost) - >或将configureHost作为`app.Addr`参数传递，结果相同。
 	//像往常一样启动服务器，唯一的区别就是
 	//我们正在添加第二个（可选）功能
 	//配置刚刚创建的主机管理。
-	// http：// localhost：8080
+	// http://localhost：8080
 	//等待10秒钟并检查您的终端
 	app.Run(iris.Addr(":8080", configureHost), iris.WithoutServerError(iris.ErrServerClosed))
 	/*
 	或者对于简单的情况，您可以使用：
-	iris.RegisterOnInterrupt用于CTRL/CMD+C和OS事件的全局捕获。
-	查看“graceful-shutdown”示例了解更多信息。
+	iris.RegisterOnInterrupt用于CTRL/CMD+C和OS事件(os.sign,os.kill)的全局捕获。
+	查看“gracefulShutdown”示例了解更多信息。
 	*/
 }
 
