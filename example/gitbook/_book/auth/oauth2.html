@@ -1,0 +1,1788 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IRIS Auth2 验证与授权 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../cache.html" />
+    
+    
+    <link rel="prev" href="basic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../auth.html">
+            
+                <a href="../auth.html">
+            
+                    
+                    IRIS 验证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    IRIS 基础验证与授权(Basic Auth)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="oauth2.html">
+            
+                <a href="oauth2.html">
+            
+                    
+                    IRIS Auth2 验证与授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cache.html">
+            
+                <a href="../cache.html">
+            
+                    
+                    IRIS 缓存使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cache/client.html">
+            
+                <a href="../cache/client.html">
+            
+                    
+                    IRIS 客户端缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cache/simple.html">
+            
+                <a href="../cache/simple.html">
+            
+                    
+                    IRIS 简单缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../conf.html">
+            
+                <a href="../conf.html">
+            
+                    
+                    IRIS 配置文件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../convertHandlers.html">
+            
+                <a href="../convertHandlers.html">
+            
+                    
+                    其他函数转换成 IRIS 处理函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../cookies.html">
+            
+                <a href="../cookies.html">
+            
+                    
+                    IRIS cookies 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../exper.html">
+            
+                <a href="../exper.html">
+            
+                    
+                    IRIS 试验性功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../exper/casbin.html">
+            
+                <a href="../exper/casbin.html">
+            
+                    
+                    IRIS 实现基于角色的HTTP权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../exper/cloudwatch.html">
+            
+                <a href="../exper/cloudwatch.html">
+            
+                    
+                    IRIS 简单的aws监听API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../exper/cors.html">
+            
+                <a href="../exper/cors.html">
+            
+                    
+                    IRIS CORS 跨域资源共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../exper/csrf.html">
+            
+                <a href="../exper/csrf.html">
+            
+                    
+                    IRIS csrf 防御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../exper/jwt.html">
+            
+                <a href="../exper/jwt.html">
+            
+                    
+                    IRIS JWT 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../exper/limitHandler.html">
+            
+                <a href="../exper/limitHandler.html">
+            
+                    
+                    IRIS 限制HTTP请求次数的中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../exper/newrelic.html">
+            
+                <a href="../exper/newrelic.html">
+            
+                    
+                    IRIS 跟踪事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../exper/prometheus.html">
+            
+                <a href="../exper/prometheus.html">
+            
+                    
+                    IRIS 系统和服务监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../exper/secure.html">
+            
+                <a href="../exper/secure.html">
+            
+                    
+                    IRIS 域名安全加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../fileServer.html">
+            
+                <a href="../fileServer.html">
+            
+                    
+                    IRIS 文件服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../fileServer/Basic.html">
+            
+                <a href="../fileServer/Basic.html">
+            
+                    
+                    IRIS 基础文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../fileServer/basicSPA.html">
+            
+                <a href="../fileServer/basicSPA.html">
+            
+                    
+                    IRIS 基础单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../fileServer/embeddedSPA.html">
+            
+                <a href="../fileServer/embeddedSPA.html">
+            
+                    
+                    IRIS embedded单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../fileServer/embeddedSPAOR.html">
+            
+                <a href="../fileServer/embeddedSPAOR.html">
+            
+                    
+                    IRIS embedded单页面文件服务与路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../fileServer/embeddingFiles.html">
+            
+                <a href="../fileServer/embeddingFiles.html">
+            
+                    
+                    IRIS embedding打包静态文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../fileServer/embeddingGziped.html">
+            
+                <a href="../fileServer/embeddingGziped.html">
+            
+                    
+                    IRIS embedding打包静态文件Gzip格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../fileServer/favicon.html">
+            
+                <a href="../fileServer/favicon.html">
+            
+                    
+                    IRIS favicon应用图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../fileServer/sendFiles.html">
+            
+                <a href="../fileServer/sendFiles.html">
+            
+                    
+                    IRIS 文件下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../helloWorld.html">
+            
+                <a href="../helloWorld.html">
+            
+                    
+                    IRIS hello world小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../hero.html">
+            
+                <a href="../hero.html">
+            
+                    
+                    IRIS hero依赖注入与结构体转化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hero/basic.html">
+            
+                <a href="../hero/basic.html">
+            
+                    
+                    IRIS hero基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../hero/overview.html">
+            
+                <a href="../hero/overview.html">
+            
+                    
+                    IRIS hero MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../hero/sessions.html">
+            
+                <a href="../hero/sessions.html">
+            
+                    
+                    IRIS hero sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../hero/smartContract.html">
+            
+                <a href="../hero/smartContract.html">
+            
+                    
+                    IRIS hero智能路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../httpListening.html">
+            
+                <a href="../httpListening.html">
+            
+                    
+                    IRIS http 服务监听
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../httpListen/customHttpserver.html">
+            
+                <a href="../httpListen/customHttpserver.html">
+            
+                    
+                    IRIS 自定义http服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../httpListen/customListener.html">
+            
+                <a href="../httpListen/customListener.html">
+            
+                    
+                    IRIS 自定义监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../httpListen/gracefulShutdown.html">
+            
+                <a href="../httpListen/gracefulShutdown.html">
+            
+                    
+                    IRIS 优雅关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../httpListen/irisConfAndHostConf.html">
+            
+                <a href="../httpListen/irisConfAndHostConf.html">
+            
+                    
+                    IRIS 配置与host配置获取关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../httpListen/listenAddr.html">
+            
+                <a href="../httpListen/listenAddr.html">
+            
+                    
+                    IRIS 地址服务器监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../httpListen/listenLetsencrypt.html">
+            
+                <a href="../httpListen/listenLetsencrypt.html">
+            
+                    
+                    IRIS 服务监听与letsencrypt加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../httpListen/listenTls.html">
+            
+                <a href="../httpListen/listenTls.html">
+            
+                    
+                    IRIS 服务监听启用安全传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../httpListen/listenUnix.html">
+            
+                <a href="../httpListen/listenUnix.html">
+            
+                    
+                    IRIS 使用.sock文件服务监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../httpListen/notifyOnShutdown.html">
+            
+                <a href="../httpListen/notifyOnShutdown.html">
+            
+                    
+                    IRIS 使用chan通知关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../httpRequest.html">
+            
+                <a href="../httpRequest.html">
+            
+                    
+                    IRIS http request请求数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../request/customViaUnmarshaler.html">
+            
+                <a href="../request/customViaUnmarshaler.html">
+            
+                    
+                    IRIS 前置自定义读取请求(实现实现Decode接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../request/extractReferer.html">
+            
+                <a href="../request/extractReferer.html">
+            
+                    
+                    IRIS 获取引用者(extract referer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../request/jsonStructValidation.html">
+            
+                <a href="../request/jsonStructValidation.html">
+            
+                    
+                    IRIS 请求数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../request/readCustomPerType.html">
+            
+                <a href="../request/readCustomPerType.html">
+            
+                    
+                    IRIS 前置自定义读取请求数据数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../request/readForm.html">
+            
+                <a href="../request/readForm.html">
+            
+                    
+                    IRIS 自定义结构体映射获取Form表单请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../request/readJson.html">
+            
+                <a href="../request/readJson.html">
+            
+                    
+                    IRIS 自定义结构体映射获取json格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../request/readXml.html">
+            
+                <a href="../request/readXml.html">
+            
+                    
+                    IRIS 自定义结构体映射获取xml格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../request/requestLogger.html">
+            
+                <a href="../request/requestLogger.html">
+            
+                    
+                    IRIS 请求日志记录配置(控制台)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../request/requestLoggerFile.html">
+            
+                <a href="../request/requestLoggerFile.html">
+            
+                    
+                    IRIS 请求日志记录(文件)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../request/uploadFile.html">
+            
+                <a href="../request/uploadFile.html">
+            
+                    
+                    IRIS 文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="../request/uploadFiles.html">
+            
+                <a href="../request/uploadFiles.html">
+            
+                    
+                    IRIS 多文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../reponseWriter.html">
+            
+                <a href="../reponseWriter.html">
+            
+                    
+                    IRIS http response模板,返回数据类型格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../responseWriter/herotemplate.html">
+            
+                <a href="../responseWriter/herotemplate.html">
+            
+                    
+                    IRIS hero模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../responseWriter/quickTemplate.html">
+            
+                <a href="../responseWriter/quickTemplate.html">
+            
+                    
+                    IRIS quicktemplate模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../responseWriter/sse.html">
+            
+                <a href="../responseWriter/sse.html">
+            
+                    
+                    IRIS sse应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../responseWriter/sseThirdParty.html">
+            
+                <a href="../responseWriter/sseThirdParty.html">
+            
+                    
+                    IRIS sse第三方应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../responseWriter/streamWriter.html">
+            
+                <a href="../responseWriter/streamWriter.html">
+            
+                    
+                    IRIS 流写入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../responseWriter/transactions.html">
+            
+                <a href="../responseWriter/transactions.html">
+            
+                    
+                    IRIS 请求事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../responseWriter/writeGzip.html">
+            
+                <a href="../responseWriter/writeGzip.html">
+            
+                    
+                    IRIS 以gzip格式写入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../responseWriter/writeRest.html">
+            
+                <a href="../responseWriter/writeRest.html">
+            
+                    
+                    IRIS 数据返回类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../miscellaneous.html">
+            
+                <a href="../miscellaneous.html">
+            
+                    
+                    IRIS 一些杂项例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../mvc.html">
+            
+                <a href="../mvc.html">
+            
+                    
+                    IRIS MVC示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../mvc/basic.html">
+            
+                <a href="../mvc/basic.html">
+            
+                    
+                    IRIS MVC基础示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../mvc/helloWorld.html">
+            
+                <a href="../mvc/helloWorld.html">
+            
+                    
+                    IRIS MVC hello world示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../mvc/login.html">
+            
+                <a href="../mvc/login.html">
+            
+                    
+                    IRIS MVC login示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../mvc/middleware.html">
+            
+                <a href="../mvc/middleware.html">
+            
+                    
+                    IRIS MVC中如何使用中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../mvc/overview.html">
+            
+                <a href="../mvc/overview.html">
+            
+                    
+                    IRIS MVC overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../mvc/perMethod.html">
+            
+                <a href="../mvc/perMethod.html">
+            
+                    
+                    IRIS MVC前置中间件使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../mvc/sessionController.html">
+            
+                <a href="../mvc/sessionController.html">
+            
+                    
+                    IRIS session控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../mvc/singleton.html">
+            
+                <a href="../mvc/singleton.html">
+            
+                    
+                    IRIS MVC 单例控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="../mvc/websocket.html">
+            
+                <a href="../mvc/websocket.html">
+            
+                    
+                    IRIS MVC websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="../mvc/withoutCtxNext.html">
+            
+                <a href="../mvc/withoutCtxNext.html">
+            
+                    
+                    IRIS MVC ExecutionRules实现中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../orm.html">
+            
+                <a href="../orm.html">
+            
+                    
+                    对象关系映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../orm/xorm.html">
+            
+                <a href="../orm/xorm.html">
+            
+                    
+                    IRIS xorm使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    IRIS overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../yaag.html">
+            
+                <a href="../yaag.html">
+            
+                    
+                    API文档生成器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../yaag/iris.html">
+            
+                <a href="../yaag/iris.html">
+            
+                    
+                    IRIS API文档生成器示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >IRIS Auth2 验证与授权</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="oauth20&#x8BA4;&#x8BC1;&#x6388;&#x6743;">OAuth2.0&#x8BA4;&#x8BC1;&#x6388;&#x6743;</h1>
+<h2 id="&#x8BA4;&#x8BC1;&#x6388;&#x6743;&#x8FC7;&#x7A0B;">&#x8BA4;&#x8BC1;&#x6388;&#x6743;&#x8FC7;&#x7A0B;</h2>
+<ul>
+<li>&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;(provider)&#xFF0C;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x6765;&#x5B58;&#x50A8;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5982;&#x7167;&#x7247;&#xFF0C;&#x89C6;&#x9891;&#xFF0C;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;</li>
+<li>&#x7528;&#x6237;&#xFF0C;&#x5B58;&#x653E;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x7684;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x62E5;&#x6709;&#x8005;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x8981;&#x8BBF;&#x95EE;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x8D44;&#x6E90;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x7F51;&#x7AD9;&#xFF0C;&#x5982;&#x63D0;&#x4F9B;&#x7167;&#x7247;&#x6253;&#x5370;&#x670D;&#x52A1;&#x7684;&#x7F51;&#x7AD9;&#x3002;&#x5728;&#x8BA4;&#x8BC1;&#x8FC7;&#x7A0B;&#x4E4B;&#x524D;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x5411;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x7533;&#x8BF7;&#x5BA2;&#x6237;&#x7AEF;&#x6807;&#x8BC6;</li>
+</ul>
+<p><strong>&#x4F7F;&#x7528;OAuth&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x548C;&#x6388;&#x6743;&#x7684;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x6240;&#x793A;:</strong></p>
+<blockquote>
+<p>&#x7528;&#x6237;&#x60F3;&#x64CD;&#x4F5C;&#x5B58;&#x653E;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x7684;&#x8D44;&#x6E90;&#x3002;
+&#x7528;&#x6237;&#x767B;&#x5F55;&#x5BA2;&#x6237;&#x7AEF;&#x5411;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x3002;
+&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8EAB;&#x4EFD;&#x540E;&#xFF0C;&#x6388;&#x4E88;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x3002;
+&#x5BA2;&#x6237;&#x7AEF;&#x83B7;&#x5F97;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x540E;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x5F15;&#x5BFC;&#x81F3;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x7684;&#x6388;&#x6743;&#x9875;&#x9762;&#x8BF7;&#x6C42;&#x7528;&#x6237;&#x6388;&#x6743;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x56DE;&#x8C03;&#x8FDE;&#x63A5;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x3002;
+&#x7528;&#x6237;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x7684;&#x7F51;&#x9875;&#x4E0A;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x6388;&#x6743;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x6240;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#x3002;
+&#x6388;&#x6743;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7F51;&#x9875;&#x3002;
+&#x5BA2;&#x6237;&#x7AEF;&#x6839;&#x636E;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x4ECE;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x90A3;&#x91CC;&#x83B7;&#x53D6;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;&#x3002;
+&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x6839;&#x636E;&#x4E34;&#x65F6;&#x4EE4;&#x724C;&#x548C;&#x7528;&#x6237;&#x7684;&#x6388;&#x6743;&#x60C5;&#x51B5;&#x6388;&#x4E88;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;&#x3002;
+&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x83B7;&#x53D6;&#x7684;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;&#x8BBF;&#x95EE;&#x5B58;&#x653E;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x4E0A;&#x7684;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>basicauth</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; templates
+        &#x2014;&#x2014; index.html
+        &#x2014;&#x2014; user.html
+</code></pre>
+<h2 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h2>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-comment">// &#x4EFB;&#x4F55;OAuth2&#xFF08;&#x751A;&#x81F3;&#x662F;&#x7EAF;golang/x/net/oauth2&#xFF09;&#x5305;</span>
+<span class="hljs-comment">// &#x53EF;&#x4EE5;&#x4E0E;iris&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;markbates&apos; goth&#xFF1A;</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5305;  go get github.com/markbates/goth/...</span>
+
+<span class="hljs-comment">// &#x8FD9;&#x4E2A;OAuth2&#x793A;&#x4F8B;&#x9002;&#x7528;&#x4E8E;&#x4F1A;&#x8BDD;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;</span>
+<span class="hljs-comment">// &#x9644;&#x52A0;&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;&#x5668;</span>
+<span class="hljs-comment">// &#x53EF;&#x9009;&#xFF1A;&#x4E3A;&#x4E86;&#x66F4;&#x5B89;&#x5168;&#x7684;&#x4F1A;&#x8BDD;&#x503C;&#xFF0C;</span>
+<span class="hljs-comment">// &#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;cookie&#x7F16;&#x7801;&#x5668;/&#x89E3;&#x7801;&#x5668;&#x3002;</span>
+<span class="hljs-comment">// &#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;gorilla&#x7684;securecookie&#xFF1A;</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5305; go get github.com/gorilla/securecookie</span>
+<span class="hljs-comment">// securecookie&#x7684;&#x793A;&#x4F8B;&#x53EF;&#x4EE5;&#x5728;&#x201C;sessions / securecookie&#x201D;&#x793A;&#x4F8B;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x627E;&#x5230;&#x3002;</span>
+
+<span class="hljs-comment">// &#x6CE8;&#x610F;:</span>
+<span class="hljs-comment">// &#x6574;&#x4E2A;&#x793A;&#x4F8B;&#x7531;markbates/goth/example/main.go&#x8F6C;&#x6362;&#x3002;</span>
+<span class="hljs-comment">// &#x5B83;&#x4F7F;&#x7528;&#x6211;&#x81EA;&#x5DF1;&#x7684;TWITTER&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x5373;&#x4F7F;&#x5BF9;&#x4E8E;localhost&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x3002;</span>
+<span class="hljs-comment">// &#x6211;&#x731C;&#x5176;&#x4ED6;&#x4E00;&#x5207;&#x90FD;&#x6309;&#x9884;&#x671F;&#x5DE5;&#x4F5C;&#xFF0C;goth&#x5E93;&#x793E;&#x533A;&#x62A5;&#x544A;&#x4E86;&#x6240;&#x6709;&#x9519;&#x8BEF;</span>
+<span class="hljs-comment">// &#x5728;&#x6211;&#x5199;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x65F6;&#x5019;&#x4FEE;&#x597D;&#x4E86;&#xFF0C;&#x73A9;&#x5F97;&#x5F00;&#x5FC3;&#xFF01;</span>
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;errors&quot;</span>
+    <span class="hljs-string">&quot;os&quot;</span>
+    <span class="hljs-string">&quot;sort&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/sessions&quot;</span>
+    <span class="hljs-string">&quot;github.com/gorilla/securecookie&quot;</span>  <span class="hljs-comment">//&#x53EF;&#x9009;&#xFF0C;&#x7528;&#x4E8E;seesion&#x7684;&#x7F16;&#x7801;&#x5668;/&#x89E3;&#x7801;&#x5668;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/amazon&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/auth0&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/bitbucket&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/box&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/dailymotion&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/deezer&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/digitalocean&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/discord&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/dropbox&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/facebook&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/fitbit&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/github&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/gitlab&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/gplus&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/heroku&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/instagram&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/intercom&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/lastfm&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/linkedin&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/meetup&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/onedrive&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/openidConnect&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/paypal&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/salesforce&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/slack&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/soundcloud&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/spotify&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/steam&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/stripe&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/twitch&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/twitter&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/uber&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/wepay&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/xero&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/yahoo&quot;</span>
+    <span class="hljs-string">&quot;github.com/markbates/goth/providers/yammer&quot;</span>
+)
+
+<span class="hljs-keyword">var</span> sessionsManager *sessions.Sessions
+
+<span class="hljs-keyword">func</span> init() {
+    <span class="hljs-comment">//&#x9644;&#x52A0;session&#x7BA1;&#x7406;&#x5668;</span>
+    cookieName := <span class="hljs-string">&quot;mycustomsessionid&quot;</span>
+    <span class="hljs-comment">// AES only supports key sizes of 16, 24 or 32 bytes.</span>
+    <span class="hljs-comment">// You either need to provide exactly that amount or you derive the key from what you type in.</span>
+    <span class="hljs-comment">// AES&#x4EC5;&#x652F;&#x6301;16,24&#x6216;32&#x5B57;&#x8282;&#x7684;&#x5BC6;&#x94A5;&#x5927;&#x5C0F;&#x3002;</span>
+    <span class="hljs-comment">// &#x60A8;&#x9700;&#x8981;&#x51C6;&#x786E;&#x63D0;&#x4F9B;&#x8BE5;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x4ECE;&#x60A8;&#x952E;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#x83B7;&#x53D6;&#x5BC6;&#x94A5;&#x3002;</span>
+    hashKey := []<span class="hljs-keyword">byte</span>(<span class="hljs-string">&quot;the-big-and-secret-fash-key-here&quot;</span>)
+    blockKey := []<span class="hljs-keyword">byte</span>(<span class="hljs-string">&quot;lot-secret-of-characters-big-too&quot;</span>)
+    secureCookie := securecookie.New(hashKey, blockKey)
+
+    sessionsManager = sessions.New(sessions.Config{
+        Cookie: cookieName,
+        Encode: secureCookie.Encode,
+        Decode: secureCookie.Decode,
+    })
+}
+<span class="hljs-comment">//&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x8F85;&#x52A9;&#x51FD;&#x6570;</span>
+
+<span class="hljs-comment">// GetProviderName&#x51FD;&#x6570;&#x662F;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x63D0;&#x4F9B;&#x8005;&#x540D;&#x79F0;&#xFF08;&#x6388;&#x6743;&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF09;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x3002;</span>
+<span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x4ECE;URL&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x63D0;&#x53D6;&#x6B64;&#x6388;&#x6743;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x3002;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x60A8;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#xFF0C; &#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x51FD;&#x6570;&#x5206;&#x914D;&#x7ED9;&#x8FD4;&#x56DE;&#x63D0;&#x4F9B;&#x8005;&#x7684;&#x53D8;&#x91CF;&#x7528;&#x60A8;&#x7684;&#x8BF7;&#x6C42;&#x7684;&#x540D;&#x79F0;&#x3002;</span>
+<span class="hljs-keyword">var</span> GetProviderName = <span class="hljs-keyword">func</span>(ctx iris.Context) (<span class="hljs-keyword">string</span>, error) {
+    <span class="hljs-comment">//&#x5C1D;&#x8BD5;&#x4ECE;&#x7684;url&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;provider</span>
+    <span class="hljs-keyword">if</span> p := ctx.URLParam(<span class="hljs-string">&quot;provider&quot;</span>); p != <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> p, <span class="hljs-literal">nil</span>
+    }
+    <span class="hljs-comment">//&#x5C1D;&#x8BD5;&#x4ECE;url PATH&#x53C2;&#x6570;&#x201C;{provider}&#x6216;&#xFF1A;provider&#x6216;{provider&#xFF1A;string}&#x6216;{provider&#xFF1A;alphabetical}&#x201D;&#x83B7;&#x53D6;&#x5B83;</span>
+    <span class="hljs-keyword">if</span> p := ctx.Params().Get(<span class="hljs-string">&quot;provider&quot;</span>); p != <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> p, <span class="hljs-literal">nil</span>
+    }
+    <span class="hljs-comment">//&#x5C1D;&#x8BD5;&#x4ECE;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x5B58;&#x50A8;&#x4E2D;&#x83B7;&#x53D6;&#x5B83;</span>
+    <span class="hljs-keyword">if</span> p := ctx.Values().GetString(<span class="hljs-string">&quot;provider&quot;</span>); p != <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> p, <span class="hljs-literal">nil</span>
+    }
+    <span class="hljs-comment">//&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x76F8;&#x5E94;&#x9519;&#x8BEF;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, errors.New(<span class="hljs-string">&quot;you must select a provider&quot;</span>)
+}
+<span class="hljs-comment">/*
+BeginAuthHandler&#x662F;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x8FC7;&#x7A0B;&#x7684;&#x4FBF;&#x6377;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;
+&#x5B83;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x4ECE;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;&#x7684;&#x540D;&#x79F0;&#x6388;&#x6743;&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF09;
+&#x4F5C;&#x4E3A;&#x201C;provider&#x201D;&#x6216;&#x201C;&#xFF1A;provider&#x201D;&#x3002;
+
+BeginAuthHandler&#x4F1A;&#x5C06;&#x7528;&#x6237;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7AEF;&#x70B9;&#x5BF9;&#x4E8E;&#x8BF7;&#x6C42;&#x7684;provider&#x3002;
+&#x8BF7;&#x53C2;&#x9605;https://github.com/markbates/goth/examples/main.go&#x4EE5;&#x67E5;&#x770B;&#x6B64;&#x64CD;&#x4F5C;&#x3002;
+*/</span>
+<span class="hljs-keyword">func</span> BeginAuthHandler(ctx iris.Context) {
+    url, err := GetAuthURL(ctx)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        ctx.StatusCode(iris.StatusBadRequest)
+        ctx.Writef(<span class="hljs-string">&quot;%v&quot;</span>, err)
+        <span class="hljs-keyword">return</span>
+    }
+    ctx.Redirect(url, iris.StatusTemporaryRedirect)
+}
+<span class="hljs-comment">/*
+GetAuthURL&#x4F7F;&#x7528;provided&#x7684;&#x8BF7;&#x6C42;&#x542F;&#x52A8;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x8FC7;&#x7A0B;&#x3002;
+&#x5B83;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E94;&#x8BE5;&#x7528;&#x4E8E;&#x5411;&#x7528;&#x6237;&#x53D1;&#x9001;&#x7684;URL&#x3002;
+
+&#x5B83;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x4ECE;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;provider&#x7684;&#x540D;&#x79F0;
+&#x4F5C;&#x4E3A;&#x201C;provider&#x201D;&#x6216;&#x201C;&#xFF1A;provider&#x201D;&#x6216;&#x6765;&#x81EA;&#x201C;provider&#x201D;&#x952E;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x503C;&#x3002;
+
+&#x6211;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;BeginAuthHandler&#x800C;&#x4E0D;&#x662F;&#x6267;&#x884C;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x6B65;&#x9AA4;&#xFF0C;&#x4F46;&#x90A3;&#x5B8C;&#x5168;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x3002;
+*/</span>
+<span class="hljs-keyword">func</span> GetAuthURL(ctx iris.Context) (<span class="hljs-keyword">string</span>, error) {
+    providerName, err := GetProviderName(ctx)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, err
+    }
+    provider, err := goth.GetProvider(providerName)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, err
+    }
+    sess, err := provider.BeginAuth(SetState(ctx))
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, err
+    }
+    url, err := sess.GetAuthURL()
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, err
+    }
+    session := sessionsManager.Start(ctx)
+    session.Set(providerName, sess.Marshal())
+    <span class="hljs-keyword">return</span> url, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-comment">// SetState&#x8BBE;&#x7F6E;&#x4E0E;&#x7ED9;&#x5B9A;&#x8BF7;&#x6C42;&#x5173;&#x8054;&#x7684;&#x72B6;&#x6001;&#x5B57;&#x7B26;&#x4E32;&#x3002;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x5B57;&#x7B26;&#x4E32;&#x4E0E;&#x8BF7;&#x6C42;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x5219;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x3002;</span>
+<span class="hljs-comment">// &#x6B64;&#x72B6;&#x6001;&#x53D1;&#x9001;&#x7ED9;provider&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x63D0;&#x53D6;&#x671F;&#x95F4;&#x68C0;&#x7D22;&#x56DE;&#x8C03;</span>
+<span class="hljs-keyword">var</span> SetState = <span class="hljs-keyword">func</span>(ctx iris.Context) <span class="hljs-keyword">string</span> {
+    state := ctx.URLParam(<span class="hljs-string">&quot;state&quot;</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(state) &gt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> state
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;state&quot;</span>
+}
+
+<span class="hljs-comment">// GetState&#x83B7;&#x53D6;&#x56DE;&#x8C03;&#x671F;&#x95F4;provider&#x7684;&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x3002;</span>
+<span class="hljs-comment">// &#x8FD9;&#x7528;&#x4E8E;&#x9632;&#x6B62;CSRF&#x653B;&#x51FB;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; http://tools.ietf.org/html/rfc6749#section-10.12</span>
+<span class="hljs-keyword">var</span> GetState = <span class="hljs-keyword">func</span>(ctx iris.Context) <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> ctx.URLParam(<span class="hljs-string">&quot;state&quot;</span>)
+}
+<span class="hljs-comment">/*
+CompleteUserAuth&#x5728;&#x9521;&#x4E0A;&#x505A;&#x4E86;&#x5B83;&#x6240;&#x8BF4;&#x7684;&#x3002; &#x5B83;&#x5B8C;&#x6210;&#x4E86;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x5904;&#x7406;&#x5E76;&#x4ECE;provider&#x5904;&#x83B7;&#x53D6;&#x6709;&#x5173;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x3002;
+
+&#x5B83;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x4ECE;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;provider&#x7684;&#x540D;&#x79F0;&#x4F5C;&#x4E3A;&#x201C;provider&#x201D;&#x6216;&#x201C;&#xFF1A;provider&#x201D;&#x3002;
+
+&#x8BF7;&#x53C2;&#x9605;https://github.com/markbates/goth/examples/main.go&#x4EE5;&#x67E5;&#x770B;&#x6B64;&#x64CD;&#x4F5C;&#x3002;
+*/</span>
+<span class="hljs-keyword">var</span> CompleteUserAuth = <span class="hljs-keyword">func</span>(ctx iris.Context) (goth.User, error) {
+    providerName, err := GetProviderName(ctx)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> goth.User{}, err
+    }
+    provider, err := goth.GetProvider(providerName)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> goth.User{}, err
+    }
+    session := sessionsManager.Start(ctx)
+    value := session.GetString(providerName)
+    <span class="hljs-keyword">if</span> value == <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> goth.User{}, errors.New(<span class="hljs-string">&quot;session value for &quot;</span> + providerName + <span class="hljs-string">&quot; not found&quot;</span>)
+    }
+    sess, err := provider.UnmarshalSession(value)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> goth.User{}, err
+    }
+    user, err := provider.FetchUser(sess)
+    <span class="hljs-keyword">if</span> err == <span class="hljs-literal">nil</span> {
+        <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x73B0;&#x6709;session&#x6570;&#x636E;&#x7684;&#x7528;&#x6237;</span>
+        <span class="hljs-keyword">return</span> user, err
+    }
+    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x65B0;&#x4EE4;&#x724C;&#x5E76;&#x91CD;&#x8BD5;&#x83B7;&#x53D6;</span>
+    _, err = sess.Authorize(provider, ctx.Request().URL.Query())
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> goth.User{}, err
+    }
+    session.Set(providerName, sess.Marshal())
+    <span class="hljs-keyword">return</span> provider.FetchUser(sess)
+}
+
+<span class="hljs-comment">// &#x6CE8;&#x9500;&#x4F7F;&#x7528;&#x6237;session</span>
+<span class="hljs-keyword">func</span> Logout(ctx iris.Context) error {
+    providerName, err := GetProviderName(ctx)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> err
+    }
+    session := sessionsManager.Start(ctx)
+    session.Delete(providerName)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-comment">//&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x52A9;&#x624B;&#x7684;&#x7ED3;&#x5C3E; &#x8BBE;&#x7F6E;key secret &#x4E0E;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</span>
+<span class="hljs-keyword">func</span> main() {
+    goth.UseProviders(
+        twitter.New(os.Getenv(<span class="hljs-string">&quot;TWITTER_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;TWITTER_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/twitter/callback&quot;</span>),
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x60A8;&#x60F3;&#x5728;Twitter&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;authenticate&#x800C;&#x4E0D;&#x662F;authorize&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x5B83;&#x3002;</span>
+        <span class="hljs-comment">// twitter.NewAuthenticate(os.Getenv(&quot;TWITTER_KEY&quot;), os.Getenv(&quot;TWITTER_SECRET&quot;), &quot;http://localhost:3000/auth/twitter/callback&quot;),</span>
+
+        facebook.New(os.Getenv(<span class="hljs-string">&quot;FACEBOOK_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;FACEBOOK_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/facebook/callback&quot;</span>),
+        fitbit.New(os.Getenv(<span class="hljs-string">&quot;FITBIT_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;FITBIT_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/fitbit/callback&quot;</span>),
+        gplus.New(os.Getenv(<span class="hljs-string">&quot;GPLUS_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;GPLUS_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/gplus/callback&quot;</span>),
+        github.New(os.Getenv(<span class="hljs-string">&quot;GITHUB_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;GITHUB_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/github/callback&quot;</span>),
+        spotify.New(os.Getenv(<span class="hljs-string">&quot;SPOTIFY_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;SPOTIFY_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/spotify/callback&quot;</span>),
+        linkedin.New(os.Getenv(<span class="hljs-string">&quot;LINKEDIN_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;LINKEDIN_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/linkedin/callback&quot;</span>),
+        lastfm.New(os.Getenv(<span class="hljs-string">&quot;LASTFM_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;LASTFM_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/lastfm/callback&quot;</span>),
+        twitch.New(os.Getenv(<span class="hljs-string">&quot;TWITCH_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;TWITCH_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/twitch/callback&quot;</span>),
+        dropbox.New(os.Getenv(<span class="hljs-string">&quot;DROPBOX_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;DROPBOX_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/dropbox/callback&quot;</span>),
+        digitalocean.New(os.Getenv(<span class="hljs-string">&quot;DIGITALOCEAN_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;DIGITALOCEAN_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/digitalocean/callback&quot;</span>, <span class="hljs-string">&quot;read&quot;</span>),
+        bitbucket.New(os.Getenv(<span class="hljs-string">&quot;BITBUCKET_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;BITBUCKET_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/bitbucket/callback&quot;</span>),
+        instagram.New(os.Getenv(<span class="hljs-string">&quot;INSTAGRAM_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;INSTAGRAM_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/instagram/callback&quot;</span>),
+        intercom.New(os.Getenv(<span class="hljs-string">&quot;INTERCOM_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;INTERCOM_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/intercom/callback&quot;</span>),
+        box.New(os.Getenv(<span class="hljs-string">&quot;BOX_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;BOX_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/box/callback&quot;</span>),
+        salesforce.New(os.Getenv(<span class="hljs-string">&quot;SALESFORCE_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;SALESFORCE_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/salesforce/callback&quot;</span>),
+        amazon.New(os.Getenv(<span class="hljs-string">&quot;AMAZON_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;AMAZON_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/amazon/callback&quot;</span>),
+        yammer.New(os.Getenv(<span class="hljs-string">&quot;YAMMER_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;YAMMER_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/yammer/callback&quot;</span>),
+        onedrive.New(os.Getenv(<span class="hljs-string">&quot;ONEDRIVE_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;ONEDRIVE_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/onedrive/callback&quot;</span>),
+
+        <span class="hljs-comment">//&#x5C06;localhost.com&#x6307;&#x5411;http&#xFF1A;//localhost&#xFF1A;3000/auth/yahoo/&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x56DE;&#x8C03;&#x4F5C;&#x4E3A;&#x96C5;&#x864E;</span>
+        <span class="hljs-comment">//&#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x91CD;&#x5B9A;&#x5411;uri&#x4E2D;&#x653E;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x7AEF;&#x53E3;</span>
+        yahoo.New(os.Getenv(<span class="hljs-string">&quot;YAHOO_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;YAHOO_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost.com&quot;</span>),
+        slack.New(os.Getenv(<span class="hljs-string">&quot;SLACK_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;SLACK_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/slack/callback&quot;</span>),
+        stripe.New(os.Getenv(<span class="hljs-string">&quot;STRIPE_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;STRIPE_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/stripe/callback&quot;</span>),
+        wepay.New(os.Getenv(<span class="hljs-string">&quot;WEPAY_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;WEPAY_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/wepay/callback&quot;</span>, <span class="hljs-string">&quot;view_user&quot;</span>),
+        <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;paypal production auth urls&#xFF0C;&#x8BF7;&#x5C06;PAYPAL_ENV = sandbox&#x8BBE;&#x7F6E;&#x4E3A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;</span>
+        <span class="hljs-comment">//&#x5728;&#x6C99;&#x76D2;&#x73AF;&#x5883;&#x4E2D;</span>
+        paypal.New(os.Getenv(<span class="hljs-string">&quot;PAYPAL_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;PAYPAL_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/paypal/callback&quot;</span>),
+        steam.New(os.Getenv(<span class="hljs-string">&quot;STEAM_KEY&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/steam/callback&quot;</span>),
+        heroku.New(os.Getenv(<span class="hljs-string">&quot;HEROKU_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;HEROKU_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/heroku/callback&quot;</span>),
+        uber.New(os.Getenv(<span class="hljs-string">&quot;UBER_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;UBER_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/uber/callback&quot;</span>),
+        soundcloud.New(os.Getenv(<span class="hljs-string">&quot;SOUNDCLOUD_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;SOUNDCLOUD_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/soundcloud/callback&quot;</span>),
+        gitlab.New(os.Getenv(<span class="hljs-string">&quot;GITLAB_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;GITLAB_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/gitlab/callback&quot;</span>),
+        dailymotion.New(os.Getenv(<span class="hljs-string">&quot;DAILYMOTION_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;DAILYMOTION_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/dailymotion/callback&quot;</span>, <span class="hljs-string">&quot;email&quot;</span>),
+        deezer.New(os.Getenv(<span class="hljs-string">&quot;DEEZER_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;DEEZER_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/deezer/callback&quot;</span>, <span class="hljs-string">&quot;email&quot;</span>),
+        discord.New(os.Getenv(<span class="hljs-string">&quot;DISCORD_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;DISCORD_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/discord/callback&quot;</span>, discord.ScopeIdentify, discord.ScopeEmail),
+        meetup.New(os.Getenv(<span class="hljs-string">&quot;MEETUP_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;MEETUP_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/meetup/callback&quot;</span>),
+
+        <span class="hljs-comment">// Auth0&#x4E3A;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x5206;&#x914D;&#x57DF;&#xFF0C;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x57DF;&#x4EE5;&#x4F7F;auth0&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;</span>
+        auth0.New(os.Getenv(<span class="hljs-string">&quot;AUTH0_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;AUTH0_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/auth0/callback&quot;</span>, os.Getenv(<span class="hljs-string">&quot;AUTH0_DOMAIN&quot;</span>)),
+        xero.New(os.Getenv(<span class="hljs-string">&quot;XERO_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;XERO_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/xero/callback&quot;</span>),
+    )
+    <span class="hljs-comment">// OpenID Connect&#x57FA;&#x4E8E;OpenID Connect&#x81EA;&#x52A8;&#x53D1;&#x73B0;URL&#xFF08;https://openid.net/specs/openid-connect-discovery-1_0-17.html&#xFF09;</span>
+    <span class="hljs-comment">//&#x56E0;&#x4E3A;OpenID Connect&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;&#x5728;New&#xFF08;&#xFF09;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x5B83;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x5E94;&#x8BE5;&#x5904;&#x7406;&#x6216;&#x5FFD;&#x7565;&#x7684;&#x9519;&#x8BEF;</span>
+    <span class="hljs-comment">//&#x6682;&#x65F6;&#x5FFD;&#x7565;&#x9519;&#x8BEF;</span>
+    openidConnect, _ := openidConnect.New(os.Getenv(<span class="hljs-string">&quot;OPENID_CONNECT_KEY&quot;</span>), os.Getenv(<span class="hljs-string">&quot;OPENID_CONNECT_SECRET&quot;</span>), <span class="hljs-string">&quot;http://localhost:3000/auth/openid-connect/callback&quot;</span>, os.Getenv(<span class="hljs-string">&quot;OPENID_CONNECT_DISCOVERY_URL&quot;</span>))
+    <span class="hljs-keyword">if</span> openidConnect != <span class="hljs-literal">nil</span> {
+        goth.UseProviders(openidConnect)
+    }
+    m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">string</span>)
+    m[<span class="hljs-string">&quot;amazon&quot;</span>] = <span class="hljs-string">&quot;Amazon&quot;</span>
+    m[<span class="hljs-string">&quot;bitbucket&quot;</span>] = <span class="hljs-string">&quot;Bitbucket&quot;</span>
+    m[<span class="hljs-string">&quot;box&quot;</span>] = <span class="hljs-string">&quot;Box&quot;</span>
+    m[<span class="hljs-string">&quot;dailymotion&quot;</span>] = <span class="hljs-string">&quot;Dailymotion&quot;</span>
+    m[<span class="hljs-string">&quot;deezer&quot;</span>] = <span class="hljs-string">&quot;Deezer&quot;</span>
+    m[<span class="hljs-string">&quot;digitalocean&quot;</span>] = <span class="hljs-string">&quot;Digital Ocean&quot;</span>
+    m[<span class="hljs-string">&quot;discord&quot;</span>] = <span class="hljs-string">&quot;Discord&quot;</span>
+    m[<span class="hljs-string">&quot;dropbox&quot;</span>] = <span class="hljs-string">&quot;Dropbox&quot;</span>
+    m[<span class="hljs-string">&quot;facebook&quot;</span>] = <span class="hljs-string">&quot;Facebook&quot;</span>
+    m[<span class="hljs-string">&quot;fitbit&quot;</span>] = <span class="hljs-string">&quot;Fitbit&quot;</span>
+    m[<span class="hljs-string">&quot;github&quot;</span>] = <span class="hljs-string">&quot;Github&quot;</span>
+    m[<span class="hljs-string">&quot;gitlab&quot;</span>] = <span class="hljs-string">&quot;Gitlab&quot;</span>
+    m[<span class="hljs-string">&quot;soundcloud&quot;</span>] = <span class="hljs-string">&quot;SoundCloud&quot;</span>
+    m[<span class="hljs-string">&quot;spotify&quot;</span>] = <span class="hljs-string">&quot;Spotify&quot;</span>
+    m[<span class="hljs-string">&quot;steam&quot;</span>] = <span class="hljs-string">&quot;Steam&quot;</span>
+    m[<span class="hljs-string">&quot;stripe&quot;</span>] = <span class="hljs-string">&quot;Stripe&quot;</span>
+    m[<span class="hljs-string">&quot;twitch&quot;</span>] = <span class="hljs-string">&quot;Twitch&quot;</span>
+    m[<span class="hljs-string">&quot;uber&quot;</span>] = <span class="hljs-string">&quot;Uber&quot;</span>
+    m[<span class="hljs-string">&quot;wepay&quot;</span>] = <span class="hljs-string">&quot;Wepay&quot;</span>
+    m[<span class="hljs-string">&quot;yahoo&quot;</span>] = <span class="hljs-string">&quot;Yahoo&quot;</span>
+    m[<span class="hljs-string">&quot;yammer&quot;</span>] = <span class="hljs-string">&quot;Yammer&quot;</span>
+    m[<span class="hljs-string">&quot;gplus&quot;</span>] = <span class="hljs-string">&quot;Google Plus&quot;</span>
+    m[<span class="hljs-string">&quot;heroku&quot;</span>] = <span class="hljs-string">&quot;Heroku&quot;</span>
+    m[<span class="hljs-string">&quot;instagram&quot;</span>] = <span class="hljs-string">&quot;Instagram&quot;</span>
+    m[<span class="hljs-string">&quot;intercom&quot;</span>] = <span class="hljs-string">&quot;Intercom&quot;</span>
+    m[<span class="hljs-string">&quot;lastfm&quot;</span>] = <span class="hljs-string">&quot;Last FM&quot;</span>
+    m[<span class="hljs-string">&quot;linkedin&quot;</span>] = <span class="hljs-string">&quot;Linkedin&quot;</span>
+    m[<span class="hljs-string">&quot;onedrive&quot;</span>] = <span class="hljs-string">&quot;Onedrive&quot;</span>
+    m[<span class="hljs-string">&quot;paypal&quot;</span>] = <span class="hljs-string">&quot;Paypal&quot;</span>
+    m[<span class="hljs-string">&quot;twitter&quot;</span>] = <span class="hljs-string">&quot;Twitter&quot;</span>
+    m[<span class="hljs-string">&quot;salesforce&quot;</span>] = <span class="hljs-string">&quot;Salesforce&quot;</span>
+    m[<span class="hljs-string">&quot;slack&quot;</span>] = <span class="hljs-string">&quot;Slack&quot;</span>
+    m[<span class="hljs-string">&quot;meetup&quot;</span>] = <span class="hljs-string">&quot;Meetup.com&quot;</span>
+    m[<span class="hljs-string">&quot;auth0&quot;</span>] = <span class="hljs-string">&quot;Auth0&quot;</span>
+    m[<span class="hljs-string">&quot;openid-connect&quot;</span>] = <span class="hljs-string">&quot;OpenID Connect&quot;</span>
+    m[<span class="hljs-string">&quot;xero&quot;</span>] = <span class="hljs-string">&quot;Xero&quot;</span>
+    <span class="hljs-keyword">var</span> keys []<span class="hljs-keyword">string</span>
+    <span class="hljs-keyword">for</span> k := <span class="hljs-keyword">range</span> m {
+        keys = <span class="hljs-built_in">append</span>(keys, k)
+    }
+    sort.Strings(keys)
+    providerIndex := &amp;ProviderIndex{Providers: keys, ProvidersMap: m}
+    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;</span>
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;sessions</span>
+    <span class="hljs-comment">//&#x5E76;&#x4E3A;&#x5C55;&#x793A;&#x8BBE;&#x7F6E;&#x8DEF;&#x7531;&#x5668;</span>
+    app := iris.New()
+    <span class="hljs-comment">//&#x9644;&#x52A0;&#x5E76;&#x6784;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x677F;</span>
+    app.RegisterView(iris.HTML(<span class="hljs-string">&quot;./templates&quot;</span>, <span class="hljs-string">&quot;.html&quot;</span>))
+    <span class="hljs-comment">//&#x542F;&#x52A8;&#x8DEF;&#x7531;&#x5668;</span>
+    app.Get(<span class="hljs-string">&quot;/auth/{provider}/callback&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        user, err := CompleteUserAuth(ctx)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            ctx.StatusCode(iris.StatusInternalServerError)
+            ctx.Writef(<span class="hljs-string">&quot;%v&quot;</span>, err)
+            <span class="hljs-keyword">return</span>
+        }
+        ctx.ViewData(<span class="hljs-string">&quot;&quot;</span>, user)
+        <span class="hljs-keyword">if</span> err := ctx.View(<span class="hljs-string">&quot;user.html&quot;</span>); err != <span class="hljs-literal">nil</span> {
+            ctx.Writef(<span class="hljs-string">&quot;%v&quot;</span>, err)
+        }
+    })
+    app.Get(<span class="hljs-string">&quot;/logout/{provider}&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        Logout(ctx)
+        ctx.Redirect(<span class="hljs-string">&quot;/&quot;</span>, iris.StatusTemporaryRedirect)
+    })
+    app.Get(<span class="hljs-string">&quot;/auth/{provider}&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        <span class="hljs-comment">//&#x5C1D;&#x8BD5;&#x8BA9;&#x7528;&#x6237;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;</span>
+        <span class="hljs-keyword">if</span> gothUser, err := CompleteUserAuth(ctx); err == <span class="hljs-literal">nil</span> {
+            ctx.ViewData(<span class="hljs-string">&quot;&quot;</span>, gothUser)
+            <span class="hljs-keyword">if</span> err := ctx.View(<span class="hljs-string">&quot;user.html&quot;</span>); err != <span class="hljs-literal">nil</span> {
+                ctx.Writef(<span class="hljs-string">&quot;%v&quot;</span>, err)
+            }
+        } <span class="hljs-keyword">else</span> {
+            BeginAuthHandler(ctx)
+        }
+    })
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.ViewData(<span class="hljs-string">&quot;&quot;</span>, providerIndex)
+        <span class="hljs-keyword">if</span> err := ctx.View(<span class="hljs-string">&quot;index.html&quot;</span>); err != <span class="hljs-literal">nil</span> {
+            ctx.Writef(<span class="hljs-string">&quot;%v&quot;</span>, err)
+        }
+    })
+    <span class="hljs-comment">// http://localhost:3000</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;localhost:3000&quot;</span>))
+}
+
+<span class="hljs-keyword">type</span> ProviderIndex <span class="hljs-keyword">struct</span> {
+    Providers    []<span class="hljs-keyword">string</span>
+    ProvidersMap <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">string</span>
+}
+</code></pre>
+<blockquote>
+<p><code>index.html</code></p>
+</blockquote>
+<pre><code class="lang-html">
+{{range $key, $value:=.Providers}}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/auth/{{ $value }}&quot;</span>&gt;</span>Log in with {{index $.ProvidersMap $value}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{{end}}
+</code></pre>
+<blockquote>
+<p><code>user.html</code></p>
+</blockquote>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/logout/{{ .Provider }}&quot;</span>&gt;</span>logout<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Name: {{.Name}} [{{.LastName}}, {{.FirstName}}]<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Email: {{.Email}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>NickName: {{.NickName}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Location: {{.Location}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>AvatarURL: {{.AvatarURL}} <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;{{ .AvatarURL }}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Description: {{.Description}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>UserID: {{.UserID}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>AccessToken: {{.AccessToken}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>ExpiresAt: {{.ExpiresAt}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>RefreshToken: {{.RefreshToken}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h3>
+<ol>
+<li>&#x53BB;Github&#x8BBE;&#x7F6E;&#x7B2C;&#x4E09;&#x65B9;&#x6388;&#x6743;&#x767B;&#x5F55;&#xFF0C;&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#x8DEF;&#x5F84;&#xFF0C;&#x628A;key,secret&#x586B;&#x5165;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;</li>
+<li>&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x9009;&#x62E9;github &#x5373;&#x53EF;&#x770B;&#x5230;&#x60F3;&#x8981;&#x7684;&#x6548;&#x679C;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="basic.html" class="navigation navigation-prev " aria-label="Previous page: IRIS 基础验证与授权(Basic Auth)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../cache.html" class="navigation navigation-next " aria-label="Next page: IRIS 缓存使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IRIS Auth2 验证与授权","level":"1.2.2","depth":2,"next":{"title":"IRIS 缓存使用","level":"1.3","depth":1,"path":"cache.md","ref":"cache.md","articles":[{"title":"IRIS 客户端缓存","level":"1.3.1","depth":2,"path":"cache/client.md","ref":"cache/client.md","articles":[]},{"title":"IRIS 简单缓存","level":"1.3.2","depth":2,"path":"cache/simple.md","ref":"cache/simple.md","articles":[]}]},"previous":{"title":"IRIS 基础验证与授权(Basic Auth)","level":"1.2.1","depth":2,"path":"auth/basic.md","ref":"auth/basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"auth/oauth2.md","mtime":"2018-11-14T07:15:10.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T10:54:26.583Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1642 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IRIS 配置文件类型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="convertHandlers.html" />
+    
+    
+    <link rel="prev" href="cache/simple.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    文档介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="auth.html">
+            
+                <a href="auth.html">
+            
+                    
+                    IRIS 验证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="auth/basic.html">
+            
+                <a href="auth/basic.html">
+            
+                    
+                    IRIS 基础验证与授权(Basic Auth)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="auth/oauth2.html">
+            
+                <a href="auth/oauth2.html">
+            
+                    
+                    IRIS Auth2 验证与授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    IRIS 缓存使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="cache/client.html">
+            
+                <a href="cache/client.html">
+            
+                    
+                    IRIS 客户端缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="cache/simple.html">
+            
+                <a href="cache/simple.html">
+            
+                    
+                    IRIS 简单缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="conf.html">
+            
+                <a href="conf.html">
+            
+                    
+                    IRIS 配置文件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="convertHandlers.html">
+            
+                <a href="convertHandlers.html">
+            
+                    
+                    其他函数转换成 IRIS 处理函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="cookies.html">
+            
+                <a href="cookies.html">
+            
+                    
+                    IRIS cookies 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="exper.html">
+            
+                <a href="exper.html">
+            
+                    
+                    IRIS 试验性功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="exper/casbin.html">
+            
+                <a href="exper/casbin.html">
+            
+                    
+                    IRIS 实现基于角色的HTTP权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="exper/cloudwatch.html">
+            
+                <a href="exper/cloudwatch.html">
+            
+                    
+                    IRIS 简单的aws监听API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="exper/cors.html">
+            
+                <a href="exper/cors.html">
+            
+                    
+                    IRIS CORS 跨域资源共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="exper/csrf.html">
+            
+                <a href="exper/csrf.html">
+            
+                    
+                    IRIS csrf 防御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="exper/jwt.html">
+            
+                <a href="exper/jwt.html">
+            
+                    
+                    IRIS JWT 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="exper/limitHandler.html">
+            
+                <a href="exper/limitHandler.html">
+            
+                    
+                    IRIS 限制HTTP请求次数的中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="exper/newrelic.html">
+            
+                <a href="exper/newrelic.html">
+            
+                    
+                    IRIS 跟踪事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="exper/prometheus.html">
+            
+                <a href="exper/prometheus.html">
+            
+                    
+                    IRIS 系统和服务监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="exper/secure.html">
+            
+                <a href="exper/secure.html">
+            
+                    
+                    IRIS 域名安全加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="fileServer.html">
+            
+                <a href="fileServer.html">
+            
+                    
+                    IRIS 文件服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="fileServer/Basic.html">
+            
+                <a href="fileServer/Basic.html">
+            
+                    
+                    IRIS 基础文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="fileServer/basicSPA.html">
+            
+                <a href="fileServer/basicSPA.html">
+            
+                    
+                    IRIS 基础单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="fileServer/embeddedSPA.html">
+            
+                <a href="fileServer/embeddedSPA.html">
+            
+                    
+                    IRIS embedded单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="fileServer/embeddedSPAOR.html">
+            
+                <a href="fileServer/embeddedSPAOR.html">
+            
+                    
+                    IRIS embedded单页面文件服务与路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="fileServer/embeddingFiles.html">
+            
+                <a href="fileServer/embeddingFiles.html">
+            
+                    
+                    IRIS embedding打包静态文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="fileServer/embeddingGziped.html">
+            
+                <a href="fileServer/embeddingGziped.html">
+            
+                    
+                    IRIS embedding打包静态文件Gzip格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="fileServer/favicon.html">
+            
+                <a href="fileServer/favicon.html">
+            
+                    
+                    IRIS favicon应用图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="fileServer/sendFiles.html">
+            
+                <a href="fileServer/sendFiles.html">
+            
+                    
+                    IRIS 文件下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="helloWorld.html">
+            
+                <a href="helloWorld.html">
+            
+                    
+                    IRIS hello world小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hero.html">
+            
+                <a href="hero.html">
+            
+                    
+                    IRIS hero依赖注入与结构体转化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="hero/basic.html">
+            
+                <a href="hero/basic.html">
+            
+                    
+                    IRIS hero基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="hero/overview.html">
+            
+                <a href="hero/overview.html">
+            
+                    
+                    IRIS hero MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="hero/sessions.html">
+            
+                <a href="hero/sessions.html">
+            
+                    
+                    IRIS hero sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="hero/smartContract.html">
+            
+                <a href="hero/smartContract.html">
+            
+                    
+                    IRIS hero智能路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="httpListening.html">
+            
+                <a href="httpListening.html">
+            
+                    
+                    IRIS http 服务监听
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="httpListen/customHttpserver.html">
+            
+                <a href="httpListen/customHttpserver.html">
+            
+                    
+                    IRIS 自定义http服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="httpListen/customListener.html">
+            
+                <a href="httpListen/customListener.html">
+            
+                    
+                    IRIS 自定义监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="httpListen/gracefulShutdown.html">
+            
+                <a href="httpListen/gracefulShutdown.html">
+            
+                    
+                    IRIS 优雅关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="httpListen/irisConfAndHostConf.html">
+            
+                <a href="httpListen/irisConfAndHostConf.html">
+            
+                    
+                    IRIS 配置与host配置获取关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="httpListen/listenAddr.html">
+            
+                <a href="httpListen/listenAddr.html">
+            
+                    
+                    IRIS 地址服务器监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="httpListen/listenLetsencrypt.html">
+            
+                <a href="httpListen/listenLetsencrypt.html">
+            
+                    
+                    IRIS 服务监听与letsencrypt加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="httpListen/listenTls.html">
+            
+                <a href="httpListen/listenTls.html">
+            
+                    
+                    IRIS 服务监听启用安全传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="httpListen/listenUnix.html">
+            
+                <a href="httpListen/listenUnix.html">
+            
+                    
+                    IRIS 使用.sock文件服务监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="httpListen/notifyOnShutdown.html">
+            
+                <a href="httpListen/notifyOnShutdown.html">
+            
+                    
+                    IRIS 使用chan通知关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="httpRequest.html">
+            
+                <a href="httpRequest.html">
+            
+                    
+                    IRIS http request请求数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="request/customViaUnmarshaler.html">
+            
+                <a href="request/customViaUnmarshaler.html">
+            
+                    
+                    IRIS 前置自定义读取请求(实现实现Decode接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="request/extractReferer.html">
+            
+                <a href="request/extractReferer.html">
+            
+                    
+                    IRIS 获取引用者(extract referer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="request/jsonStructValidation.html">
+            
+                <a href="request/jsonStructValidation.html">
+            
+                    
+                    IRIS 请求数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="request/readCustomPerType.html">
+            
+                <a href="request/readCustomPerType.html">
+            
+                    
+                    IRIS 前置自定义读取请求数据数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="request/readForm.html">
+            
+                <a href="request/readForm.html">
+            
+                    
+                    IRIS 自定义结构体映射获取Form表单请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="request/readJson.html">
+            
+                <a href="request/readJson.html">
+            
+                    
+                    IRIS 自定义结构体映射获取json格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="request/readXml.html">
+            
+                <a href="request/readXml.html">
+            
+                    
+                    IRIS 自定义结构体映射获取xml格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="request/requestLogger.html">
+            
+                <a href="request/requestLogger.html">
+            
+                    
+                    IRIS 请求日志记录配置(控制台)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="request/requestLoggerFile.html">
+            
+                <a href="request/requestLoggerFile.html">
+            
+                    
+                    IRIS 请求日志记录(文件)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="request/uploadFile.html">
+            
+                <a href="request/uploadFile.html">
+            
+                    
+                    IRIS 文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="request/uploadFiles.html">
+            
+                <a href="request/uploadFiles.html">
+            
+                    
+                    IRIS 多文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="reponseWriter.html">
+            
+                <a href="reponseWriter.html">
+            
+                    
+                    IRIS http response模板,返回数据类型格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="responseWriter/herotemplate.html">
+            
+                <a href="responseWriter/herotemplate.html">
+            
+                    
+                    IRIS hero模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="responseWriter/quickTemplate.html">
+            
+                <a href="responseWriter/quickTemplate.html">
+            
+                    
+                    IRIS quicktemplate模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="responseWriter/sse.html">
+            
+                <a href="responseWriter/sse.html">
+            
+                    
+                    IRIS sse应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="responseWriter/sseThirdParty.html">
+            
+                <a href="responseWriter/sseThirdParty.html">
+            
+                    
+                    IRIS sse第三方应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="responseWriter/streamWriter.html">
+            
+                <a href="responseWriter/streamWriter.html">
+            
+                    
+                    IRIS 流写入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="responseWriter/transactions.html">
+            
+                <a href="responseWriter/transactions.html">
+            
+                    
+                    IRIS 请求事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="responseWriter/writeGzip.html">
+            
+                <a href="responseWriter/writeGzip.html">
+            
+                    
+                    IRIS 以gzip格式写入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="responseWriter/writeRest.html">
+            
+                <a href="responseWriter/writeRest.html">
+            
+                    
+                    IRIS 数据返回类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="miscellaneous.html">
+            
+                <a href="miscellaneous.html">
+            
+                    
+                    IRIS 一些杂项例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="mvc.html">
+            
+                <a href="mvc.html">
+            
+                    
+                    IRIS MVC示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="mvc/basic.html">
+            
+                <a href="mvc/basic.html">
+            
+                    
+                    IRIS MVC基础示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="mvc/helloWorld.html">
+            
+                <a href="mvc/helloWorld.html">
+            
+                    
+                    IRIS MVC hello world示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="mvc/login.html">
+            
+                <a href="mvc/login.html">
+            
+                    
+                    IRIS MVC login示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="mvc/middleware.html">
+            
+                <a href="mvc/middleware.html">
+            
+                    
+                    IRIS MVC中如何使用中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="mvc/overview.html">
+            
+                <a href="mvc/overview.html">
+            
+                    
+                    IRIS MVC overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="mvc/perMethod.html">
+            
+                <a href="mvc/perMethod.html">
+            
+                    
+                    IRIS MVC前置中间件使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="mvc/sessionController.html">
+            
+                <a href="mvc/sessionController.html">
+            
+                    
+                    IRIS session控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="mvc/singleton.html">
+            
+                <a href="mvc/singleton.html">
+            
+                    
+                    IRIS MVC 单例控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="mvc/websocket.html">
+            
+                <a href="mvc/websocket.html">
+            
+                    
+                    IRIS MVC websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="mvc/withoutCtxNext.html">
+            
+                <a href="mvc/withoutCtxNext.html">
+            
+                    
+                    IRIS MVC ExecutionRules实现中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="orm.html">
+            
+                <a href="orm.html">
+            
+                    
+                    对象关系映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="orm/xorm.html">
+            
+                <a href="orm/xorm.html">
+            
+                    
+                    IRIS xorm使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    IRIS overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="yaag.html">
+            
+                <a href="yaag.html">
+            
+                    
+                    API文档生成器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="yaag/iris.html">
+            
+                <a href="yaag/iris.html">
+            
+                    
+                    IRIS API文档生成器示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >IRIS 配置文件类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x914D;&#x7F6E;&#x7EC4;">&#x914D;&#x7F6E;&#x7EC4;</h1>
+<p>&#x6240;&#x6709;&#x914D;&#x7F6E;&#x7684;&#x503C;&#x90FD;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6240;&#x6709;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>iris.New()</code></p>
+<p>&#x5728;<code>listen</code>&#x51FD;&#x6570;&#x4E4B;&#x524D;&#x914D;&#x7F6E;&#x662F;&#x6CA1;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x5728;<code>Application&#xFF03;Run / 2</code>&#xFF08;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF09;&#x4E0A;&#x4F20;&#x9012;&#x5B83;</p>
+<p><code>Iris</code>&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>Configurator</code>&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;<code>func(* iris.Application)</code>&#xFF0C;&#x4EFB;&#x4F55;&#x51FD;&#x6570;
+&#x5B8C;&#x6210;&#x6B64;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5728;<code>Application&#xFF03;Configure</code>&#x6216;<code>Application&#xFF03;Run/2</code>&#x4E2D;&#x4F20;&#x9012;&#x3002;</p>
+<p><code>Application#ConfigurationReadOnly()</code>&#x8FD4;&#x56DE;&#x914D;&#x7F6E;&#x503C;.</p>
+<h2 id="&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x7C7B;&#x578B;&#x4ECB;&#x7ECD;">&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x7C7B;&#x578B;&#x4ECB;&#x7ECD;</h2>
+<h3 id="1&#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;">1.&#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>fromConfigurationStructure</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; main.go
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.HTML(<span class="hljs-string">&quot;&lt;b&gt;Hello!&lt;/b&gt;&quot;</span>)
+    })
+    <span class="hljs-comment">// [...]</span>
+    <span class="hljs-comment">//&#x5F53;&#x60A8;&#x60F3;&#x8981;&#x4FEE;&#x6539;&#x6574;&#x4E2A;&#x914D;&#x7F6E;&#x65F6;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x3002;</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>), iris.WithConfiguration(iris.Configuration{ <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;:</span>
+        DisableStartupLog:                 <span class="hljs-literal">false</span>,
+        DisableInterruptHandler:           <span class="hljs-literal">false</span>,
+        DisablePathCorrection:             <span class="hljs-literal">false</span>,
+        EnablePathEscape:                  <span class="hljs-literal">false</span>,
+        FireMethodNotAllowed:              <span class="hljs-literal">false</span>,
+        DisableBodyConsumptionOnUnmarshal: <span class="hljs-literal">false</span>,
+        DisableAutoFireStatusCode:         <span class="hljs-literal">false</span>,
+        TimeFormat:                        <span class="hljs-string">&quot;Mon, 02 Jan 2006 15:04:05 GMT&quot;</span>,
+        Charset:                           <span class="hljs-string">&quot;UTF-8&quot;</span>,
+    }))
+    <span class="hljs-comment">// &#x6216;&#x5728;run&#x4E4B;&#x524D;:</span>
+    <span class="hljs-comment">// app.Configure(iris.WithConfiguration(iris.Configuration{...}))</span>
+}
+</code></pre>
+<h3 id="2&#x901A;&#x8FC7;toml&#x52A0;&#x8F7D;&#x914D;&#x7F6E;">2.&#x901A;&#x8FC7;toml&#x52A0;&#x8F7D;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>fromTomlFile</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; configs
+        &#x2014;&#x2014; iris.tml
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.HTML(<span class="hljs-string">&quot;&lt;b&gt;Hello!&lt;/b&gt;&quot;</span>)
+    })
+    <span class="hljs-comment">// [...]</span>
+    <span class="hljs-comment">//&#x5F53;&#x4F60;&#x6709;&#x4E24;&#x4E2A;&#x914D;&#x7F6E;&#x65F6;&#x5F88;&#x597D;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x751F;&#x4EA7;&#x7528;&#x9014;&#x3002;</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>), iris.WithConfiguration(iris.TOML(<span class="hljs-string">&quot;./configs/iris.tml&quot;</span>)))
+    <span class="hljs-comment">// &#x4F1A;run&#x4E4B;&#x524D;&#x52A0;&#x8F7D;:</span>
+    <span class="hljs-comment">// app.Configure(iris.WithConfiguration(iris.TOML(&quot;./configs/iris.tml&quot;)))</span>
+    <span class="hljs-comment">// app.Run(iris.Addr(&quot;:8080&quot;))</span>
+}
+</code></pre>
+<blockquote>
+<p><code>/configs/iris.tml</code></p>
+</blockquote>
+<pre><code class="lang-tml">DisablePathCorrection = false
+EnablePathEscape = false
+FireMethodNotAllowed = true
+DisableBodyConsumptionOnUnmarshal = false
+TimeFormat = &quot;Mon, 01 Jan 2006 15:04:05 GMT&quot;
+Charset = &quot;UTF-8&quot;
+
+[Other]
+    MyServerName = &quot;iris&quot;
+</code></pre>
+<h3 id="3&#x901A;&#x8FC7;yaml&#x52A0;&#x8F7D;&#x914D;&#x7F6E;">3.&#x901A;&#x8FC7;<code>YAML</code>&#x52A0;&#x8F7D;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>fromYamlFile</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; configs
+        &#x2014;&#x2014; iris.yml
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.HTML(<span class="hljs-string">&quot;&lt;b&gt;Hello!&lt;/b&gt;&quot;</span>)
+    })
+    <span class="hljs-comment">// [...]</span>
+    <span class="hljs-comment">//&#x5F53;&#x4F60;&#x6709;&#x4E24;&#x4E2A;&#x914D;&#x7F6E;&#x65F6;&#x5F88;&#x597D;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x751F;&#x4EA7;&#x7528;&#x9014;&#x3002;</span>
+    <span class="hljs-comment">//&#x5982;&#x679C;iris.YAML&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#x4E3A;&#x201C;&#x301C;&#x201D;&#xFF0C;&#x5219;&#x5B83;&#x4ECE;&#x4E3B;&#x76EE;&#x5F55;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;</span>
+    <span class="hljs-comment">//&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5728;&#x8BB8;&#x591A;iris&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x3002;</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>), iris.WithConfiguration(iris.YAML(<span class="hljs-string">&quot;./configs/iris.yml&quot;</span>)))
+    <span class="hljs-comment">// &#x5728;run&#x4E4B;&#x524D;&#x52A0;&#x8F7D;:</span>
+    <span class="hljs-comment">// app.Configure(iris.WithConfiguration(iris.YAML(&quot;./configs/iris.yml&quot;)))</span>
+    <span class="hljs-comment">// app.Run(iris.Addr(&quot;:8080&quot;))</span>
+}
+</code></pre>
+<blockquote>
+<p><code>/configs/iris.yml</code></p>
+</blockquote>
+<pre><code class="lang-yml"><span class="hljs-attr">DisablePathCorrection:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">EnablePathEscape:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">FireMethodNotAllowed:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">DisableBodyConsumptionOnUnmarshal:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">TimeFormat:</span> Mon, <span class="hljs-number">01</span> Jan <span class="hljs-number">2006</span> <span class="hljs-number">15</span>:<span class="hljs-number">04</span>:<span class="hljs-number">05</span> GMT
+<span class="hljs-attr">Charset:</span> UTF<span class="hljs-bullet">-8</span>
+</code></pre>
+<h3 id="4&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x5355;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x914D;&#x7F6E;">4.&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x5355;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>functional</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; main.go
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.HTML(<span class="hljs-string">&quot;&lt;b&gt;Hello!&lt;/b&gt;&quot;</span>)
+    })
+    <span class="hljs-comment">// [...]</span>
+    <span class="hljs-comment">//&#x5F53;&#x60A8;&#x60F3;&#x8981;&#x66F4;&#x6539;&#x67D0;&#x4E9B;&#x914D;&#x7F6E;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x8FD9;&#x5F88;&#x597D;&#x3002;</span>
+    <span class="hljs-comment">//&#x524D;&#x7F00;&#xFF1A;With&#xFF0C;&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;&#x5C06;&#x5E2E;&#x52A9;&#x60A8;&#x6D4F;&#x89C8;&#x6240;&#x6709;&#x5185;&#x5BB9;</span>
+    <span class="hljs-comment">//&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x751A;&#x81F3;&#x6CA1;&#x6709;&#x53C2;&#x8003;&#x6587;&#x6863;&#x7684;&#x7C7B;&#x578B;&#x3002;</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>), iris.WithoutStartupLog, iris.WithCharset(<span class="hljs-string">&quot;UTF-8&quot;</span>))
+    <span class="hljs-comment">// &#x5728;run&#x4E4B;&#x524D;&#x52A0;&#x8F7D;:</span>
+    <span class="hljs-comment">// app.Configure(iris.WithoutStartupLog, iris.WithCharset(&quot;UTF-8&quot;))</span>
+    <span class="hljs-comment">// app.Run(iris.Addr(&quot;:8080&quot;))</span>
+}
+</code></pre>
+<hr>
+<h2 id="builtn&#x914D;&#x7F6E;&#x5668;">Built&apos;n&#x914D;&#x7F6E;&#x5668;</h2>
+<pre><code class="lang-go"><span class="hljs-comment">// WithoutServerError&#x5C06;&#x5FFD;&#x7565;&#x9519;&#x8BEF;&#xFF0C;&#x6765;&#x81EA;&#x4E3B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;`Run`&#x51FD;&#x6570;&#x3002;</span>
+<span class="hljs-comment">// &#x7528;&#x6CD5;&#xFF1A;</span>
+<span class="hljs-comment">// err&#xFF1A;= app.Run(iris.Addr&#xFF08;&quot;:8080&quot;),iris.WithoutServerError(iris.ErrServerClosed))</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x9519;&#x8BEF;&#x662F;`http/iris&#xFF03;ErrServerClosed`&#xFF0C;//&#x5C06;&#x8FD4;&#x56DE;`nil`&#x3002;</span>
+<span class="hljs-comment">// &#x4E5F;&#x53C2;&#x89C1;`Configuration&#xFF03;IgnoreServerErrors [] string`&#x3002;</span>
+
+<span class="hljs-comment">// &#x793A;&#x4F8B;: https://github.com/kataras/iris/tree/master/_examples/http-listening/listen-addr/omit-server-errors</span>
+<span class="hljs-keyword">func</span> WithoutServerError(errors ...error) Configurator
+
+<span class="hljs-comment">//WithoutStartupLog &#x5C06;&#x5173;&#x95ED;&#x7B2C;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x7EC8;&#x7AEF;&#x5C31;&#x53D1;&#x9001;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">var</span> WithoutStartupLog
+
+<span class="hljs-comment">// WithoutInterruptHandler&#x7981;&#x7528;&#x81EA;&#x52A8;&#x6B63;&#x5E38;&#x670D;&#x52A1;&#x5668;&#x5173;&#x95ED;&#xFF0C;&#x5F53;&#x6309;&#x4E0B;control / cmd + C&#x65F6;</span>
+<span class="hljs-keyword">var</span> WithoutInterruptHandler
+
+<span class="hljs-comment">// WithoutPathCorrection&#x7981;&#x7528;PathCorrection&#x8BBE;&#x7F6E;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithoutPathCorrection
+
+<span class="hljs-comment">// WithoutBodyConsumptionOnUnmarshal&#x7981;&#x7528;BodyConsumptionOnUnmarshal&#x8BBE;&#x7F6E;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithoutBodyConsumptionOnUnmarshal
+
+<span class="hljs-comment">// WithoutAutoFireStatusCode&#x7981;&#x7528;AutoFireStatusCode&#x8BBE;&#x7F6E;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithoutAutoFireStatusCode
+
+<span class="hljs-comment">// WithPathEscape&#x4F7F;PathEscape&#x8BBE;&#x7F6E;&#x53D8;&#x4E3A;enanbles</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithPathEscape
+
+<span class="hljs-comment">// WithOptimizations&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F18;&#x5316;&#x4EE5;&#x83B7;&#x5F97;&#x5C3D;&#x53EF;&#x80FD;&#x6700;&#x4F73;&#x7684;&#x6027;&#x80FD;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithOptimizations
+
+<span class="hljs-comment">// WithFireMethodNotAllowed&#x4F7F;FireMethodNotAllowed&#x8BBE;&#x7F6E;&#x53D8;&#x4E3A;&#x53EF;&#x7528;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">var</span> WithFireMethodNotAllowed
+
+<span class="hljs-comment">//&#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">func</span> WithTimeFormat(timeformat <span class="hljs-keyword">string</span>) Configurator
+
+<span class="hljs-comment">// WithCharset&#x8BBE;&#x7F6E;Charset&#x8BBE;&#x7F6E;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">func</span> WithCharset(charset <span class="hljs-keyword">string</span>) Configurator
+
+<span class="hljs-comment">// WithRemoteAddrHeader&#x542F;&#x7528;&#x6216;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6216;&#x73B0;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x6807;&#x5934;&#x540D;&#x79F0;</span>
+<span class="hljs-comment">// &#x53EF;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x771F;&#x5B9E;IP</span>
+<span class="hljs-comment">//&#x73B0;&#x6709;&#x503C;&#x4E3A;&#xFF1A;</span>
+<span class="hljs-comment">//&quot;X-Real-Ip&quot;&#xFF1A;false&#xFF0C;</span>
+<span class="hljs-comment">//&quot;X-Forwarded-For&quot;&#xFF1A;false&#xFF0C;</span>
+<span class="hljs-comment">//&quot;CF-Connecting-IP&quot;&#xFF1A;false</span>
+<span class="hljs-comment">//&#x67E5;&#x770B;`context.RemoteAddr()`&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">func</span> WithRemoteAddrHeader(headerName <span class="hljs-keyword">string</span>) Configurator
+
+<span class="hljs-comment">// WithoutRemoteAddrHeader&#x7981;&#x7528;&#x73B0;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x6807;&#x5934;&#x540D;&#x79F0;</span>
+<span class="hljs-comment">//&#x53EF;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x771F;&#x5B9E;IP&#x3002;</span>
+<span class="hljs-comment">//&#x73B0;&#x6709;&#x503C;&#x4E3A;&#xFF1A;</span>
+<span class="hljs-comment">//&quot;X-Real-Ip&quot;:false&#xFF0C;</span>
+<span class="hljs-comment">//&quot;X-Forwarded-For&quot;:false&#xFF0C;</span>
+<span class="hljs-comment">//&quot;CF-Connecting-IP&quot;:false</span>
+<span class="hljs-comment">//&#x67E5;&#x770B;`context.RemoteAddr()`&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">func</span> WithoutRemoteAddrHeader(headerName <span class="hljs-keyword">string</span>) Configurator
+
+<span class="hljs-comment">// WithOtherValue&#x6839;&#x636E;&#x5176;&#x4ED6;&#x8BBE;&#x7F6E;&#x7684;&#x952E;&#x6DFB;&#x52A0;&#x503C;</span>
+<span class="hljs-comment">//&#x53C2;&#x89C1;`&#x914D;&#x7F6E;`</span>
+<span class="hljs-keyword">func</span> WithOtherValue(key <span class="hljs-keyword">string</span>, val <span class="hljs-keyword">interface</span>{}) Configurator
+</code></pre>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x5668;">&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x5668;</h2>
+<p>&#x4F7F;&#x7528;<code>Configurator</code>&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x6A21;&#x5757;&#x5316;&#x4ED6;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x6587;&#x4EF6;&#x540D;&#x79F0; counter/counter.go</span>
+<span class="hljs-keyword">package</span> counter
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;time&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/core/host&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> Configurator(app *iris.Application) {
+    counterValue := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        ticker := time.NewTicker(time.Second)
+        <span class="hljs-keyword">for</span> <span class="hljs-keyword">range</span> ticker.C {
+            counterValue++
+        }
+        app.ConfigureHost(<span class="hljs-keyword">func</span>(h *host.Supervisor) { <span class="hljs-comment">// &lt; - &#x8FD9;&#x91CC;&#xFF1A;&#x91CD;&#x8981;&#x7684;</span>
+            h.RegisterOnShutdown(<span class="hljs-keyword">func</span>() {
+                ticker.Stop()
+            })
+        })
+    }()
+    app.Get(<span class="hljs-string">&quot;/counter&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.Writef(<span class="hljs-string">&quot;Counter value = %d&quot;</span>, counterValue)
+    })
+}
+</code></pre>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x6587;&#x4EF6;&#x540D;&#x79F0;: main.go</span>
+<span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;counter&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Configure(counter.Configurator)
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>))
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cache/simple.html" class="navigation navigation-prev " aria-label="Previous page: IRIS 简单缓存">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="convertHandlers.html" class="navigation navigation-next " aria-label="Next page: 其他函数转换成 IRIS 处理函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IRIS 配置文件类型","level":"1.4","depth":1,"next":{"title":"其他函数转换成 IRIS 处理函数","level":"1.5","depth":1,"path":"convertHandlers.md","ref":"convertHandlers.md","articles":[]},"previous":{"title":"IRIS 简单缓存","level":"1.3.2","depth":2,"path":"cache/simple.md","ref":"cache/simple.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"conf.md","mtime":"2018-11-14T07:19:02.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T10:54:26.583Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

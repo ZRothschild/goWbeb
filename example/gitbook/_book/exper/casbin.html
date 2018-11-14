@@ -1,0 +1,1775 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IRIS 实现基于角色的HTTP权限控制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cloudwatch.html" />
+    
+    
+    <link rel="prev" href="../exper.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../auth.html">
+            
+                <a href="../auth.html">
+            
+                    
+                    IRIS 验证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../auth/basic.html">
+            
+                <a href="../auth/basic.html">
+            
+                    
+                    IRIS 基础验证与授权(Basic Auth)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../auth/oauth2.html">
+            
+                <a href="../auth/oauth2.html">
+            
+                    
+                    IRIS Auth2 验证与授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cache.html">
+            
+                <a href="../cache.html">
+            
+                    
+                    IRIS 缓存使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cache/client.html">
+            
+                <a href="../cache/client.html">
+            
+                    
+                    IRIS 客户端缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cache/simple.html">
+            
+                <a href="../cache/simple.html">
+            
+                    
+                    IRIS 简单缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../conf.html">
+            
+                <a href="../conf.html">
+            
+                    
+                    IRIS 配置文件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../convertHandlers.html">
+            
+                <a href="../convertHandlers.html">
+            
+                    
+                    其他函数转换成 IRIS 处理函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../cookies.html">
+            
+                <a href="../cookies.html">
+            
+                    
+                    IRIS cookies 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../exper.html">
+            
+                <a href="../exper.html">
+            
+                    
+                    IRIS 试验性功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="casbin.html">
+            
+                <a href="casbin.html">
+            
+                    
+                    IRIS 实现基于角色的HTTP权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="cloudwatch.html">
+            
+                <a href="cloudwatch.html">
+            
+                    
+                    IRIS 简单的aws监听API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="cors.html">
+            
+                <a href="cors.html">
+            
+                    
+                    IRIS CORS 跨域资源共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="csrf.html">
+            
+                <a href="csrf.html">
+            
+                    
+                    IRIS csrf 防御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="jwt.html">
+            
+                <a href="jwt.html">
+            
+                    
+                    IRIS JWT 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="limitHandler.html">
+            
+                <a href="limitHandler.html">
+            
+                    
+                    IRIS 限制HTTP请求次数的中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="newrelic.html">
+            
+                <a href="newrelic.html">
+            
+                    
+                    IRIS 跟踪事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="prometheus.html">
+            
+                <a href="prometheus.html">
+            
+                    
+                    IRIS 系统和服务监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="secure.html">
+            
+                <a href="secure.html">
+            
+                    
+                    IRIS 域名安全加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../fileServer.html">
+            
+                <a href="../fileServer.html">
+            
+                    
+                    IRIS 文件服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../fileServer/Basic.html">
+            
+                <a href="../fileServer/Basic.html">
+            
+                    
+                    IRIS 基础文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../fileServer/basicSPA.html">
+            
+                <a href="../fileServer/basicSPA.html">
+            
+                    
+                    IRIS 基础单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../fileServer/embeddedSPA.html">
+            
+                <a href="../fileServer/embeddedSPA.html">
+            
+                    
+                    IRIS embedded单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../fileServer/embeddedSPAOR.html">
+            
+                <a href="../fileServer/embeddedSPAOR.html">
+            
+                    
+                    IRIS embedded单页面文件服务与路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../fileServer/embeddingFiles.html">
+            
+                <a href="../fileServer/embeddingFiles.html">
+            
+                    
+                    IRIS embedding打包静态文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../fileServer/embeddingGziped.html">
+            
+                <a href="../fileServer/embeddingGziped.html">
+            
+                    
+                    IRIS embedding打包静态文件Gzip格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../fileServer/favicon.html">
+            
+                <a href="../fileServer/favicon.html">
+            
+                    
+                    IRIS favicon应用图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../fileServer/sendFiles.html">
+            
+                <a href="../fileServer/sendFiles.html">
+            
+                    
+                    IRIS 文件下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../helloWorld.html">
+            
+                <a href="../helloWorld.html">
+            
+                    
+                    IRIS hello world小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../hero.html">
+            
+                <a href="../hero.html">
+            
+                    
+                    IRIS hero依赖注入与结构体转化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hero/basic.html">
+            
+                <a href="../hero/basic.html">
+            
+                    
+                    IRIS hero基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../hero/overview.html">
+            
+                <a href="../hero/overview.html">
+            
+                    
+                    IRIS hero MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../hero/sessions.html">
+            
+                <a href="../hero/sessions.html">
+            
+                    
+                    IRIS hero sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../hero/smartContract.html">
+            
+                <a href="../hero/smartContract.html">
+            
+                    
+                    IRIS hero智能路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../httpListening.html">
+            
+                <a href="../httpListening.html">
+            
+                    
+                    IRIS http 服务监听
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../httpListen/customHttpserver.html">
+            
+                <a href="../httpListen/customHttpserver.html">
+            
+                    
+                    IRIS 自定义http服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../httpListen/customListener.html">
+            
+                <a href="../httpListen/customListener.html">
+            
+                    
+                    IRIS 自定义监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../httpListen/gracefulShutdown.html">
+            
+                <a href="../httpListen/gracefulShutdown.html">
+            
+                    
+                    IRIS 优雅关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../httpListen/irisConfAndHostConf.html">
+            
+                <a href="../httpListen/irisConfAndHostConf.html">
+            
+                    
+                    IRIS 配置与host配置获取关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../httpListen/listenAddr.html">
+            
+                <a href="../httpListen/listenAddr.html">
+            
+                    
+                    IRIS 地址服务器监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../httpListen/listenLetsencrypt.html">
+            
+                <a href="../httpListen/listenLetsencrypt.html">
+            
+                    
+                    IRIS 服务监听与letsencrypt加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../httpListen/listenTls.html">
+            
+                <a href="../httpListen/listenTls.html">
+            
+                    
+                    IRIS 服务监听启用安全传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../httpListen/listenUnix.html">
+            
+                <a href="../httpListen/listenUnix.html">
+            
+                    
+                    IRIS 使用.sock文件服务监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../httpListen/notifyOnShutdown.html">
+            
+                <a href="../httpListen/notifyOnShutdown.html">
+            
+                    
+                    IRIS 使用chan通知关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../httpRequest.html">
+            
+                <a href="../httpRequest.html">
+            
+                    
+                    IRIS http request请求数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../request/customViaUnmarshaler.html">
+            
+                <a href="../request/customViaUnmarshaler.html">
+            
+                    
+                    IRIS 前置自定义读取请求(实现实现Decode接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../request/extractReferer.html">
+            
+                <a href="../request/extractReferer.html">
+            
+                    
+                    IRIS 获取引用者(extract referer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../request/jsonStructValidation.html">
+            
+                <a href="../request/jsonStructValidation.html">
+            
+                    
+                    IRIS 请求数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../request/readCustomPerType.html">
+            
+                <a href="../request/readCustomPerType.html">
+            
+                    
+                    IRIS 前置自定义读取请求数据数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../request/readForm.html">
+            
+                <a href="../request/readForm.html">
+            
+                    
+                    IRIS 自定义结构体映射获取Form表单请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../request/readJson.html">
+            
+                <a href="../request/readJson.html">
+            
+                    
+                    IRIS 自定义结构体映射获取json格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../request/readXml.html">
+            
+                <a href="../request/readXml.html">
+            
+                    
+                    IRIS 自定义结构体映射获取xml格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../request/requestLogger.html">
+            
+                <a href="../request/requestLogger.html">
+            
+                    
+                    IRIS 请求日志记录配置(控制台)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../request/requestLoggerFile.html">
+            
+                <a href="../request/requestLoggerFile.html">
+            
+                    
+                    IRIS 请求日志记录(文件)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../request/uploadFile.html">
+            
+                <a href="../request/uploadFile.html">
+            
+                    
+                    IRIS 文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="../request/uploadFiles.html">
+            
+                <a href="../request/uploadFiles.html">
+            
+                    
+                    IRIS 多文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../reponseWriter.html">
+            
+                <a href="../reponseWriter.html">
+            
+                    
+                    IRIS http response模板,返回数据类型格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../responseWriter/herotemplate.html">
+            
+                <a href="../responseWriter/herotemplate.html">
+            
+                    
+                    IRIS hero模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../responseWriter/quickTemplate.html">
+            
+                <a href="../responseWriter/quickTemplate.html">
+            
+                    
+                    IRIS quicktemplate模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../responseWriter/sse.html">
+            
+                <a href="../responseWriter/sse.html">
+            
+                    
+                    IRIS sse应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../responseWriter/sseThirdParty.html">
+            
+                <a href="../responseWriter/sseThirdParty.html">
+            
+                    
+                    IRIS sse第三方应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../responseWriter/streamWriter.html">
+            
+                <a href="../responseWriter/streamWriter.html">
+            
+                    
+                    IRIS 流写入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../responseWriter/transactions.html">
+            
+                <a href="../responseWriter/transactions.html">
+            
+                    
+                    IRIS 请求事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../responseWriter/writeGzip.html">
+            
+                <a href="../responseWriter/writeGzip.html">
+            
+                    
+                    IRIS 以gzip格式写入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../responseWriter/writeRest.html">
+            
+                <a href="../responseWriter/writeRest.html">
+            
+                    
+                    IRIS 数据返回类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../miscellaneous.html">
+            
+                <a href="../miscellaneous.html">
+            
+                    
+                    IRIS 一些杂项例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../mvc.html">
+            
+                <a href="../mvc.html">
+            
+                    
+                    IRIS MVC示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../mvc/basic.html">
+            
+                <a href="../mvc/basic.html">
+            
+                    
+                    IRIS MVC基础示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../mvc/helloWorld.html">
+            
+                <a href="../mvc/helloWorld.html">
+            
+                    
+                    IRIS MVC hello world示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../mvc/login.html">
+            
+                <a href="../mvc/login.html">
+            
+                    
+                    IRIS MVC login示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../mvc/middleware.html">
+            
+                <a href="../mvc/middleware.html">
+            
+                    
+                    IRIS MVC中如何使用中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../mvc/overview.html">
+            
+                <a href="../mvc/overview.html">
+            
+                    
+                    IRIS MVC overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../mvc/perMethod.html">
+            
+                <a href="../mvc/perMethod.html">
+            
+                    
+                    IRIS MVC前置中间件使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../mvc/sessionController.html">
+            
+                <a href="../mvc/sessionController.html">
+            
+                    
+                    IRIS session控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../mvc/singleton.html">
+            
+                <a href="../mvc/singleton.html">
+            
+                    
+                    IRIS MVC 单例控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="../mvc/websocket.html">
+            
+                <a href="../mvc/websocket.html">
+            
+                    
+                    IRIS MVC websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="../mvc/withoutCtxNext.html">
+            
+                <a href="../mvc/withoutCtxNext.html">
+            
+                    
+                    IRIS MVC ExecutionRules实现中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../orm.html">
+            
+                <a href="../orm.html">
+            
+                    
+                    对象关系映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../orm/xorm.html">
+            
+                <a href="../orm/xorm.html">
+            
+                    
+                    IRIS xorm使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    IRIS overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../yaag.html">
+            
+                <a href="../yaag.html">
+            
+                    
+                    API文档生成器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../yaag/iris.html">
+            
+                <a href="../yaag/iris.html">
+            
+                    
+                    IRIS API文档生成器示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >IRIS 实现基于角色的HTTP权限控制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="casbin&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;http&#x6743;&#x9650;&#x63A7;&#x5236;"><code>casbin</code>&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;<code>HTTP</code>&#x6743;&#x9650;&#x63A7;&#x5236;</h1>
+<h2 id="casbin&#x4ECB;&#x7ECD;"><code>casbin</code>&#x4ECB;&#x7ECD;</h2>
+<p><code>casbin</code>&#x662F;&#x7531;&#x5317;&#x5927;&#x7684;&#x4E00;&#x4F4D;&#x535A;&#x58EB;&#x751F;&#x4E3B;&#x5BFC;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;<code>Go</code>&#x8BED;&#x8A00;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#x5E93;&#x3002;&#x652F;&#x6301; <code>ACL</code>&#xFF0C;<code>RBAC</code>&#xFF0C;<code>ABAC</code> &#x7B49;&#x5E38;&#x7528;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x6A21;&#x578B;&#x3002;</p>
+<p><code>casbin</code>&#x662F;<code>Golang</code>&#x9879;&#x76EE;&#x7684;&#x5F3A;&#x5927;&#x800C;&#x9AD8;&#x6548;&#x7684;&#x5F00;&#x6E90;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5E93;&#x3002; &#x5B83;&#x652F;&#x6301;&#x57FA;&#x4E8E;&#x5404;&#x79CD;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x6A21;&#x578B;&#x5B9E;&#x65BD;&#x6388;&#x6743;&#x3002;</p>
+<p><code>casbin</code>&#x7684;&#x6838;&#x5FC3;&#x662F;&#x4E00;&#x5957;&#x57FA;&#x4E8E;<code>PERM metamodel</code>(<code>Policy</code>, <code>Effect</code>, <code>Request</code>, <code>Matchers</code>)&#x7684;<code>DSL</code>&#x3002;<code>Casbin</code>&#x4ECE;&#x7528;&#x8FD9;&#x79CD;<code>DSL</code>&#x5B9A;&#x4E49;&#x7684;&#x914D;&#x7F6E;
+&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x6A21;&#x578B;&#xFF0C;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x6743;&#x9650;&#x9A8C;&#x8BC1;&#x7684;&#x57FA;&#x7840;</p>
+<h2 id="casbin&#x505A;&#x4E86;&#x4EC0;&#x4E48;"><code>Casbin</code>&#x505A;&#x4E86;&#x4EC0;&#x4E48;</h2>
+<ol>
+<li>&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8BF7;&#x6C42;&#x683C;&#x5F0F;&#x4E3A;<code>{subject, object, action}</code>&#x3002;</li>
+<li>&#x5177;&#x6709;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x6A21;&#x578B;<code>model</code>&#x548C;&#x7B56;&#x7565;<code>policy</code>&#x4E24;&#x4E2A;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x3002;</li>
+<li>&#x652F;&#x6301;<code>RBAC</code>&#x4E2D;&#x7684;&#x591A;&#x5C42;&#x89D2;&#x8272;&#x7EE7;&#x627F;&#xFF0C;&#x4E0D;&#x6B62;&#x4E3B;&#x4F53;&#x53EF;&#x4EE5;&#x6709;&#x89D2;&#x8272;&#xFF0C;&#x8D44;&#x6E90;&#x4E5F;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x89D2;&#x8272;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x5982;<code>root</code>&#x6216;<code>Administrator</code>&#xFF0C;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4E0D;&#x53D7;&#x6388;&#x6743;&#x7B56;&#x7565;&#x7684;&#x7EA6;&#x675F;&#x8BBF;&#x95EE;&#x4EFB;&#x610F;&#x8D44;&#x6E90;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x591A;&#x79CD;&#x5185;&#x7F6E;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x5982;<code>keyMatch</code>&#xFF0C;&#x65B9;&#x4FBF;&#x5BF9;&#x8DEF;&#x5F84;&#x5F0F;&#x7684;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x5982;<code>/foo/bar</code>&#x53EF;&#x4EE5;&#x6620;&#x5C04;&#x5230;<code>/foo*</code></li>
+</ol>
+<h2 id="casbin&#x4E0D;&#x505A;&#x7684;&#x4E8B;&#x60C5;"><code>Casbin</code>&#x4E0D;&#x505A;&#x7684;&#x4E8B;&#x60C5;</h2>
+<ol>
+<li>&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;<code>authentication</code>(&#x5373;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;&#x3001;&#x5BC6;&#x7801;)&#xFF0C;<code>casbin</code>&#x53EA;&#x8D1F;&#x8D23;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x3002;&#x5E94;&#x8BE5;&#x6709;&#x5176;&#x4ED6;&#x4E13;&#x95E8;&#x7684;&#x7EC4;&#x4EF6;&#x8D1F;&#x8D23;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#xFF0C;&#x7136;&#x540E;&#x7531;<code>casbin</code>&#x8FDB;&#x884C;&#x8BBF;&#x95EE;
+&#x63A7;&#x5236;&#xFF0C;&#x4E8C;&#x8005;&#x662F;&#x76F8;&#x4E92;&#x914D;&#x5408;&#x7684;&#x5173;&#x7CFB;&#x3002;</li>
+<li>&#x7BA1;&#x7406;&#x7528;&#x6237;&#x5217;&#x8868;&#x6216;&#x89D2;&#x8272;&#x5217;&#x8868;&#x3002;<code>Casbin</code>&#x8BA4;&#x4E3A;&#x7531;&#x9879;&#x76EE;&#x81EA;&#x8EAB;&#x6765;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x3001;&#x89D2;&#x8272;&#x5217;&#x8868;&#x66F4;&#x4E3A;&#x5408;&#x9002;&#xFF0C;&#x7528;&#x6237;&#x901A;&#x5E38;&#x6709;&#x4ED6;&#x4EEC;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x4F46;&#x662F;<code>Casbin</code>&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x5E76;&#x4E0D;&#x662F;&#x628A;
+&#x5B83;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5BC6;&#x7801;&#x7684;&#x5BB9;&#x5668;&#x3002;&#x800C;&#x662F;&#x5B58;&#x50A8;<code>RBAC</code>&#x65B9;&#x6848;&#x4E2D;&#x7528;&#x6237;&#x548C;&#x89D2;&#x8272;&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</li>
+</ol>
+<h2 id="&#x914D;&#x7F6E;&#x793A;&#x4F8B;">&#x914D;&#x7F6E;&#x793A;&#x4F8B;</h2>
+<h3 id="&#x6A21;&#x578B;&#x4E0E;&#x7B56;&#x7565;&#x5B9A;&#x5236;">&#x6A21;&#x578B;&#x4E0E;&#x7B56;&#x7565;&#x5B9A;&#x5236;</h3>
+<pre><code class="lang-smartyconfig">//sub   &quot;alice&quot;// &#x60F3;&#x8981;&#x8BBF;&#x95EE;&#x8D44;&#x6E90;&#x7684;&#x7528;&#x6237;.
+//obj  &quot;data1&quot; // &#x8981;&#x8BBF;&#x95EE;&#x7684;&#x8D44;&#x6E90;.
+//act  &quot;read&quot;  // &#x7528;&#x6237;&#x5BF9;&#x8D44;&#x6E90;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;.
+
+# Request definition
+[request_definition]
+r = sub, obj, act
+
+# Policy definition
+[policy_definition]
+p = sub, obj, act
+
+# Policy effect
+[policy_effect]
+e = some(where (p.eft == allow))
+
+# Matchers
+[matchers]
+m = r.sub == p.sub &amp;&amp; r.obj == p.obj &amp;&amp; r.act == p.act
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3B;&#x8981;&#x5B9A;&#x4E49;&#x4E86;<code>Request</code>&#x548C;<code>Policy</code>&#x7684;&#x7EC4;&#x6210;&#x7ED3;&#x6784;.<code>Policy effect</code>&#x548C;<code>Matchers</code>&#x5219;&#x7075;&#x6D3B;&#x7684;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8868;&#x8FBE;&#x5F0F;
+&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x540D;&#x53EB;<code>root</code>&#x7684;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;:</p>
+<pre><code class="lang-smartyconfig">[matchers]
+m = r.sub == p.sub &amp;&amp; r.obj == p.obj &amp;&amp; r.act == p.act || r.sub == &quot;root&quot;
+</code></pre>
+<p>&#x53C8;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x6B63;&#x5219;&#x5339;&#x914D;&#x6765;&#x5224;&#x65AD;&#x6743;&#x9650;&#x662F;&#x5426;&#x5339;&#x914D;:</p>
+<pre><code class="lang-smartyconfig">[matchers]
+m = r.sub == p.sub &amp;&amp; keyMatch(r.obj, p.obj) &amp;&amp; regexMatch(r.act, p.act)
+</code></pre>
+<h3 id="&#x5177;&#x4F53;&#x89C4;&#x5219;&#x8BBE;&#x7F6E;">&#x5177;&#x4F53;&#x89C4;&#x5219;&#x8BBE;&#x7F6E;</h3>
+<pre><code class="lang-smartyconfig">p, alice, data1, read
+p, bob, data2, write
+</code></pre>
+<blockquote>
+<p>&#x610F;&#x601D;&#x5C31;&#x662F; alice &#x53EF;&#x4EE5;&#x8BFB; data1&#xFF0C;bob &#x53EF;&#x4EE5;&#x5199; data2</p>
+</blockquote>
+<h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
+<blockquote>
+<p>&#x6A21;&#x578B;&#x4E0E;&#x7B56;&#x7565;&#x5B9A;&#x5236; <code>test.conf</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">[request_definition]
+r = sub, dom, obj, act
+
+[policy_definition]
+p = sub, dom, obj, act
+
+[role_definition]
+g = _, _, _
+
+[policy_effect]
+e = some(where (p.eft == allow))
+
+[matchers]
+m = g(r.sub, p.sub, r.dom) &amp;&amp; r.dom == p.dom &amp;&amp; r.obj == p.obj &amp;&amp; r.act == p.act
+</code></pre>
+<blockquote>
+<p>&#x5177;&#x4F53;&#x89C4;&#x5219;&#x8BBE;&#x7F6E; <code>test.csv</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">p, admin, domain1, data1, read
+p, admin, domain1, data1, write
+p, admin, domain2, data2, read
+p, admin, domain2, data2, write
+g, alice, admin, domain1
+g, bob, admin, domain2
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;alice &#x548C; bob &#x5206;&#x522B;&#x662F; domian1 &#x548C; domain2 &#x7684;&#x7BA1;&#x7406;&#x5458;</p>
+<h2 id="iris&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><code>iris</code>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h2>
+<h3 id="1&#x4E2D;&#x95F4;&#x4EF6;&#x683C;&#x5F0F;-&#x9519;&#x8BEF;&#x8FD4;&#x56DE;forbidden">1.&#x4E2D;&#x95F4;&#x4EF6;&#x683C;&#x5F0F; <code>&#x9519;&#x8BEF;&#x8FD4;&#x56DE;forbidden</code></h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>middleware</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; casbinmodel.conf
+    &#x2014;&#x2014; casbinpolicy.csv
+    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; main_test.go
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>casbinmodel.conf</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">[request_definition]
+r = sub, obj, act
+
+[policy_definition]
+p = sub, obj, act
+
+[role_definition]
+g = _, _
+
+[policy_effect]
+e = some(where (p.eft == allow))
+
+[matchers]
+m = g(r.sub, p.sub) &amp;&amp; keyMatch(r.obj, p.obj) &amp;&amp; (r.act == p.act || p.act == &quot;*&quot;)
+</code></pre>
+<blockquote>
+<p><code>casbinpolicy.csv</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">p, alice, /dataset1/*, GET
+p, alice, /dataset1/resource1, POST
+p, bob, /dataset2/resource1, *
+p, bob, /dataset2/resource2, GET
+p, bob, /dataset2/folder1/*, POST
+</code></pre>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+    <span class="hljs-string">&quot;github.com/casbin/casbin&quot;</span>
+    cm <span class="hljs-string">&quot;github.com/iris-contrib/middleware/casbin&quot;</span>
+)
+
+<span class="hljs-comment">// $ go get github.com/casbin/casbin</span>
+<span class="hljs-comment">// $ go run main.go</span>
+<span class="hljs-comment">// Enforcer&#x6620;&#x5C04;&#x6A21;&#x578B;&#x548C;casbin&#x670D;&#x52A1;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x5728;main_test&#x4E0A;&#x4F7F;&#x7528;&#x6B64;&#x53D8;&#x91CF;&#x3002;</span>
+<span class="hljs-keyword">var</span> Enforcer = casbin.NewEnforcer(<span class="hljs-string">&quot;casbinmodel.conf&quot;</span>, <span class="hljs-string">&quot;casbinpolicy.csv&quot;</span>)
+
+<span class="hljs-keyword">func</span> newApp() *iris.Application {
+    casbinMiddleware := cm.New(Enforcer)
+    app := iris.New()
+    app.Use(casbinMiddleware.ServeHTTP)
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, hi)
+    app.Get(<span class="hljs-string">&quot;/dataset1/{p:path}&quot;</span>, hi) <span class="hljs-comment">// p, alice, /dataset1/*, GET</span>
+    app.Post(<span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, hi)
+    app.Get(<span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, hi)
+    app.Post(<span class="hljs-string">&quot;/dataset2/folder1/{p:path}&quot;</span>, hi)
+    app.Any(<span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, hi)
+    <span class="hljs-keyword">return</span> app
+}
+
+<span class="hljs-keyword">func</span> main() {
+    app := newApp()
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>))
+}
+
+<span class="hljs-keyword">func</span> hi(ctx iris.Context) {
+    ctx.Writef(<span class="hljs-string">&quot;Hello %s&quot;</span>, cm.Username(ctx.Request()))
+}
+</code></pre>
+<blockquote>
+<p><code>main_test.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;testing&quot;</span>
+    <span class="hljs-string">&quot;github.com/iris-contrib/httpexpect&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/httptest&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> TestCasbinMiddleware(t *testing.T) {
+    app := newApp()
+    e := httptest.New(t, app, httptest.Debug(<span class="hljs-literal">false</span>))
+
+    <span class="hljs-keyword">type</span> ttcasbin <span class="hljs-keyword">struct</span> {
+        username <span class="hljs-keyword">string</span>
+        path     <span class="hljs-keyword">string</span>
+        method   <span class="hljs-keyword">string</span>
+        status   <span class="hljs-keyword">int</span>
+    }
+
+    tt := []ttcasbin{
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">404</span>},
+
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">404</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">404</span>},
+
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">404</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">404</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">404</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">404</span>},
+    }
+
+    <span class="hljs-keyword">for</span> _, tt := <span class="hljs-keyword">range</span> tt {
+        check(e, tt.method, tt.path, tt.username, tt.status)
+    }
+}
+
+<span class="hljs-keyword">func</span> check(e *httpexpect.Expect, method, path, username <span class="hljs-keyword">string</span>, status <span class="hljs-keyword">int</span>) {
+    e.Request(method, path).WithBasicAuth(username, <span class="hljs-string">&quot;password&quot;</span>).Expect().Status(status)
+}
+</code></pre>
+<h3 id="2&#x8DEF;&#x7531;&#x4FEE;&#x9970;&#x6A21;&#x5F0F;--&#x9519;&#x8BEF;&#x8FD4;&#x56DE;403">2.&#x8DEF;&#x7531;&#x4FEE;&#x9970;&#x6A21;&#x5F0F;  <code>&#x9519;&#x8BEF;&#x8FD4;&#x56DE;403</code></h3>
+<h4 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>wrapper</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; casbinmodel.conf
+    &#x2014;&#x2014; casbinpolicy.csv
+    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; main_test.go
+</code></pre>
+<h4 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<blockquote>
+<p><code>casbinmodel.conf</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">[request_definition]
+r = sub, obj, act
+
+[policy_definition]
+p = sub, obj, act
+
+[role_definition]
+g = _, _
+
+[policy_effect]
+e = some(where (p.eft == allow))
+
+[matchers]
+m = g(r.sub, p.sub) &amp;&amp; keyMatch(r.obj, p.obj) &amp;&amp; (r.act == p.act || p.act == &quot;*&quot;)
+</code></pre>
+<blockquote>
+<p><code>casbinpolicy.csv</code></p>
+</blockquote>
+<pre><code class="lang-smartyconfig">p, alice, /dataset1/*, GET
+p, alice, /dataset1/resource1, POST
+p, bob, /dataset2/resource1, *
+p, bob, /dataset2/resource2, GET
+p, bob, /dataset2/folder1/*, POST
+p, cathrin, /dataset2/resource2, GET
+p, dataset1_admin, /dataset1/*, *
+g, cathrin, dataset1_admin
+</code></pre>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+
+    <span class="hljs-string">&quot;github.com/casbin/casbin&quot;</span>
+    cm <span class="hljs-string">&quot;github.com/iris-contrib/middleware/casbin&quot;</span>
+)
+
+<span class="hljs-comment">// $ go get github.com/casbin/casbin</span>
+<span class="hljs-comment">// $ go run main.go</span>
+<span class="hljs-comment">// Enforcer&#x6620;&#x5C04;&#x6A21;&#x578B;&#x548C;casbin&#x670D;&#x52A1;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x5728;main_test&#x4E0A;&#x4F7F;&#x7528;&#x6B64;&#x53D8;&#x91CF;&#x3002;</span>
+<span class="hljs-keyword">var</span> Enforcer = casbin.NewEnforcer(<span class="hljs-string">&quot;casbinmodel.conf&quot;</span>, <span class="hljs-string">&quot;casbinpolicy.csv&quot;</span>)
+
+<span class="hljs-keyword">func</span> newApp() *iris.Application {
+    casbinMiddleware := cm.New(Enforcer)
+    app := iris.New()
+    app.WrapRouter(casbinMiddleware.Wrapper())
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, hi)
+    app.Any(<span class="hljs-string">&quot;/dataset1/{p:path}&quot;</span>, hi) <span class="hljs-comment">// p, dataset1_admin, /dataset1/*, * &amp;&amp; p, alice, /dataset1/*, GET</span>
+    app.Post(<span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, hi)
+    app.Get(<span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, hi)
+    app.Post(<span class="hljs-string">&quot;/dataset2/folder1/{p:path}&quot;</span>, hi)
+    app.Any(<span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, hi)
+
+    <span class="hljs-keyword">return</span> app
+}
+
+<span class="hljs-keyword">func</span> main() {
+    app := newApp()
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>))
+}
+
+<span class="hljs-keyword">func</span> hi(ctx iris.Context) {
+    ctx.Writef(<span class="hljs-string">&quot;Hello %s&quot;</span>, cm.Username(ctx.Request()))
+}
+</code></pre>
+<blockquote>
+<p><code>main_test.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;testing&quot;</span>
+
+    <span class="hljs-string">&quot;github.com/iris-contrib/httpexpect&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/httptest&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> TestCasbinWrapper(t *testing.T) {
+    app := newApp()
+    e := httptest.New(t, app)
+
+    <span class="hljs-keyword">type</span> ttcasbin <span class="hljs-keyword">struct</span> {
+        username <span class="hljs-keyword">string</span>
+        path     <span class="hljs-keyword">string</span>
+        method   <span class="hljs-keyword">string</span>
+        status   <span class="hljs-keyword">int</span>
+    }
+
+    tt := []ttcasbin{
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;/dataset1/resource2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">403</span>},
+
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource1&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/resource2&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item1&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;bob&quot;</span>, <span class="hljs-string">&quot;/dataset2/folder1/item2&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+    }
+
+    <span class="hljs-keyword">for</span> _, tt := <span class="hljs-keyword">range</span> tt {
+        check(e, tt.method, tt.path, tt.username, tt.status)
+    }
+
+    ttAdmin := []ttcasbin{
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">200</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+    }
+
+    <span class="hljs-keyword">for</span> _, tt := <span class="hljs-keyword">range</span> ttAdmin {
+        check(e, tt.method, tt.path, tt.username, tt.status)
+    }
+
+    Enforcer.DeleteRolesForUser(<span class="hljs-string">&quot;cathrin&quot;</span>)
+
+    ttAdminDeleted := []ttcasbin{
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset1/item&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-number">403</span>},
+        {<span class="hljs-string">&quot;cathrin&quot;</span>, <span class="hljs-string">&quot;/dataset2/item&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-number">403</span>},
+    }
+
+    <span class="hljs-keyword">for</span> _, tt := <span class="hljs-keyword">range</span> ttAdminDeleted {
+        check(e, tt.method, tt.path, tt.username, tt.status)
+    }
+
+}
+
+<span class="hljs-keyword">func</span> check(e *httpexpect.Expect, method, path, username <span class="hljs-keyword">string</span>, status <span class="hljs-keyword">int</span>) {
+    e.Request(method, path).WithBasicAuth(username, <span class="hljs-string">&quot;password&quot;</span>).Expect().Status(status)
+}
+</code></pre>
+<h2 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h2>
+<ol>
+<li>&#x4EE5;&#x4E0A;&#x7684;<code>go iris</code>&#x90FD;&#x662F;&#x4F7F;&#x7528;<code>Basic Auth</code>,&#x7528;<code>postman</code>&#x6D4B;&#x8BD5;&#x8BF7;&#x9009;&#x62E9;<code>Authorization</code>&#x9009;&#x9879;</li>
+<li><code>*.conf</code>&#x6587;&#x4EF6;&#x662F;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x6A21;&#x578B;&#xFF0C;<code>*.csv</code>&#x662F;&#x5177;&#x4F53;&#x89C4;&#x5219;&#x7684;&#x4F53;&#x73B0;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4E0D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x7528;&#x6237;&#x6570;&#x636E;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x4EE3;&#x66FF;</li>
+<li>&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x6211;&#x5BF9;&#x8FD9;&#x4E9B;&#x7684;&#x7406;&#x89E3;</li>
+</ol>
+<pre><code class="lang-smartyconfig">//policy&#x7B56;&#x7565;
+p, alice, /dataset1/*, GET         //alice &#x7528;&#x6237;&#x6709;&#x5BF9; method&#x4E3A;GET&#x8DEF;&#x5F84;&#x6EE1;&#x8DB3; /dataset1/*&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650; &#x4E0B;&#x9762;&#x540C;&#x7406;
+p, alice, /dataset1/resource1, POST
+p, bob, /dataset2/resource1, *
+p, bob, /dataset2/resource2, GET
+p, bob, /dataset2/folder1/*, POST
+p, cathrin, /dataset2/resource2, GET
+p, dataset1_admin, /dataset1/*, *
+g, cathrin, dataset1_admin  //cathrin&#x7528;&#x6237;&#x5C5E;&#x4E8E;dataset1_admin&#x7EC4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;dataset1_admin&#x80FD;&#x8BBF;&#x95EE;&#x7684;cathrin&#x90FD;&#x80FD;&#x8BBF;&#x95EE;&#xFF0C;&#x53CD;&#x4E4B;&#x4E0D;&#x7136;
+</code></pre>
+<pre><code class="lang-smartyconfig">//&#x914D;&#x7F6E;
+[request_definition]        //&#x8BF7;&#x6C42;&#x5B9A;&#x4E49;
+r = sub, obj, act
+
+[policy_definition]         //&#x7B56;&#x7565;&#x5B9A;&#x4E49;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;*.cvs&#x6587;&#x4EF6; p &#x5B9A;&#x4E49;&#x7684;&#x683C;&#x5F0F;
+p = sub, obj, act
+
+[role_definition]           //&#x7EC4;&#x5B9A;&#x4E49;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;*.cvs&#x6587;&#x4EF6; g &#x5B9A;&#x4E49;&#x7684;&#x683C;&#x5F0F;
+g = _, _
+
+[policy_effect]              
+e = some(where (p.eft == allow))
+
+[matchers]                 //&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;
+m = g(r.sub, p.sub) &amp;&amp; keyMatch(r.obj, p.obj) &amp;&amp; (r.act == p.act || p.act == &quot;*&quot;)
+//&#x8BF7;&#x6C42;&#x7528;&#x6237;&#x4E0E;&#x6EE1;&#x8DB3;*.cvs p(&#x7B56;&#x7565;)&#x4E14;&#x6EE1;&#x8DB3;g(&#x7EC4;&#x89C4;&#x5219;)&#x4E14;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x6EE1;&#x8DB3;p(&#x7B56;&#x7565;)&#x89C4;&#x5B9A;&#x8D44;&#x6E90;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../exper.html" class="navigation navigation-prev " aria-label="Previous page: IRIS 试验性功能">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cloudwatch.html" class="navigation navigation-next " aria-label="Next page: IRIS 简单的aws监听API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IRIS 实现基于角色的HTTP权限控制","level":"1.7.1","depth":2,"next":{"title":"IRIS 简单的aws监听API","level":"1.7.2","depth":2,"path":"exper/cloudwatch.md","ref":"exper/cloudwatch.md","articles":[]},"previous":{"title":"IRIS 试验性功能","level":"1.7","depth":1,"path":"exper.md","ref":"exper.md","articles":[{"title":"IRIS 实现基于角色的HTTP权限控制","level":"1.7.1","depth":2,"path":"exper/casbin.md","ref":"exper/casbin.md","articles":[]},{"title":"IRIS 简单的aws监听API","level":"1.7.2","depth":2,"path":"exper/cloudwatch.md","ref":"exper/cloudwatch.md","articles":[]},{"title":"IRIS CORS 跨域资源共享","level":"1.7.3","depth":2,"path":"exper/cors.md","ref":"exper/cors.md","articles":[]},{"title":"IRIS csrf 防御","level":"1.7.4","depth":2,"path":"exper/csrf.md","ref":"exper/csrf.md","articles":[]},{"title":"IRIS JWT 使用","level":"1.7.5","depth":2,"path":"exper/jwt.md","ref":"exper/jwt.md","articles":[]},{"title":"IRIS 限制HTTP请求次数的中间件","level":"1.7.6","depth":2,"path":"exper/limitHandler.md","ref":"exper/limitHandler.md","articles":[]},{"title":"IRIS 跟踪事务","level":"1.7.7","depth":2,"path":"exper/newrelic.md","ref":"exper/newrelic.md","articles":[]},{"title":"IRIS 系统和服务监控系统","level":"1.7.8","depth":2,"path":"exper/prometheus.md","ref":"exper/prometheus.md","articles":[]},{"title":"IRIS 域名安全加密","level":"1.7.9","depth":2,"path":"exper/secure.md","ref":"exper/secure.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exper/casbin.md","mtime":"2018-11-14T07:30:32.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T10:54:26.583Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
