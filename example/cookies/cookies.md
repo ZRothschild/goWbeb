@@ -1,5 +1,5 @@
 # `cookies`使用
-## 基础`cookies`操作
+## 1.基础`cookies`操作
 ### 目录结构
 > 主目录`basic`
 
@@ -98,7 +98,7 @@ func TestCookiesBasic(t *testing.T) {
 	t4.Body().Empty()
 }
 ```
-## `cookies`加密
+## 2.`cookies`加密
 ### 目录结构
 > 主目录`securecookie`
 
