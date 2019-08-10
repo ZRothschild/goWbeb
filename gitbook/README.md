@@ -8,5 +8,6 @@
 文档只完成一大部分，还有一小部分将会适时更新，谢谢您的阅读与理解，您的朋友献上！
 
 ### 官方群一： 群名称：Go语言Web Iris官方群① 群号：718678742
+### 官方群二： 群名称：Go语言Web Iris官方群② 群号：778497739
 ### 官方邮箱： `studyiris@vip.qq.com`
-### [官方网站](https://studyiris.com/)`https://studyiris.com/`
+### [官方网站: https://www.studyiris.com/](https://studyiris.com/)
