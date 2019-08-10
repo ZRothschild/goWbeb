@@ -1,0 +1,1922 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IRIS MVC overview示例 Go Web Iris中文网</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="perMethod.html" />
+    
+    
+    <link rel="prev" href="middleware.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iris.html">
+            
+                <a href="../iris.html">
+            
+                    
+                    IRIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../auth.html">
+            
+                <a href="../auth.html">
+            
+                    
+                    IRIS 验证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../auth/basic.html">
+            
+                <a href="../auth/basic.html">
+            
+                    
+                    IRIS 基础验证与授权(Basic Auth)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../auth/oauth2.html">
+            
+                <a href="../auth/oauth2.html">
+            
+                    
+                    IRIS Auth2 验证与授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../cache.html">
+            
+                <a href="../cache.html">
+            
+                    
+                    IRIS 缓存使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../cache/client.html">
+            
+                <a href="../cache/client.html">
+            
+                    
+                    IRIS 客户端缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../cache/simple.html">
+            
+                <a href="../cache/simple.html">
+            
+                    
+                    IRIS 简单缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../conf.html">
+            
+                <a href="../conf.html">
+            
+                    
+                    IRIS 配置文件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../convertHandlers.html">
+            
+                <a href="../convertHandlers.html">
+            
+                    
+                    其他函数转换成 IRIS 处理函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../cookies.html">
+            
+                <a href="../cookies.html">
+            
+                    
+                    IRIS cookies 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../exper.html">
+            
+                <a href="../exper.html">
+            
+                    
+                    IRIS 试验性功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../exper/casbin.html">
+            
+                <a href="../exper/casbin.html">
+            
+                    
+                    IRIS 实现基于角色的HTTP权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../exper/cloudwatch.html">
+            
+                <a href="../exper/cloudwatch.html">
+            
+                    
+                    IRIS 简单的aws监听API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../exper/cors.html">
+            
+                <a href="../exper/cors.html">
+            
+                    
+                    IRIS CORS 跨域资源共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../exper/csrf.html">
+            
+                <a href="../exper/csrf.html">
+            
+                    
+                    IRIS csrf 防御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../exper/jwt.html">
+            
+                <a href="../exper/jwt.html">
+            
+                    
+                    IRIS JWT 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../exper/limitHandler.html">
+            
+                <a href="../exper/limitHandler.html">
+            
+                    
+                    IRIS 限制HTTP请求次数的中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../exper/newrelic.html">
+            
+                <a href="../exper/newrelic.html">
+            
+                    
+                    IRIS 跟踪事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../exper/prometheus.html">
+            
+                <a href="../exper/prometheus.html">
+            
+                    
+                    IRIS 系统和服务监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../exper/secure.html">
+            
+                <a href="../exper/secure.html">
+            
+                    
+                    IRIS 域名安全加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../fileServer.html">
+            
+                <a href="../fileServer.html">
+            
+                    
+                    IRIS 文件服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../fileServer/Basic.html">
+            
+                <a href="../fileServer/Basic.html">
+            
+                    
+                    IRIS 基础文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../fileServer/basicSPA.html">
+            
+                <a href="../fileServer/basicSPA.html">
+            
+                    
+                    IRIS 基础单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../fileServer/embeddedSPA.html">
+            
+                <a href="../fileServer/embeddedSPA.html">
+            
+                    
+                    IRIS embedded单页面文件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../fileServer/embeddedSPAOR.html">
+            
+                <a href="../fileServer/embeddedSPAOR.html">
+            
+                    
+                    IRIS embedded单页面文件服务与路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../fileServer/embeddingFiles.html">
+            
+                <a href="../fileServer/embeddingFiles.html">
+            
+                    
+                    IRIS embedding打包静态文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../fileServer/embeddingGziped.html">
+            
+                <a href="../fileServer/embeddingGziped.html">
+            
+                    
+                    IRIS embedding打包静态文件Gzip格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../fileServer/favicon.html">
+            
+                <a href="../fileServer/favicon.html">
+            
+                    
+                    IRIS favicon应用图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../fileServer/sendFiles.html">
+            
+                <a href="../fileServer/sendFiles.html">
+            
+                    
+                    IRIS 文件下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../helloWorld.html">
+            
+                <a href="../helloWorld.html">
+            
+                    
+                    IRIS hello world小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../hero.html">
+            
+                <a href="../hero.html">
+            
+                    
+                    IRIS hero依赖注入与结构体转化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../hero/basic.html">
+            
+                <a href="../hero/basic.html">
+            
+                    
+                    IRIS hero基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../hero/overview.html">
+            
+                <a href="../hero/overview.html">
+            
+                    
+                    IRIS hero MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../hero/sessions.html">
+            
+                <a href="../hero/sessions.html">
+            
+                    
+                    IRIS hero sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../hero/smartContract.html">
+            
+                <a href="../hero/smartContract.html">
+            
+                    
+                    IRIS hero智能路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../httpListening.html">
+            
+                <a href="../httpListening.html">
+            
+                    
+                    IRIS http 服务监听
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../httpListen/customHttpserver.html">
+            
+                <a href="../httpListen/customHttpserver.html">
+            
+                    
+                    IRIS 自定义http服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../httpListen/customListener.html">
+            
+                <a href="../httpListen/customListener.html">
+            
+                    
+                    IRIS 自定义监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../httpListen/gracefulShutdown.html">
+            
+                <a href="../httpListen/gracefulShutdown.html">
+            
+                    
+                    IRIS 优雅关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../httpListen/irisConfAndHostConf.html">
+            
+                <a href="../httpListen/irisConfAndHostConf.html">
+            
+                    
+                    IRIS 配置与host配置获取关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../httpListen/listenAddr.html">
+            
+                <a href="../httpListen/listenAddr.html">
+            
+                    
+                    IRIS 地址服务器监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../httpListen/listenLetsencrypt.html">
+            
+                <a href="../httpListen/listenLetsencrypt.html">
+            
+                    
+                    IRIS 服务监听与letsencrypt加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../httpListen/listenTls.html">
+            
+                <a href="../httpListen/listenTls.html">
+            
+                    
+                    IRIS 服务监听启用安全传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../httpListen/listenUnix.html">
+            
+                <a href="../httpListen/listenUnix.html">
+            
+                    
+                    IRIS 使用.sock文件服务监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../httpListen/notifyOnShutdown.html">
+            
+                <a href="../httpListen/notifyOnShutdown.html">
+            
+                    
+                    IRIS 使用chan通知关闭服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../httpRequest.html">
+            
+                <a href="../httpRequest.html">
+            
+                    
+                    IRIS http request请求数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../request/customViaUnmarshaler.html">
+            
+                <a href="../request/customViaUnmarshaler.html">
+            
+                    
+                    IRIS 前置自定义读取请求(实现实现Decode接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../request/extractReferer.html">
+            
+                <a href="../request/extractReferer.html">
+            
+                    
+                    IRIS 获取引用者(extract referer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../request/jsonStructValidation.html">
+            
+                <a href="../request/jsonStructValidation.html">
+            
+                    
+                    IRIS 请求数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../request/readCustomPerType.html">
+            
+                <a href="../request/readCustomPerType.html">
+            
+                    
+                    IRIS 前置自定义读取请求数据数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../request/readForm.html">
+            
+                <a href="../request/readForm.html">
+            
+                    
+                    IRIS 自定义结构体映射获取Form表单请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../request/readJson.html">
+            
+                <a href="../request/readJson.html">
+            
+                    
+                    IRIS 自定义结构体映射获取json格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../request/readXml.html">
+            
+                <a href="../request/readXml.html">
+            
+                    
+                    IRIS 自定义结构体映射获取xml格式请求数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../request/requestLogger.html">
+            
+                <a href="../request/requestLogger.html">
+            
+                    
+                    IRIS 请求日志记录配置(控制台)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" data-path="../request/requestLoggerFile.html">
+            
+                <a href="../request/requestLoggerFile.html">
+            
+                    
+                    IRIS 请求日志记录(文件)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" data-path="../request/uploadFile.html">
+            
+                <a href="../request/uploadFile.html">
+            
+                    
+                    IRIS 文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.11" data-path="../request/uploadFiles.html">
+            
+                <a href="../request/uploadFiles.html">
+            
+                    
+                    IRIS 多文件上传示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../reponseWriter.html">
+            
+                <a href="../reponseWriter.html">
+            
+                    
+                    IRIS http response模板,返回数据类型格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../responseWriter/herotemplate.html">
+            
+                <a href="../responseWriter/herotemplate.html">
+            
+                    
+                    IRIS hero模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../responseWriter/quickTemplate.html">
+            
+                <a href="../responseWriter/quickTemplate.html">
+            
+                    
+                    IRIS quicktemplate模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../responseWriter/sse.html">
+            
+                <a href="../responseWriter/sse.html">
+            
+                    
+                    IRIS sse应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../responseWriter/sseThirdParty.html">
+            
+                <a href="../responseWriter/sseThirdParty.html">
+            
+                    
+                    IRIS sse第三方应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../responseWriter/streamWriter.html">
+            
+                <a href="../responseWriter/streamWriter.html">
+            
+                    
+                    IRIS 流写入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../responseWriter/transactions.html">
+            
+                <a href="../responseWriter/transactions.html">
+            
+                    
+                    IRIS 请求事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../responseWriter/writeGzip.html">
+            
+                <a href="../responseWriter/writeGzip.html">
+            
+                    
+                    IRIS 以gzip格式写入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../responseWriter/writeRest.html">
+            
+                <a href="../responseWriter/writeRest.html">
+            
+                    
+                    IRIS 数据返回类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../miscellaneous.html">
+            
+                <a href="../miscellaneous.html">
+            
+                    
+                    IRIS 一些杂项例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../mvc.html">
+            
+                <a href="../mvc.html">
+            
+                    
+                    IRIS MVC示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    IRIS MVC基础示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="helloWorld.html">
+            
+                <a href="helloWorld.html">
+            
+                    
+                    IRIS MVC hello world示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="login.html">
+            
+                <a href="login.html">
+            
+                    
+                    IRIS MVC login示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    IRIS MVC中如何使用中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16.5" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    IRIS MVC overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="perMethod.html">
+            
+                <a href="perMethod.html">
+            
+                    
+                    IRIS MVC前置中间件使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="sessionController.html">
+            
+                <a href="sessionController.html">
+            
+                    
+                    IRIS session控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="singleton.html">
+            
+                <a href="singleton.html">
+            
+                    
+                    IRIS MVC 单例控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    IRIS MVC websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.10" data-path="withoutCtxNext.html">
+            
+                <a href="withoutCtxNext.html">
+            
+                    
+                    IRIS MVC ExecutionRules实现中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../orm.html">
+            
+                <a href="../orm.html">
+            
+                    
+                    对象关系映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../orm/xorm.html">
+            
+                <a href="../orm/xorm.html">
+            
+                    
+                    IRIS xorm使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    IRIS overview示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../yaag.html">
+            
+                <a href="../yaag.html">
+            
+                    
+                    API文档生成器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../yaag/iris.html">
+            
+                <a href="../yaag/iris.html">
+            
+                    
+                    IRIS API文档生成器示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.studyiris.com/doc/index.html" target="blank" class="gitbook-link" style="color: red;font-weight: bold;">
+            Go Iris 中文文档
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >IRIS MVC overview示例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="iris-mvc-overview&#x793A;&#x4F8B;"><code>IRIS MVC overview</code>&#x793A;&#x4F8B;</h1>
+<h2 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<blockquote>
+<p>&#x4E3B;&#x76EE;&#x5F55;<code>overview</code></p>
+</blockquote>
+<pre><code class="lang-html">    &#x2014;&#x2014; datamodels
+        &#x2014;&#x2014; movie.go
+    &#x2014;&#x2014; datasource
+        &#x2014;&#x2014; movie.go
+    &#x2014;&#x2014; main.go
+    &#x2014;&#x2014; repositories
+        &#x2014;&#x2014; movie_repository.go
+    &#x2014;&#x2014; services
+        &#x2014;&#x2014; movie_service.go
+    &#x2014;&#x2014; web
+        &#x2014;&#x2014; controllers
+            &#x2014;&#x2014; hello_controller.go
+            &#x2014;&#x2014; movie_controller.go
+        &#x2014;&#x2014; middleware
+            &#x2014;&#x2014; basicauth.go
+        &#x2014;&#x2014; viewmodels
+            &#x2014;&#x2014; README.md
+        &#x2014;&#x2014; views
+            &#x2014;&#x2014; hello
+                &#x2014;&#x2014; index.html
+                &#x2014;&#x2014; name.html
+</code></pre>
+<h2 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h2>
+<blockquote>
+<p><code>main.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;&#xFF1A;main.go</span>
+<span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;./datasource&quot;</span>
+    <span class="hljs-string">&quot;./repositories&quot;</span>
+    <span class="hljs-string">&quot;./services&quot;</span>
+    <span class="hljs-string">&quot;./web/controllers&quot;</span>
+    <span class="hljs-string">&quot;./web/middleware&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/mvc&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.Logger().SetLevel(<span class="hljs-string">&quot;debug&quot;</span>)
+    <span class="hljs-comment">//&#x52A0;&#x8F7D;&#x6A21;&#x677F;&#x6587;&#x4EF6;</span>
+    app.RegisterView(iris.HTML(<span class="hljs-string">&quot;./web/views&quot;</span>, <span class="hljs-string">&quot;.html&quot;</span>))
+    <span class="hljs-comment">//&#x670D;&#x52A1;&#x63A7;&#x5236;&#x5668;</span>
+    mvc.New(app.Party(<span class="hljs-string">&quot;/hello&quot;</span>)).Handle(<span class="hljs-built_in">new</span>(controllers.HelloController))
+    <span class="hljs-comment">//&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x62C6;&#x5206;&#x60A8;&#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x4EE5;&#x914D;&#x7F6E;mvc.Application</span>
+    <span class="hljs-comment">//&#x4F7F;&#x7528;`mvc.Configure`&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</span>
+    mvc.Configure(app.Party(<span class="hljs-string">&quot;/movies&quot;</span>), movies)
+    <span class="hljs-comment">// http://localhost:8080/hello</span>
+    <span class="hljs-comment">// http://localhost:8080/hello/iris</span>
+    <span class="hljs-comment">// http://localhost:8080/movies</span>
+    <span class="hljs-comment">// http://localhost:8080/movies/1</span>
+    app.Run(
+        <span class="hljs-comment">//&#x5728;localhost&#xFF1A;8080&#x542F;&#x52A8;Web&#x670D;&#x52A1;&#x5668;</span>
+        iris.Addr(<span class="hljs-string">&quot;localhost:8080&quot;</span>),
+        <span class="hljs-comment">//&#x6309;&#x4E0B;CTRL/CMD+C&#x65F6;&#x8DF3;&#x8FC7;&#x9519;&#x8BEF;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF1A;</span>
+        iris.WithoutServerError(iris.ErrServerClosed),
+        <span class="hljs-comment">//&#x542F;&#x7528;&#x66F4;&#x5FEB;&#x7684;json&#x5E8F;&#x5217;&#x5316;&#x548C;&#x4F18;&#x5316;&#xFF1A;</span>
+        iris.WithOptimizations,
+    )
+}
+
+<span class="hljs-comment">//&#x6CE8;&#x610F;mvc.Application&#xFF0C;&#x5B83;&#x4E0D;&#x662F;iris.Application&#x3002;</span>
+<span class="hljs-keyword">func</span> movies(app *mvc.Application) {
+    <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x57FA;&#x672C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF08;admin&#xFF1A;password&#xFF09;&#x4E2D;&#x95F4;&#x4EF6;</span>
+    <span class="hljs-comment">//&#x7528;&#x4E8E;&#x57FA;&#x4E8E;/movies&#x7684;&#x8BF7;&#x6C42;&#x3002;</span>
+    app.Router.Use(middleware.BasicAuth)
+    <span class="hljs-comment">//&#x4F7F;&#x7528;&#x6570;&#x636E;&#x6E90;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#xFF08;&#x5185;&#x5B58;&#xFF09;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x7535;&#x5F71;&#x8D44;&#x6E90;&#x5E93;&#x3002;</span>
+    repo := repositories.NewMovieRepository(datasource.Movies)
+    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x7535;&#x5F71;&#x670D;&#x52A1;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x7ED1;&#x5B9A;&#x5230;&#x7535;&#x5F71;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x4E2D;</span>
+    movieService := services.NewMovieService(repo)
+    app.Register(movieService)
+    <span class="hljs-comment">//&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x7535;&#x5F71;&#x63A7;&#x5236;&#x5668;&#x670D;&#x52A1;</span>
+    <span class="hljs-comment">//&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x63A7;&#x5236;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</span>
+    <span class="hljs-comment">//&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;`movies.Party&#xFF08;relativePath&#xFF09;`&#x6216;`movies.Clone&#xFF08;app.Party&#xFF08;...&#xFF09;&#xFF09;&#x521B;&#x5EFA;&#x5B50;mvc&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x4F60;&#x60F3;&#x3002;</span>
+    app.Handle(<span class="hljs-built_in">new</span>(controllers.MovieController))
+}
+</code></pre>
+<blockquote>
+<p><code>/datamodels/movie.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;: datamodels/movie.go</span>
+<span class="hljs-keyword">package</span> datamodels
+
+<span class="hljs-comment">//Movie&#x662F;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</span>
+<span class="hljs-comment">//&#x6CE8;&#x610F;&#x7ED3;&#x6784;&#x4F53;&#x5B57;&#x6BB5;&#x53EF;&#x5BFC;&#x51FA;</span>
+<span class="hljs-comment">//&#x5E94;&#x8BE5;&#x4FDD;&#x5B58;&#x5728;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;web/viewmodels/movie.go</span>
+<span class="hljs-comment">//&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5D4C;&#x5165;datamodels.Movie&#x6216; &#x58F0;&#x660E;&#x65B0;&#x5B57;&#x6BB5;&#x4F46;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x6B64;&#x6570;&#x636E;&#x6A21;&#x578B;</span>
+<span class="hljs-comment">//&#x4F5C;&#x4E3A;&#x6211;&#x4EEC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x552F;&#x4E00;&#x7684;&#x4E00;&#x4E2A;Movie&#x6A21;&#x578B;&#xFF0C;&#x4E3A;&#x4E86;&#x4E0D;&#x51B2;&#x7A81;&#x3002;</span>
+<span class="hljs-keyword">type</span> Movie <span class="hljs-keyword">struct</span> {
+    ID     <span class="hljs-keyword">int64</span>  <span class="hljs-string">`json:&quot;id&quot;`</span>
+    Name   <span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;name&quot;`</span>
+    Year   <span class="hljs-keyword">int</span>    <span class="hljs-string">`json:&quot;year&quot;`</span>
+    Genre  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;genre&quot;`</span>
+    Poster <span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;poster&quot;`</span>
+}
+</code></pre>
+<blockquote>
+<p><code>/datasource/movie.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;: datasource/movies.go</span>
+<span class="hljs-keyword">package</span> datasource
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;../datamodels&quot;</span>
+<span class="hljs-comment">//Movies&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6E90;&#x3002;</span>
+<span class="hljs-keyword">var</span> Movies = <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int64</span>]datamodels.Movie{
+    <span class="hljs-number">1</span>: {
+        ID:     <span class="hljs-number">1</span>,
+        Name:   <span class="hljs-string">&quot;Casablanca&quot;</span>,
+        Year:   <span class="hljs-number">1942</span>,
+        Genre:  <span class="hljs-string">&quot;Romance&quot;</span>,
+        Poster: <span class="hljs-string">&quot;https://iris-go.com/images/examples/mvc-movies/1.jpg&quot;</span>,
+    },
+    <span class="hljs-number">2</span>: {
+        ID:     <span class="hljs-number">2</span>,
+        Name:   <span class="hljs-string">&quot;Gone with the Wind&quot;</span>,
+        Year:   <span class="hljs-number">1939</span>,
+        Genre:  <span class="hljs-string">&quot;Romance&quot;</span>,
+        Poster: <span class="hljs-string">&quot;https://iris-go.com/images/examples/mvc-movies/2.jpg&quot;</span>,
+    },
+    <span class="hljs-number">3</span>: {
+        ID:     <span class="hljs-number">3</span>,
+        Name:   <span class="hljs-string">&quot;Citizen Kane&quot;</span>,
+        Year:   <span class="hljs-number">1941</span>,
+        Genre:  <span class="hljs-string">&quot;Mystery&quot;</span>,
+        Poster: <span class="hljs-string">&quot;https://iris-go.com/images/examples/mvc-movies/3.jpg&quot;</span>,
+    },
+    <span class="hljs-number">4</span>: {
+        ID:     <span class="hljs-number">4</span>,
+        Name:   <span class="hljs-string">&quot;The Wizard of Oz&quot;</span>,
+        Year:   <span class="hljs-number">1939</span>,
+        Genre:  <span class="hljs-string">&quot;Fantasy&quot;</span>,
+        Poster: <span class="hljs-string">&quot;https://iris-go.com/images/examples/mvc-movies/4.jpg&quot;</span>,
+    },
+    <span class="hljs-number">5</span>: {
+        ID:     <span class="hljs-number">5</span>,
+        Name:   <span class="hljs-string">&quot;North by Northwest&quot;</span>,
+        Year:   <span class="hljs-number">1959</span>,
+        Genre:  <span class="hljs-string">&quot;Thriller&quot;</span>,
+        Poster: <span class="hljs-string">&quot;https://iris-go.com/images/examples/mvc-movies/5.jpg&quot;</span>,
+    },
+}
+</code></pre>
+<blockquote>
+<p><code>/repositories/movie_repository.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;: repositories/movie_repository.go</span>
+<span class="hljs-keyword">package</span> repositories
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;errors&quot;</span>
+    <span class="hljs-string">&quot;sync&quot;</span>
+    <span class="hljs-string">&quot;../datamodels&quot;</span>
+)
+<span class="hljs-comment">// Query&#x8868;&#x793A;&#x8BBF;&#x95EE;&#x8005;&#x548C;&#x64CD;&#x4F5C;&#x67E5;&#x8BE2;</span>
+<span class="hljs-keyword">type</span> Query <span class="hljs-keyword">func</span>(datamodels.Movie) <span class="hljs-keyword">bool</span>
+
+<span class="hljs-comment">// MovieRepository&#x5904;&#x7406;&#x7535;&#x5F71;&#x5B9E;&#x4F53;/&#x6A21;&#x578B;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x3002;</span>
+<span class="hljs-comment">//&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6D4B;&#x8BD5;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5373;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x7535;&#x5F71;&#x5E93;&#x6216;&#x8FDE;&#x63A5;&#x5230;sql&#x6570;&#x636E;&#x5E93;&#x3002;</span>
+<span class="hljs-keyword">type</span> MovieRepository <span class="hljs-keyword">interface</span> {
+    Exec(query Query, action Query, limit <span class="hljs-keyword">int</span>, mode <span class="hljs-keyword">int</span>) (ok <span class="hljs-keyword">bool</span>)
+
+    Select(query Query) (movie datamodels.Movie, found <span class="hljs-keyword">bool</span>)
+    SelectMany(query Query, limit <span class="hljs-keyword">int</span>) (results []datamodels.Movie)
+
+    InsertOrUpdate(movie datamodels.Movie) (updatedMovie datamodels.Movie, err error)
+    Delete(query Query, limit <span class="hljs-keyword">int</span>) (deleted <span class="hljs-keyword">bool</span>)
+}
+
+<span class="hljs-comment">//NewMovieRepository&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x57FA;&#x4E8E;&#x7535;&#x5F71;&#x5185;&#x5B58;&#x7684;repository&#xFF0C;</span>
+<span class="hljs-comment">//&#x6211;&#x4EEC;&#x793A;&#x4F8B;&#x4E2D;&#x552F;&#x4E00;&#x7684;repository&#x7C7B;&#x578B;&#x3002;</span>
+<span class="hljs-keyword">func</span> NewMovieRepository(source <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int64</span>]datamodels.Movie) MovieRepository {
+    <span class="hljs-keyword">return</span> &amp;movieMemoryRepository{source: source}
+}
+
+<span class="hljs-comment">// movieMemoryRepository&#x662F;&#x4E00;&#x4E2A;MovieRepository</span>
+<span class="hljs-comment">//&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x6570;&#x636E;&#x6E90;&#xFF08;map&#xFF09;&#x7BA1;&#x7406;&#x7535;&#x5F71;&#x3002;</span>
+<span class="hljs-keyword">type</span> movieMemoryRepository <span class="hljs-keyword">struct</span> {
+    source <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int64</span>]datamodels.Movie
+    mu     sync.RWMutex
+}
+
+<span class="hljs-keyword">const</span> (
+    <span class="hljs-comment">// ReadOnlyMode&#x5C06;RLock&#xFF08;&#x8BFB;&#x53D6;&#xFF09;&#x6570;&#x636E;&#x3002;</span>
+    ReadOnlyMode = <span class="hljs-literal">iota</span>
+    <span class="hljs-comment">// ReadWriteMode&#x5C06;&#x9501;&#x5B9A;&#xFF08;&#x8BFB;/&#x5199;&#xFF09;&#x6570;&#x636E;&#x3002;</span>
+    ReadWriteMode
+)
+
+<span class="hljs-keyword">func</span> (r *movieMemoryRepository) Exec(query Query, action Query, actionLimit <span class="hljs-keyword">int</span>, mode <span class="hljs-keyword">int</span>) (ok <span class="hljs-keyword">bool</span>) {
+    loops := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">if</span> mode == ReadOnlyMode {
+        r.mu.RLock()
+        <span class="hljs-keyword">defer</span> r.mu.RUnlock()
+    } <span class="hljs-keyword">else</span> {
+        r.mu.Lock()
+        <span class="hljs-keyword">defer</span> r.mu.Unlock()
+    }
+    <span class="hljs-keyword">for</span> _, movie := <span class="hljs-keyword">range</span> r.source {
+        ok = query(movie)
+        <span class="hljs-keyword">if</span> ok {
+            <span class="hljs-keyword">if</span> action(movie) {
+                loops++
+                <span class="hljs-keyword">if</span> actionLimit &gt;= loops {
+                    <span class="hljs-keyword">break</span> <span class="hljs-comment">// break</span>
+                }
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-comment">//Select&#x63A5;&#x6536;&#x67E5;&#x8BE2;&#x51FD;&#x6570;</span>
+<span class="hljs-comment">//&#x4E3A;&#x5185;&#x90E8;&#x7684;&#x6BCF;&#x4E2A;&#x7535;&#x5F71;&#x6A21;&#x578B;&#x89E6;&#x53D1;</span>
+<span class="hljs-comment">//&#x6211;&#x4EEC;&#x60F3;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6E90;</span>
+<span class="hljs-comment">//&#x5F53;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;true&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x505C;&#x6B62;&#x8FED;&#x4EE3;</span>
+
+<span class="hljs-comment">//&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4F46;&#x975E;&#x5E38;&#x806A;&#x660E;&#x7684;&#x539F;&#x578B;&#x51FD;&#x6570;</span>
+<span class="hljs-comment">//&#x81EA;&#x4ECE;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x60F3;&#x5230;&#x5B83;&#x4EE5;&#x6765;&#xFF0C;&#x6211;&#x4E00;&#x76F4;&#x5728;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;</span>
+<span class="hljs-comment">//&#x5E0C;&#x671B;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5B83;&#x4E5F;&#x5F88;&#x6709;&#x7528;&#x3002;</span>
+<span class="hljs-keyword">func</span> (r *movieMemoryRepository) Select(query Query) (movie datamodels.Movie, found <span class="hljs-keyword">bool</span>) {
+    found = r.Exec(query, <span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        movie = m
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }, <span class="hljs-number">1</span>, ReadOnlyMode)
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;datamodels.Movie&#xFF0C;&#x5982;&#x679C;&#x6839;&#x672C;&#x627E;&#x4E0D;&#x5230;&#x7684;&#x8BDD;&#x3002;</span>
+    <span class="hljs-keyword">if</span> !found {
+        movie = datamodels.Movie{}
+    }
+    <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-comment">// SelectMany&#x4E0E;Select&#x76F8;&#x540C;&#x4F46;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;datamodels.Movie&#x4F5C;&#x4E3A;&#x5207;&#x7247;&#x3002;</span>
+<span class="hljs-comment">//&#x5982;&#x679C;limit &lt;= 0&#x5219;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x3002;</span>
+<span class="hljs-keyword">func</span> (r *movieMemoryRepository) SelectMany(query Query, limit <span class="hljs-keyword">int</span>) (results []datamodels.Movie) {
+    r.Exec(query, <span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        results = <span class="hljs-built_in">append</span>(results, m)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }, limit, ReadOnlyMode)
+    <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-comment">// InsertOrUpdate&#x5C06;movie&#x6DFB;&#x52A0;&#x6216;&#x66F4;&#x65B0;&#x5230;map&#x4E2D;&#x5B58;&#x50A8;&#x3002;</span>
+<span class="hljs-comment">//&#x8FD4;&#x56DE;&#x65B0;&#x7535;&#x5F71;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5219;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</span>
+<span class="hljs-keyword">func</span> (r *movieMemoryRepository) InsertOrUpdate(movie datamodels.Movie) (datamodels.Movie, error) {
+    id := movie.ID
+    <span class="hljs-keyword">if</span> id == <span class="hljs-number">0</span> { <span class="hljs-comment">// Create new action  //&#x521B;&#x5EFA;&#x65B0;&#x8BB0;&#x5F55;</span>
+        <span class="hljs-keyword">var</span> lastID <span class="hljs-keyword">int64</span>
+        <span class="hljs-comment">//&#x627E;&#x5230;&#x6700;&#x5927;&#x7684;ID&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0D;&#x91CD;&#x590D;</span>
+        <span class="hljs-comment">//&#x5728;&#x5236;&#x4F5C;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;</span>
+        <span class="hljs-comment">//&#x5E93;&#x4EE5;&#x751F;&#x6210;UUID&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</span>
+        r.mu.RLock()
+        <span class="hljs-keyword">for</span> _, item := <span class="hljs-keyword">range</span> r.source {
+            <span class="hljs-keyword">if</span> item.ID &gt; lastID {
+                lastID = item.ID
+            }
+        }
+        r.mu.RUnlock()
+        id = lastID + <span class="hljs-number">1</span>
+        movie.ID = id
+        <span class="hljs-comment">// map-specific thing</span>
+        r.mu.Lock()
+        r.source[id] = movie
+        r.mu.Unlock()
+        <span class="hljs-keyword">return</span> movie, <span class="hljs-literal">nil</span>
+    }
+    <span class="hljs-comment">//&#x57FA;&#x4E8E;movie.ID&#x66F4;&#x65B0;&#x52A8;&#x4F5C;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x5141;&#x8BB8;&#x66F4;&#x65B0;&#x6D77;&#x62A5;&#x548C;&#x6D41;&#x6D3E;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x7A7A;&#x7684;&#x8BDD;&#x3002;</span>
+    <span class="hljs-comment">//&#x6216;&#x8005;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x505A;&#x66FF;&#x6362;&#xFF1A;</span>
+    <span class="hljs-comment">// r.source [id] =movie</span>
+    <span class="hljs-comment">//&#x5411;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x6837;;</span>
+    current, exists := r.Select(<span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        <span class="hljs-keyword">return</span> m.ID == id
+    })
+    <span class="hljs-keyword">if</span> !exists { <span class="hljs-comment">// ID&#x4E0D;&#x662F;&#x771F;&#x5B9E;&#x7684;&#xFF0C;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</span>
+        <span class="hljs-keyword">return</span> datamodels.Movie{}, errors.New(<span class="hljs-string">&quot;failed to update a nonexistent movie&quot;</span>)
+    }
+    <span class="hljs-comment">//&#x6216;&#x6CE8;&#x91CA;&#x8FD9;&#x4E9B;&#x548C;r.source[id] = m&#x8FDB;&#x884C;&#x7EAF;&#x66FF;&#x6362;</span>
+    <span class="hljs-keyword">if</span> movie.Poster != <span class="hljs-string">&quot;&quot;</span> {
+        current.Poster = movie.Poster
+    }
+    <span class="hljs-keyword">if</span> movie.Genre != <span class="hljs-string">&quot;&quot;</span> {
+        current.Genre = movie.Genre
+    }
+    <span class="hljs-comment">//&#x9501;&#x5B9A;&#x6570;&#x636E;</span>
+    r.mu.Lock()
+    r.source[id] = current
+    r.mu.Unlock()
+    <span class="hljs-keyword">return</span> movie, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-keyword">func</span> (r *movieMemoryRepository) Delete(query Query, limit <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> r.Exec(query, <span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        <span class="hljs-built_in">delete</span>(r.source, m.ID)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }, limit, ReadWriteMode)
+}
+</code></pre>
+<blockquote>
+<p><code>/services/movie_service.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x6587;&#x4EF6;: services/movie_service.go</span>
+<span class="hljs-keyword">package</span> services
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;../datamodels&quot;</span>
+    <span class="hljs-string">&quot;../repositories&quot;</span>
+)
+<span class="hljs-comment">//MovieService&#x5904;&#x7406;&#x7535;&#x5F71;&#x6570;&#x636E;&#x6A21;&#x578B;&#x7684;&#x4E00;&#x4E9B;CRUID&#x64CD;&#x4F5C;&#x3002;</span>
+<span class="hljs-comment">//&#x8FD9;&#x4F9D;&#x8D56;&#x4E8E;&#x5F71;&#x7247;repository&#x7684;&#x65B9;&#x6CD5;&#x3002;</span>
+<span class="hljs-comment">//&#x8FD9;&#x662F;&#x5C06;&#x6570;&#x636E;&#x6E90;&#x4E0E;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x7EC4;&#x4EF6;&#x5206;&#x79BB;&#x3002;</span>
+<span class="hljs-comment">//&#x56E0;&#x6B64;&#xFF0C;&#x4E0D;&#x540C;&#x7684;repository&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x3002;</span>
+<span class="hljs-comment">//&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x90FD;&#x88AB;&#x7528;&#x4F5C;&#x63A5;&#x53E3;</span>
+<span class="hljs-comment">//&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5728;&#x5C06;&#x6765;&#x66F4;&#x6539;&#x6216;&#x5C1D;&#x8BD5;&#x5B9E;&#x9A8C;&#x6027;&#x7684;&#x4E0D;&#x540C;&#x57DF;&#x903B;&#x8F91;&#x3002;</span>
+<span class="hljs-keyword">type</span> MovieService <span class="hljs-keyword">interface</span> {
+    GetAll() []datamodels.Movie
+    GetByID(id <span class="hljs-keyword">int64</span>) (datamodels.Movie, <span class="hljs-keyword">bool</span>)
+    DeleteByID(id <span class="hljs-keyword">int64</span>) <span class="hljs-keyword">bool</span>
+    UpdatePosterAndGenreByID(id <span class="hljs-keyword">int64</span>, poster <span class="hljs-keyword">string</span>, genre <span class="hljs-keyword">string</span>) (datamodels.Movie, error)
+}
+
+<span class="hljs-comment">// NewMovieService&#x8FD4;&#x56DE;&#x9ED8;&#x8BA4;&#x7684;movie service</span>
+<span class="hljs-keyword">func</span> NewMovieService(repo repositories.MovieRepository) MovieService {
+    <span class="hljs-keyword">return</span> &amp;movieService{
+        repo: repo,
+    }
+}
+
+<span class="hljs-keyword">type</span> movieService <span class="hljs-keyword">struct</span> {
+    repo repositories.MovieRepository
+}
+
+<span class="hljs-comment">// GetAll&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x7535;&#x5F71;</span>
+<span class="hljs-keyword">func</span> (s *movieService) GetAll() []datamodels.Movie {
+    <span class="hljs-keyword">return</span> s.repo.SelectMany(<span class="hljs-keyword">func</span>(_ datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }, <span class="hljs-number">-1</span>)
+}
+
+<span class="hljs-comment">// GetByID&#x6839;&#x636E;&#x5176;id&#x8FD4;&#x56DE;&#x4E00;&#x90E8;&#x7535;&#x5F71;</span>
+<span class="hljs-keyword">func</span> (s *movieService) GetByID(id <span class="hljs-keyword">int64</span>) (datamodels.Movie, <span class="hljs-keyword">bool</span>) {
+    <span class="hljs-keyword">return</span> s.repo.Select(<span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        <span class="hljs-keyword">return</span> m.ID == id
+    })
+}
+
+<span class="hljs-comment">// UpdatePosterAndGenreByID&#x66F4;&#x65B0;&#x7535;&#x5F71;&#x7684;&#x6D77;&#x62A5;&#x548C;&#x6D41;&#x6D3E;&#x3002;</span>
+<span class="hljs-keyword">func</span> (s *movieService) UpdatePosterAndGenreByID(id <span class="hljs-keyword">int64</span>, poster <span class="hljs-keyword">string</span>, genre <span class="hljs-keyword">string</span>) (datamodels.Movie, error) {
+    <span class="hljs-comment">//&#x66F4;&#x65B0;&#x7535;&#x5F71;&#x5E76;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#x3002;</span>
+    <span class="hljs-keyword">return</span> s.repo.InsertOrUpdate(datamodels.Movie{
+        ID:     id,
+        Poster: poster,
+        Genre:  genre,
+    })
+}
+
+<span class="hljs-comment">// DeleteByID&#x6309;ID&#x5220;&#x9664;&#x7535;&#x5F71;&#x3002;</span>
+<span class="hljs-comment">//&#x5982;&#x679C;&#x5220;&#x9664;&#x5219;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#x3002;</span>
+<span class="hljs-keyword">func</span> (s *movieService) DeleteByID(id <span class="hljs-keyword">int64</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> s.repo.Delete(<span class="hljs-keyword">func</span>(m datamodels.Movie) <span class="hljs-keyword">bool</span> {
+        <span class="hljs-keyword">return</span> m.ID == id
+    }, <span class="hljs-number">1</span>)
+}
+</code></pre>
+<blockquote>
+<p><code>/web/controllers/hello_controller.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;: web/controllers/hello_controller.go</span>
+<span class="hljs-keyword">package</span> controllers
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;errors&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris/mvc&quot;</span>
+)
+
+<span class="hljs-comment">// HelloController&#x662F;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x63A7;&#x5236;&#x5668;</span>
+<span class="hljs-comment">//&#x5B83;&#x5904;&#x7406; GET&#xFF1A;/hello&#x548C;GET&#xFF1A;/hello/{name}</span>
+<span class="hljs-keyword">type</span> HelloController <span class="hljs-keyword">struct</span>{}
+
+<span class="hljs-keyword">var</span> helloView = mvc.View{
+    Name: <span class="hljs-string">&quot;hello/index.html&quot;</span>,
+    Data: <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">interface</span>{}{
+        <span class="hljs-string">&quot;Title&quot;</span>:     <span class="hljs-string">&quot;Hello Page&quot;</span>,
+        <span class="hljs-string">&quot;MyMessage&quot;</span>: <span class="hljs-string">&quot;Welcome to my awesome website&quot;</span>,
+    },
+}
+<span class="hljs-comment">//Get&#x5C06;&#x8FD4;&#x56DE;&#x5E26;&#x6709;&#x7ED1;&#x5B9A;&#x6570;&#x636E;&#x7684;&#x9884;&#x5B9A;&#x4E49;&#x89C6;&#x56FE;</span>
+<span class="hljs-comment">//`mvc.Result`&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&apos;Dispatch`&#x529F;&#x80FD;&#x7684;&#x63A5;&#x53E3;&#x3002;</span>
+<span class="hljs-comment">//`mvc.Response`&#x548C;`mvc.View`&#x662F;&#x5185;&#x7F6E;&#x7684;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;</span>
+<span class="hljs-comment">//&#x4F60;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x54CD;&#x5E94;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;</span>
+<span class="hljs-comment">//&#x5B9E;&#x73B0;`github.com/kataras/iris/hero&#xFF03;Result`&#x63A5;&#x53E3;&#x3002;</span>
+<span class="hljs-keyword">func</span> (c *HelloController) Get() mvc.Result {
+    <span class="hljs-keyword">return</span> helloView
+}
+
+<span class="hljs-comment">//&#x60A8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x91CD;&#x590D;&#x4F7F;&#x7528;</span>
+<span class="hljs-keyword">var</span> errBadName = errors.New(<span class="hljs-string">&quot;bad name&quot;</span>)
+
+<span class="hljs-comment">//&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;</span>
+<span class="hljs-comment">//&#x4F7F;&#x7528;mvc.Response&#x5305;&#x88C5;&#x6B64;&#x9519;&#x8BEF;&#xFF0C;&#x4F7F;&#x5176;&#x6210;&#x4E3A;mvc.Result&#x517C;&#x5BB9;&#x7C7B;&#x578B;&#x3002;</span>
+<span class="hljs-keyword">var</span> badName = mvc.Response{Err: errBadName, Code: <span class="hljs-number">400</span>}
+
+<span class="hljs-comment">// GetBy &#x8FD4;&#x56DE; &quot;Hello {name}&quot; response.</span>
+<span class="hljs-comment">// &#x793A;&#x4F8B;:</span>
+<span class="hljs-comment">// curl -i http://localhost:8080/hello/iris</span>
+<span class="hljs-comment">// curl -i http://localhost:8080/hello/anything</span>
+<span class="hljs-keyword">func</span> (c *HelloController) GetBy(name <span class="hljs-keyword">string</span>) mvc.Result {
+    <span class="hljs-keyword">if</span> name != <span class="hljs-string">&quot;iris&quot;</span> {
+        <span class="hljs-keyword">return</span> badName
+        <span class="hljs-comment">// &#x6216;</span>
+        <span class="hljs-comment">// GetBy(name string) (mvc.Result, error) {</span>
+        <span class="hljs-comment">//    return nil, errBadName</span>
+        <span class="hljs-comment">// }</span>
+    }
+    <span class="hljs-comment">// return mvc.Response{Text: &quot;Hello &quot; + name} &#x6216;:</span>
+    <span class="hljs-keyword">return</span> mvc.View{
+        Name: <span class="hljs-string">&quot;hello/name.html&quot;</span>,
+        Data: name,
+    }
+}
+</code></pre>
+<blockquote>
+<p><code>/web/controllers/movie_controller.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x6587;&#x4EF6;: web/controllers/movie_controller.go</span>
+<span class="hljs-keyword">package</span> controllers
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;errors&quot;</span>
+    <span class="hljs-string">&quot;../../datamodels&quot;</span>
+    <span class="hljs-string">&quot;../../services&quot;</span>
+    <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+)
+<span class="hljs-comment">// MovieController&#x662F;&#x6211;&#x4EEC;&#x7684;/movies controller&#x3002;</span>
+<span class="hljs-keyword">type</span> MovieController <span class="hljs-keyword">struct</span> {
+    <span class="hljs-comment">//&#x6211;&#x4EEC;&#x7684;MovieService&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x4ECE;&#x4E3B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7ED1;&#x5B9A;&#x3002;</span>
+    Service services.MovieService
+}
+
+<span class="hljs-comment">//&#x83B7;&#x53D6;&#x7535;&#x5F71;&#x7684;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x3002;</span>
+<span class="hljs-comment">// &#x793A;&#x4F8B;:</span>
+<span class="hljs-comment">// curl -i http://localhost:8080/movies</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// func (c *MovieController) Get() (results []viewmodels.Movie) {</span>
+<span class="hljs-comment">//     data := c.Service.GetAll()</span>
+<span class="hljs-comment">//     for _, movie := range data {</span>
+<span class="hljs-comment">//         results = append(results, viewmodels.Movie{movie})</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//     return</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-comment">//&#x5426;&#x5219;&#x53EA;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x6A21;&#x578B;</span>
+<span class="hljs-keyword">func</span> (c *MovieController) Get() (results []datamodels.Movie) {
+    <span class="hljs-keyword">return</span> c.Service.GetAll()
+}
+
+<span class="hljs-comment">// MovieByID&#x8FD4;&#x56DE;&#x6307;&#x5B9A;id&#x7684;&#x4E00;&#x90E8;&#x7535;&#x5F71;</span>
+<span class="hljs-comment">// &#x4F8B;&#x5B50;:</span>
+<span class="hljs-comment">// curl -i http://localhost:8080/movies/1</span>
+<span class="hljs-keyword">func</span> (c *MovieController) GetBy(id <span class="hljs-keyword">int64</span>) (movie datamodels.Movie, found <span class="hljs-keyword">bool</span>) {
+    <span class="hljs-keyword">return</span> c.Service.GetByID(id) <span class="hljs-comment">// it will throw 404 if not found.</span>
+}
+
+<span class="hljs-comment">// PutBy &#x66F4;&#x65B0;&#x6307;&#x70B9;&#x7535;&#x5F71;&#x6570;&#x636E;.</span>
+<span class="hljs-comment">// &#x4F8B;&#x5B50;:</span>
+<span class="hljs-comment">// curl -i -X PUT -F &quot;genre=Thriller&quot; -F &quot;poster=@/Users/kataras/Downloads/out.gif&quot; http://localhost:8080/movies/1</span>
+<span class="hljs-keyword">func</span> (c *MovieController) PutBy(ctx iris.Context, id <span class="hljs-keyword">int64</span>) (datamodels.Movie, error) {
+    <span class="hljs-comment">// get the request data for poster and genre</span>
+    file, info, err := ctx.FormFile(<span class="hljs-string">&quot;poster&quot;</span>)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> datamodels.Movie{}, errors.New(<span class="hljs-string">&quot;failed due form file &apos;poster&apos; missing&quot;</span>)
+    }
+    <span class="hljs-comment">//&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x3002;</span>
+    file.Close()
+    <span class="hljs-comment">//&#x60F3;&#x8C61;&#x8FD9;&#x662F;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x7F51;&#x5740;...</span>
+    poster := info.Filename
+    genre := ctx.FormValue(<span class="hljs-string">&quot;genre&quot;</span>)
+    <span class="hljs-keyword">return</span> c.Service.UpdatePosterAndGenreByID(id, poster, genre)
+}
+
+<span class="hljs-comment">// DeleteBy&#x5220;&#x9664;&#x7535;&#x5F71;&#x3002;</span>
+<span class="hljs-comment">// &#x4F8B;&#x5B50;:</span>
+<span class="hljs-comment">// curl -i -X DELETE -u admin:password http://localhost:8080/movies/1</span>
+<span class="hljs-keyword">func</span> (c *MovieController) DeleteBy(id <span class="hljs-keyword">int64</span>) <span class="hljs-keyword">interface</span>{} {
+    wasDel := c.Service.DeleteByID(id)
+    <span class="hljs-keyword">if</span> wasDel {
+        <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x5DF2;&#x5220;&#x9664;&#x7535;&#x5F71;&#x7684;ID</span>
+        <span class="hljs-keyword">return</span> iris.Map{<span class="hljs-string">&quot;deleted&quot;</span>: id}
+    }
+    <span class="hljs-comment">//&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x65B9;&#x6CD5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x8FD9;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;&#xFF08;map&#x6216;int&#xFF09;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x6211;&#x4EEC;&#x4E0D;&#x5FC5;&#x5C06;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x4E3A;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x3002;</span>
+    <span class="hljs-keyword">return</span> iris.StatusBadRequest
+}
+</code></pre>
+<blockquote>
+<p><code>/web/middleware/basicauth.go</code></p>
+</blockquote>
+<pre><code class="lang-go"><span class="hljs-comment">//&#x6587;&#x4EF6;: web/middleware/basicauth.go</span>
+<span class="hljs-keyword">package</span> middleware
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;github.com/kataras/iris/middleware/basicauth&quot;</span>
+
+<span class="hljs-comment">// BasicAuth&#x4E2D;&#x95F4;&#x4EF6;&#x793A;&#x4F8B;&#x3002;</span>
+<span class="hljs-keyword">var</span> BasicAuth = basicauth.New(basicauth.Config{
+    Users: <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;admin&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>,
+    },
+})
+</code></pre>
+<blockquote>
+<p><code>/web/views/hello/index.html</code></p>
+</blockquote>
+<pre><code class="lang-html">
+<span class="hljs-comment">&lt;!-- &#x6587;&#x4EF6;: web/views/hello/index.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{.Title}} - My App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{.MyMessage}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p><code>/web/views/name.go</code></p>
+</blockquote>
+<pre><code class="lang-html">
+<span class="hljs-comment">&lt;!-- &#x6587;&#x4EF6;: web/views/hello/name.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{.}}&apos; Portfolio - My App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {{.}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><img src="../img/folder_structure.png" alt="MVC&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="middleware.html" class="navigation navigation-prev " aria-label="Previous page: IRIS MVC中如何使用中间件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="perMethod.html" class="navigation navigation-next " aria-label="Next page: IRIS MVC前置中间件使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IRIS MVC overview示例","level":"1.16.5","depth":2,"next":{"title":"IRIS MVC前置中间件使用","level":"1.16.6","depth":2,"path":"mvc/perMethod.md","ref":"mvc/perMethod.md","articles":[]},"previous":{"title":"IRIS MVC中如何使用中间件","level":"1.16.4","depth":2,"path":"mvc/middleware.md","ref":"mvc/middleware.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mvc/overview.md","mtime":"2019-08-10T19:19:34.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T19:48:02.861Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

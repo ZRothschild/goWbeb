@@ -1,0 +1,568 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>包装路由器 · Go Web Iris中文网</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ErrorHandlers.html" />
+    
+    
+    <link rel="prev" href="Middleware.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Go Iris中文文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Features.html">
+            
+                <a href="Features.html">
+            
+                    
+                    功能特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Installation.html">
+            
+                <a href="Installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Host.html">
+            
+                <a href="Host.html">
+            
+                    
+                    主机服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Overview.html">
+            
+                <a href="Overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Configuration.html">
+            
+                <a href="Configuration.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Routing.html">
+            
+                <a href="Routing.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="ContextOutline.html">
+            
+                <a href="ContextOutline.html">
+            
+                    
+                    上下文概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="DynamicPathParameters.html">
+            
+                <a href="DynamicPathParameters.html">
+            
+                    
+                    动态路由参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="ReverseRouting.html">
+            
+                <a href="ReverseRouting.html">
+            
+                    
+                    路由和反向查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Middleware.html">
+            
+                <a href="Middleware.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.5" data-path="WrappingTheRouter.html">
+            
+                <a href="WrappingTheRouter.html">
+            
+                    
+                    包装路由器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ErrorHandlers.html">
+            
+                <a href="ErrorHandlers.html">
+            
+                    
+                    错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="MVC.html">
+            
+                <a href="MVC.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="MoviesMVCApplication.html">
+            
+                <a href="MoviesMVCApplication.html">
+            
+                    
+                    电影MVC应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="MVCLovesWebsockets.html">
+            
+                <a href="MVCLovesWebsockets.html">
+            
+                    
+                    MVC中的Websockets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="MVCLovesSessions.html">
+            
+                <a href="MVCLovesSessions.html">
+            
+                    
+                    MVC中的Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="View.html">
+            
+                <a href="View.html">
+            
+                    
+                    视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Sessions.html">
+            
+                <a href="Sessions.html">
+            
+                    
+                    Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Websockets.html">
+            
+                <a href="Websockets.html">
+            
+                    
+                    Websockets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.studyiris.com/example/index.html" target="blank" class="gitbook-link" style="color: red;font-weight: bold" >
+            Go Iris Web小示例文档
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >包装路由器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="&#x5305;&#x88C5;&#x8DEF;&#x7531;&#x5668;">&#x5305;&#x88C5;&#x8DEF;&#x7531;&#x5668;</h4>
+<p>443/5000
+&#x975E;&#x5E38;&#x7F55;&#x89C1;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x6C38;&#x8FDC;&#x4E0D;&#x9700;&#x8981;&#x5B83;&#xFF0C;&#x4F46;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x60A8;&#x90FD;&#x9700;&#x8981;&#x5B83;&#x3002;(&#x4EE5;&#x5907;&#x4E0D;&#x65F6;&#x4E4B;&#x9700;)</p>
+<p>&#x6709;&#x65F6;&#x60A8;&#x9700;&#x8981;&#x8986;&#x76D6;&#x6216;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5C06;&#x5728;&#x4F20;&#x5165;&#x8BF7;&#x6C42;&#x4E0A;&#x6267;&#x884C;&#x8DEF;&#x7531;&#x5668;&#x3002; &#x5982;&#x679C;&#x4F60;&#x4EE5;&#x524D;&#x6709;&#x8FC7;&#x4F7F;&#x7528;net / http&#x548C;&#x5176;&#x4ED6;web&#x6846;&#x67B6;&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;
+&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x719F;&#x6089;&#x4F60;&#xFF08;&#x5B83;&#x6709;net / http&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x63A5;&#x53D7;&#x4E0B;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x800C;&#x662F;&#x63A5;&#x53D7;Router&#x4F5C;&#x4E3A;&#x51FD;&#x6570; &#x662F;&#x5426;&#x88AB;&#x6267;&#x884C;&#xFF09;&#x3002;</p>
+<pre><code class="lang-go">    <span class="hljs-comment">// WrapperFunc&#x7528;&#x4F5C;&#x9884;&#x671F;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7B7E;&#x540D;</span>
+    <span class="hljs-comment">//&#x7528;&#x4E8E;WrapRouter&#x3002; &#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x4F4E;&#x7EA7;&#x201D;&#x7B7E;&#x540D;&#xFF0C;&#x4E0E;net / http&#x517C;&#x5BB9;&#x3002;</span>
+    <span class="hljs-comment">//&#x5B83;&#x7528;&#x4E8E;&#x8FD0;&#x884C;&#x6216;&#x4E0D;&#x8FD0;&#x884C;&#x57FA;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x903B;&#x8F91;&#x7684;&#x8DEF;&#x7531;&#x5668;&#x3002;</span>
+    <span class="hljs-keyword">type</span> WrapperFunc <span class="hljs-keyword">func</span>(w http.ResponseWriter, r *http.Request, firstNextIsTheRouter http.HandlerFunc)
+    <span class="hljs-comment">// WrapRouter&#x5728;&#x4E3B;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x9876;&#x90E8;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#x5668;&#x3002;</span>
+    <span class="hljs-comment">//&#x901A;&#x5E38;&#xFF0C;&#x5F53;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x50CF;CORS&#x8FD9;&#x6837;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x5305;&#x88C5;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5B83;&#x5BF9;&#x7B2C;&#x4E09;&#x65B9;&#x4E2D;&#x95F4;&#x4EF6;&#x5F88;&#x6709;&#x7528;&#x3002;</span>
+    <span class="hljs-comment">//&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x5305;&#x88C5;&#x5668;&#xFF0C;&#x8FD9;&#x4E9B;&#x5305;&#x88C5;&#x5668;&#x7684;&#x6267;&#x884C;&#x4ECE;&#x6700;&#x540E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x3002;</span>
+    <span class="hljs-comment">//&#x8FD9;&#x610F;&#x5473;&#x7740;&#x7B2C;&#x4E8C;&#x4E2A;&#x5305;&#x88C5;&#x5668;&#x5C06;&#x5305;&#x88C5;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</span>
+    <span class="hljs-comment">//&#x5728;&#x6784;&#x5EFA;&#x4E4B;&#x524D;&#x3002;</span>
+    <span class="hljs-keyword">func</span> WrapRouter(wrapperFunc WrapperFunc)
+</code></pre>
+<p>Iris&#x7684;&#x8DEF;&#x7531;&#x5668;&#x57FA;&#x4E8E;HTTP&#x65B9;&#x6CD5;&#x641C;&#x7D22;&#x5176;&#x8DEF;&#x7531;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x5305;&#x88C5;&#x5668;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x8BE5;&#x884C;&#x4E3A;&#x5E76;&#x6267;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x4EE3;&#x7801;&#x3002;
+&#x793A;&#x4F8B;&#x4EE3;&#x7801;:</p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
+    app := iris.New()
+    app.OnErrorCode(iris.StatusNotFound, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.HTML(<span class="hljs-string">&quot;&lt;b&gt;Resource Not found&lt;/b&gt;&quot;</span>)
+    })
+    app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.ServeFile(<span class="hljs-string">&quot;./public/index.html&quot;</span>, <span class="hljs-literal">false</span>)
+    })
+    app.Get(<span class="hljs-string">&quot;/profile/{username}&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+        ctx.Writef(<span class="hljs-string">&quot;Hello %s&quot;</span>, ctx.Params().Get(<span class="hljs-string">&quot;username&quot;</span>))
+    })
+   <span class="hljs-comment">//&#x63D0;&#x4F9B;&#x6765;&#x81EA;&#x6839;&#x201C;/&#x201D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;.StaticWeb&#x5B83;&#x53EF;&#x4EE5;&#x8986;&#x76D6;</span>
+   <span class="hljs-comment">//&#x7531;&#x4E8E;&#x4E0B;&#x5212;&#x7EBF;&#x9700;&#x8981;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x6240;&#x6709;&#x8DEF;&#x7531;&#x3002;</span>
+   <span class="hljs-comment">//&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;&#x5982;&#x4F55;&#x7ED5;&#x8FC7;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;</span>
+   <span class="hljs-comment">//&#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x548C;</span>
+   <span class="hljs-comment">//&#x4E3A;&#x8DEF;&#x7531;&#x5668;&#x8BBE;&#x7F6E;&#x5305;&#x88C5;&#x5668;&#xFF08;&#x5982;&#x201C;&#x4F4E;&#x7EA7;&#x201D;&#x4E2D;&#x95F4;&#x4EF6;&#xFF09;</span>
+   <span class="hljs-comment">//&#x4E3A;&#x4E86;&#x624B;&#x52A8;&#x68C0;&#x67E5;&#x6211;&#x4EEC;&#x662F;&#x5426;&#x60F3;&#x8981;&#x6B63;&#x5E38;&#x5904;&#x7406;&#x8DEF;&#x7531;&#x5668;</span>
+   <span class="hljs-comment">//&#x6216;&#x8005;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;</span>
+   <span class="hljs-comment">//&#x4F7F;&#x7528;.StaticHandler</span>
+   <span class="hljs-comment">//&#x5B83;&#x4E0E;StaticWeb&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;</span>
+   <span class="hljs-comment">//&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#xFF0C;&#x5B83;&#x53EA;&#x8FD4;&#x56DE;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;</span>
+    fileServer := app.StaticHandler(<span class="hljs-string">&quot;./public&quot;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)
+    <span class="hljs-comment">//&#x4F7F;&#x7528;&#x672C;&#x673A;net / http&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5305;&#x88C5;&#x8DEF;&#x7531;&#x5668;&#x3002;</span>
+    <span class="hljs-comment">//&#x5982;&#x679C;url&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x201C;&#x3002;&#x201D; &#xFF08;&#x5373;&#xFF1A;.css&#xFF0C;.js ......&#xFF09;</span>
+    <span class="hljs-comment">//&#xFF08;&#x53D6;&#x51B3;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x5F02;&#x5E38;&#xFF09;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x7136;&#x540E;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5C06;&#x6267;&#x884C;&#x8D1F;&#x8D23;&#x7684;&#x8DEF;&#x7531;&#x5668;</span>
+   <span class="hljs-comment">//&#x6CE8;&#x518C;&#x8DEF;&#x7EBF;&#xFF08;&#x770B;&#x201C;/&#x201D;&#x548C;&#x201C;/ profile / {username}&#x201D;&#xFF09;</span>
+   <span class="hljs-comment">//&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C06;&#x6839;&#x636E;&#x6839;&#x201C;/&#x201D;&#x8DEF;&#x5F84;&#x63D0;&#x4F9B;&#x6587;&#x4EF6;&#x3002;</span>
+    app.WrapRouter(<span class="hljs-keyword">func</span>(w http.ResponseWriter, r *http.Request, router http.HandlerFunc) {
+        path := r.URL.Path
+       <span class="hljs-comment">//&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;path&#x7684;&#x540E;&#x7F00;&#x4E3A;&#x201C;index.html&#x201D;&#xFF0C;&#x5219;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x201C;/&#x201D;&#xFF0C;</span>
+       <span class="hljs-comment">//&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5C06;&#x88AB;&#x6267;&#x884C;&#x3002;</span>
+        <span class="hljs-keyword">if</span> !strings.Contains(path, <span class="hljs-string">&quot;.&quot;</span>) { 
+            <span class="hljs-comment">//&#x5982;&#x679C;&#x5B83;&#x4E0D;&#x662F;&#x8D44;&#x6E90;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x50CF;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E00;&#x6837;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x5668;. &lt;-- IMPORTANT</span>
+            router(w, r)
+            <span class="hljs-keyword">return</span>
+        }
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x5E76;&#x91CA;&#x653E;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x6267;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;</span>
+        <span class="hljs-comment">//&#x8BB0;&#x5F97;&#xFF1A;&#x6211;&#x4EEC;&#x4F7F;&#x7528;net / http.Handler&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x672C;&#x8EAB;&#x4E4B;&#x524D;&#x5904;&#x4E8E;&#x201C;&#x4F4E;&#x7EA7;&#x522B;&#x201D;&#x3002;</span>
+        ctx := app.ContextPool.Acquire(w, r)
+        fileServer(ctx)
+        app.ContextPool.Release(ctx)
+    })
+    <span class="hljs-comment">// http://localhost:8080</span>
+    <span class="hljs-comment">// http://localhost:8080/index.html</span>
+    <span class="hljs-comment">// http://localhost:8080/app.js</span>
+    <span class="hljs-comment">// http://localhost:8080/css/main.css</span>
+    <span class="hljs-comment">// http://localhost:8080/profile/anyusername</span>
+    app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>))
+   <span class="hljs-comment">//&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x53EA;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x7528;&#x4F8B;&#xFF0C;</span>
+   <span class="hljs-comment">//&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x8981;.WrapRouter&#x6216;.Downgrade&#x4EE5;&#x7ED5;&#x8FC7;&#x8679;&#x819C;&#x7684;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;&#x5668;&#xFF0C;&#x5373;&#xFF1A;</span>
+   <span class="hljs-comment">//&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x4EE3;&#x7406;&#x3002;</span>
+   <span class="hljs-comment">//&#x5982;&#x679C;&#x60A8;&#x53EA;&#x60F3;&#x5728;&#x9664;root&#x4E4B;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x8DEF;&#x5F84;&#x4E0A;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x6587;&#x4EF6;</span>
+   <span class="hljs-comment">//&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;StaticWeb, i.e:</span>
+    <span class="hljs-comment">//                          .StaticWeb(&quot;/static&quot;, &quot;./public&quot;)</span>
+    <span class="hljs-comment">// ________________________________requestPath, systemPath</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Middleware.html" class="navigation navigation-prev " aria-label="Previous page: 中间件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ErrorHandlers.html" class="navigation navigation-next " aria-label="Next page: 错误处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"包装路由器","level":"1.7.5","depth":2,"next":{"title":"错误处理","level":"1.8","depth":1,"path":"irisDoc/ErrorHandlers.md","ref":"./irisDoc/ErrorHandlers.md","articles":[]},"previous":{"title":"中间件","level":"1.7.4","depth":2,"path":"irisDoc/Middleware.md","ref":"./irisDoc/Middleware.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"irisDoc/WrappingTheRouter.md","mtime":"2019-06-15T05:50:52.315Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T18:39:33.396Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

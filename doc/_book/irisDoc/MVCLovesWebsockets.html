@@ -1,0 +1,568 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MVC中的Websockets · Go Web Iris中文网</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MVCLovesSessions.html" />
+    
+    
+    <link rel="prev" href="MoviesMVCApplication.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Go Iris中文文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Features.html">
+            
+                <a href="Features.html">
+            
+                    
+                    功能特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Installation.html">
+            
+                <a href="Installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Host.html">
+            
+                <a href="Host.html">
+            
+                    
+                    主机服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Overview.html">
+            
+                <a href="Overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Configuration.html">
+            
+                <a href="Configuration.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Routing.html">
+            
+                <a href="Routing.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="ContextOutline.html">
+            
+                <a href="ContextOutline.html">
+            
+                    
+                    上下文概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="DynamicPathParameters.html">
+            
+                <a href="DynamicPathParameters.html">
+            
+                    
+                    动态路由参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="ReverseRouting.html">
+            
+                <a href="ReverseRouting.html">
+            
+                    
+                    路由和反向查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Middleware.html">
+            
+                <a href="Middleware.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="WrappingTheRouter.html">
+            
+                <a href="WrappingTheRouter.html">
+            
+                    
+                    包装路由器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ErrorHandlers.html">
+            
+                <a href="ErrorHandlers.html">
+            
+                    
+                    错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="MVC.html">
+            
+                <a href="MVC.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="MoviesMVCApplication.html">
+            
+                <a href="MoviesMVCApplication.html">
+            
+                    
+                    电影MVC应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.2" data-path="MVCLovesWebsockets.html">
+            
+                <a href="MVCLovesWebsockets.html">
+            
+                    
+                    MVC中的Websockets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="MVCLovesSessions.html">
+            
+                <a href="MVCLovesSessions.html">
+            
+                    
+                    MVC中的Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="View.html">
+            
+                <a href="View.html">
+            
+                    
+                    视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Sessions.html">
+            
+                <a href="Sessions.html">
+            
+                    
+                    Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Websockets.html">
+            
+                <a href="Websockets.html">
+            
+                    
+                    Websockets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.studyiris.com/example/index.html" target="blank" class="gitbook-link" style="color: red;font-weight: bold">
+            Go Iris Web小示例文档
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MVC中的Websockets</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="mvc-&#x7ED3;&#x5408;websocket">MVC &#x7ED3;&#x5408;Websocket</h4>
+<pre><code class="lang-go">    <span class="hljs-keyword">package</span> main
+    <span class="hljs-keyword">import</span> (
+        <span class="hljs-string">&quot;sync/atomic&quot;</span>
+        <span class="hljs-string">&quot;github.com/kataras/iris&quot;</span>
+        <span class="hljs-string">&quot;github.com/kataras/iris/mvc&quot;</span>
+        <span class="hljs-string">&quot;github.com/kataras/iris/websocket&quot;</span>
+    )
+    <span class="hljs-keyword">func</span> main() {
+        app := iris.New()
+        <span class="hljs-comment">// &#x52A0;&#x8F7D;&#x6A21;&#x677F;</span>
+        app.RegisterView(iris.HTML(<span class="hljs-string">&quot;./views&quot;</span>, <span class="hljs-string">&quot;.html&quot;</span>))
+
+        <span class="hljs-comment">// &#x6E32;&#x67D3;&#x89C6;&#x56FE;.</span>
+        app.Get(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">func</span>(ctx iris.Context) {
+            ctx.View(<span class="hljs-string">&quot;index.html&quot;</span>)
+        })
+
+        mvc.Configure(app.Party(<span class="hljs-string">&quot;/websocket&quot;</span>), configureMVC)
+
+        <span class="hljs-comment">// http://localhost:8080</span>
+        app.Run(iris.Addr(<span class="hljs-string">&quot;:8080&quot;</span>))
+    }
+    <span class="hljs-keyword">func</span> configureMVC(m *mvc.Application) {
+        ws := websocket.New(websocket.Config{})
+        <span class="hljs-comment">// http://localhost:8080/websocket/iris-ws.js</span>
+        m.Router.Any(<span class="hljs-string">&quot;/iris-ws.js&quot;</span>, websocket.ClientHandler())
+
+      <span class="hljs-comment">//&#x8FD9;&#x5C06;&#x7ED1;&#x5B9A;ws.Upgrade&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;websocket.Connection</span>
+        <span class="hljs-comment">//&#x7531;`m.Handle`&#x670D;&#x52A1;&#x7684;&#x63A7;&#x5236;&#x5668;&#x3002;</span>
+        m.Register(ws.Upgrade)
+        m.Handle(<span class="hljs-built_in">new</span>(websocketController))
+    }
+    <span class="hljs-keyword">var</span> visits <span class="hljs-keyword">uint64</span>
+    <span class="hljs-keyword">func</span> increment() <span class="hljs-keyword">uint64</span> {
+        <span class="hljs-keyword">return</span> atomic.AddUint64(&amp;visits, <span class="hljs-number">1</span>)
+    }
+
+    <span class="hljs-keyword">func</span> decrement() <span class="hljs-keyword">uint64</span> {
+        <span class="hljs-keyword">return</span> atomic.AddUint64(&amp;visits, ^<span class="hljs-keyword">uint64</span>(<span class="hljs-number">0</span>))
+    }
+
+    <span class="hljs-keyword">type</span> websocketController <span class="hljs-keyword">struct</span> {
+        <span class="hljs-comment">//&#x6CE8;&#x610F;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x5B57;&#x6BB5;&#xFF0C;&#x65E0;&#x6240;&#x8C13;&#xFF0C;binder&#x4F1A;&#x627E;&#x5230;&#x5B83;&#x3002;</span>
+        <span class="hljs-comment">//&#x8FD9;&#x662F;&#x5F53;&#x524D;&#x7684;websocket&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;* websocketController&#x5B9E;&#x4F8B;&#x3002;</span>
+        Conn websocket.Connection
+    }
+
+    <span class="hljs-keyword">func</span> (c *websocketController) onLeave(roomName <span class="hljs-keyword">string</span>) {
+        <span class="hljs-comment">//visits--</span>
+        newCount := decrement()
+
+        <span class="hljs-comment">//&#x8FD9;&#x5C06;&#x5728;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x8C03;&#x7528;&#x201C;visit&#x201D;&#x4E8B;&#x4EF6;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x9664;&#x5916;</span>
+        <span class="hljs-comment">//&#xFF08;&#x5B83;&#x4E0D;&#x80FD;&#x56E0;&#x4E3A;&#x5B83;&#x5DF2;&#x7ECF;&#x79BB;&#x5F00;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x90FD;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BBE;&#x8BA1;&#xFF09;</span>
+        c.Conn.To(websocket.Broadcast).Emit(<span class="hljs-string">&quot;visit&quot;</span>, newCount)
+    }
+
+    <span class="hljs-keyword">func</span> (c *websocketController) update() {
+        <span class="hljs-comment">// visits++</span>
+        newCount := increment()
+
+       <span class="hljs-comment">//&#x8FD9;&#x5C06;&#x5728;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x8C03;&#x7528;&#x201C;visit&#x201D;&#x4E8B;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x5F53;&#x524D;&#x4E8B;&#x4EF6;</span>
+        <span class="hljs-comment">//&#x4F7F;&#x7528;&apos;newCount&apos;&#x53D8;&#x91CF;&#x3002;</span>
+        <span class="hljs-comment">//</span>
+        <span class="hljs-comment">//&#x4F60;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x66F4;&#x5FEB;&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8BBF;&#x95EE;&#x8005;</span>
+        <span class="hljs-comment">//&#x5E76;&#x4E14;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x589E;&#x52A0;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x201C;&#x5C55;&#x793A;&#x201D;websocket&#x63A7;&#x5236;&#x5668;&#x3002;</span>
+        c.Conn.To(websocket.All).Emit(<span class="hljs-string">&quot;visit&quot;</span>, newCount)
+    }
+    <span class="hljs-keyword">func</span> (c *websocketController) Get( <span class="hljs-comment">/* websocket.Connection could be lived here as well, it doesn&apos;t matter */</span> ) {
+        c.Conn.OnLeave(c.onLeave)
+        c.Conn.On(<span class="hljs-string">&quot;visit&quot;</span>, c.update)
+
+        <span class="hljs-comment">// &#x5728;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#x6CE8;&#x518C;&#x540E;&#x8C03;&#x7528;&#x5B83;&#x3002;</span>
+        c.Conn.Wait()
+    }
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MoviesMVCApplication.html" class="navigation navigation-prev " aria-label="Previous page: 电影MVC应用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MVCLovesSessions.html" class="navigation navigation-next " aria-label="Next page: MVC中的Sessions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MVC中的Websockets","level":"1.9.2","depth":2,"next":{"title":"MVC中的Sessions","level":"1.9.3","depth":2,"path":"irisDoc/MVCLovesSessions.md","ref":"./irisDoc/MVCLovesSessions.md","articles":[]},"previous":{"title":"电影MVC应用","level":"1.9.1","depth":2,"path":"irisDoc/MoviesMVCApplication.md","ref":"./irisDoc/MoviesMVCApplication.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"irisDoc/MVCLovesWebsockets.md","mtime":"2019-06-15T05:50:52.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T18:39:33.396Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
